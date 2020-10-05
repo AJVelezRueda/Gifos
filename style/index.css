@@ -7,14 +7,14 @@
 }
 
 h1, h2, h3, h4, h5 {
-	font-family: 'Montserrat', sans-serif;
+	font-family: Montserrat-Bold, sans-serif;
 	color: #572EE5;
     font-weight: normal;
     letter-spacing: 0;
 }
 
 h1 {
-    font-size: 3.1em;
+    font-size: 2.1em;
 }
 
 h2 {
@@ -40,7 +40,7 @@ nav {
 }
 
 .nav-link {
-    color: black;
+    color: #572EE5;
 }
 
 .ham-menu {
@@ -65,16 +65,11 @@ ul li {
     display: inline-block;
 }
 
-ul li:hover {
-    text-decoration: line-through;
-    color: white;
-    font-size: large;
-}
-
 
 a {
     text-decoration: none;
     color: #572EE5;
+    font-size: 0.8em;
 }
 
 #toggle {
@@ -112,16 +107,23 @@ a {
 }
 
 
+.gifos-text {
+	color: #50E3C2;
+	font-weight: bold;
+}
+
+.buscador {
+	display: flex;
+	flex-direction: column;
+	padding: 15%;
+}
 
 
 @media screen and (min-width: 720px) {
     #toggle:checked~.menu i::before {
         content: none;
     }
-    a {
-        text-decoration: none;
-        color: black;
-    }
+
     .h2 {
         margin-bottom: 20px;
     }
