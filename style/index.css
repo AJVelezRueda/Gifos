@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;1,100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap');
+
 
 * {
     margin: 0;
@@ -6,7 +8,7 @@
     box-sizing: border-box;
 }
 
-h1, h2, h3, h4, h5 {
+h1, h2 {
 	font-family: Montserrat-Bold, sans-serif;
 	color: #572EE5;
     font-weight: normal;
@@ -17,14 +19,36 @@ h1 {
     font-size: 2.1em;
 }
 
-h2 {
-    font-size: 2.5em;
+h3, h4, h5 {
+    font-size: 1.8em;
     margin-bottom: 8px;
     text-align: initial;
+    font-family: 'Roboto', sans-serif;
+    color: #572EE5;
+    text-align: center;
+}
+
+p {
+	font-family: 'Roboto', sans-serif;
+	font-size: 1em;
 }
 
 body>main {
     margin-top: 19vh;
+}
+
+.logo-desck {
+	z-index: 1;
+	width: 100%;
+}
+
+.logo-mobile {
+	z-index: 25;
+}
+
+.crear {
+	width: 65%;
+	margin-top: 47%;
 }
 
 nav {
@@ -37,6 +61,11 @@ nav {
     align-items: center;
     margin-top: 2%;
     justify-content: space-between;
+}
+
+.nav-bar {
+	border-top: 4px solid #572EE5;
+	margin-top: 0;
 }
 
 .nav-link {
@@ -112,12 +141,28 @@ a {
 	font-weight: bold;
 }
 
-.buscador {
+.buscador-section {
 	display: flex;
 	flex-direction: column;
 	padding: 15%;
+	align-items: center;
 }
 
+
+.buscador-buton {
+	border: #572EE5 solid 1px;
+	width: 50vw;
+}
+
+.buscador {
+	display: inline-block;
+}
+
+
+.results {
+	background: #F3F5F8;
+	text-align: center;
+}
 
 @media screen and (min-width: 720px) {
     #toggle:checked~.menu i::before {
@@ -127,13 +172,20 @@ a {
     .h2 {
         margin-bottom: 20px;
     }
+
+	.logo-mobile {
+		display: none;
+	}
+
     .menu {
         display: none;
     }
+    
     .ham-menu {
         height: 100%;
         font-size: larger;
     }
+    
     .main-menu {
         background-color: transparent;
         color: black;
@@ -144,11 +196,17 @@ a {
         margin-top: 0;
         position: relative;
     }
+    
     .menu-ul {
-        line-height: 100%;
-        display: inline-block;
-        position: relative;
+        line-height: 6vw;
+		position: relative;
+		text-align: center;
+		justify-content: center;
+		display: flex;
+		align-items: center;
+		margin-top: -5%;
     }
+    
     ul li {
         position: relative;
         padding: 0 10px;
@@ -156,4 +214,5 @@ a {
         margin-inline-end: 0;
         margin-inline-start: 0;
     }
+
     }
