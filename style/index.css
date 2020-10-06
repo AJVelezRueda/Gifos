@@ -152,6 +152,7 @@ a {
 
 .buscador-buton {
 	border: #572EE5 solid 1px;
+	border-radius: 15px;
 	width: 50vw;
 	height: 3vw;
 }
@@ -168,7 +169,7 @@ a {
 .lupa {
 	z-index: 10;
 	position: absolute;
-	margin-left: -27px;
+	margin-left: -33px;
 	margin-top: 4px;
 }
 
