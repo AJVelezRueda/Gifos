@@ -39,12 +39,13 @@ body>main {
 }
 
 .logo-desck {
-	z-index: 1;
+	opacity: 0;
 	width: 100%;
 }
 
 .logo-mobile {
 	z-index: 25;
+	position: absolute;
 }
 
 .crear {
@@ -191,6 +192,9 @@ a {
 		display: none;
 	}
 
+	.logo-desck {
+		opacity: 1;
+	}
     .menu {
         display: none;
     }
