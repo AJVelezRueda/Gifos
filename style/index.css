@@ -212,6 +212,11 @@ a:hover {
 .gif {
     background-size: cover;
     padding: 0 2%;
+    display: none;
+}
+
+.gif.active {
+	display: block;
 }
 
 .gifs {
