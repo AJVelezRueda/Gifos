@@ -11,7 +11,10 @@
 body {
     overflow-x: hidden;
     height: 100%;
+    width: 100%;
     color: #572EE5;
+    border-bottom: 4px solid #572EE5;
+    border-top: 4px solid #572EE5;
 }
 
 h1, h2 {
@@ -32,15 +35,13 @@ h3, h4, h5 {
     text-align: initial;
     font-family: 'Roboto', sans-serif;
     text-align: center;
+    margin-bottom: 3%;
 }
 
 p {
 	font-family: 'Roboto', sans-serif;
 	font-size: 1em;
-}
-
-body>main {
-    margin-top: 19vh;
+	color: black;
 }
 
 .logo-desck {
@@ -54,8 +55,8 @@ body>main {
 }
 
 .crear {
-	width: 65%;
-	margin-top: 47%;
+	width: 20px;
+	margin-top: 1%;
 }
 
 nav {
@@ -71,8 +72,7 @@ nav {
 }
 
 .nav-bar {
-	border-top: 4px solid #572EE5;
-	margin-top: 0;
+	margin-top: 3%;
 }
 
 .nav-link {
@@ -137,17 +137,15 @@ a:hover {
 }
 
 .main-menu {
-    background-color: blue;
-    height: 0px;
+	background-color: transparent;
+	height: 0px;
     width: 100%;
     overflow: hidden;
     transition: all 0.1s ease-ease;
     -webkit-transition: all 0.1s;
-    grid-column-start: 1;
-    grid-column-end: 1;
     position: absolute;
-    left: 0;
-    margin-top: 1%;
+    left: 8%;
+	margin-top: 8%;
 }
 
 .fa, .fas {
@@ -162,7 +160,7 @@ a:hover {
 .buscador-section {
 	display: flex;
 	flex-direction: column;
-	padding: 15%;
+	padding: 27% 9%;
 	align-items: center;
 }
 
@@ -190,25 +188,44 @@ a:hover {
 	margin-top: 5.5px;
 }
 
-.trending-title {
-	margin-bottom: 2%;
+.trending {
+	padding: 7% 2%;
 }
 
 .trending-text {
 	margin-bottom: 4%;
+	color: #572EE5;
 }
 
 .results {
 	background: #F3F5F8;
+	padding: 7% 2%;
 }
 
+.carousel {
+	display: flex;
+	flex-direction: row;
+}
+
+.retroceder, .avanzar {
+	background: transparent;
+	z-index: 2;
+	width: 44px;
+	height: 44px;
+	margin-top: 22%;
+}
+
+.gif {
+	width: 10em;
+	height: 10em;
+}
 
 .footer {
 	display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 3%;
+	padding: 3% 6%;
 }
 
 
@@ -233,6 +250,11 @@ a:hover {
     .h2 {
         margin-bottom: 20px;
     }
+
+    .crear {
+		width: 65%;
+		margin-top: 47%;
+	}
 
 	.logo-mobile {
 		display: none;
