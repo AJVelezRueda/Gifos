@@ -8,6 +8,11 @@
     box-sizing: border-box;
 }
 
+body {
+    overflow-x: hidden;
+    height: 100%;
+}
+
 h1, h2 {
 	font-family: Montserrat-Bold, sans-serif;
 	color: #572EE5;
@@ -171,7 +176,7 @@ a {
 	z-index: 10;
 	position: absolute;
 	margin-left: -33px;
-	margin-top: 4px;
+	margin-top: 5.5px;
 }
 
 .results {
