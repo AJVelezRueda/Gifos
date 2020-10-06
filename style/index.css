@@ -189,7 +189,7 @@ a:hover {
 }
 
 .trending {
-	padding: 7% 2%;
+	padding: 0 2%;
 }
 
 .trending-text {
@@ -205,6 +205,23 @@ a:hover {
 .carousel {
 	display: flex;
 	flex-direction: row;
+	width: 90%;
+    margin: 0 auto;
+}
+
+.gif {
+    background-size: cover;
+    padding: 0 2%;
+}
+
+.gifs {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+}
+
+.foto-carrusel {
+	width: 100%;
 }
 
 .retroceder, .avanzar {
@@ -212,12 +229,7 @@ a:hover {
 	z-index: 2;
 	width: 44px;
 	height: 44px;
-	margin-top: 22%;
-}
-
-.gif {
-	width: 10em;
-	height: 10em;
+	margin-top: 6%;
 }
 
 .footer {
