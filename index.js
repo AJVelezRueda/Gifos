@@ -6,6 +6,8 @@ let carouselOffset = 0;
 function actualizadorClasesCarousel () {
 	const listaGifs = Array.from(document.getElementsByClassName('gif'));
 
+	carouselOffset = (listaGifs.length + carouselOffset) % listaGifs.length
+
 	listaGifs.forEach((elemento, indice) => {
 		if (indice < carouselOffset || indice >= carouselOffset +3) {
 			elemento.classList.remove('active');
@@ -16,7 +18,8 @@ function actualizadorClasesCarousel () {
 }
 
 function nextCarouselImage() {
-	carouselOffset += 3;	
+	carouselOffset += 3;
+
 	actualizadorClasesCarousel();
 }
 
