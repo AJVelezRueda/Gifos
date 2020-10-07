@@ -3,9 +3,7 @@
 let carouselOffset = 0;
 
 
-function nextCarouselImage() {
-	carouselOffset += 3;	
-
+function actualizadorClasesCarousel () {
 	const listaGifs = Array.from(document.getElementsByClassName('gif'));
 
 	listaGifs.forEach((elemento, indice) => {
@@ -17,5 +15,17 @@ function nextCarouselImage() {
 	})
 }
 
+function nextCarouselImage() {
+	carouselOffset += 3;	
+	actualizadorClasesCarousel();
+}
+
+
+function backCarouselImage() {
+	carouselOffset -= 3;	
+	actualizadorClasesCarousel();	
+}
+
 
 document.getElementById('avanzar').addEventListener('click', nextCarouselImage)
+document.getElementById('retroceder').addEventListener('click', backCarouselImage)
