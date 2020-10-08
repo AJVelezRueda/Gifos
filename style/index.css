@@ -105,13 +105,16 @@ ul li {
 a {
     text-decoration: none;
     color: #572EE5;
-    font-size: 0.8em;
+    font-size: 1.2em;
 }
 
 a:hover {
-	color: #50E3C2;
+	color: #572EE5;
 }
 
+.opciones:hover {
+	color:#50E3C2;	
+}
 
 #toggle {
     display: none;
@@ -173,6 +176,8 @@ a:hover {
 	border-radius: 15px;
 	width: 27em;
 	height: 2.3em;
+	position:relative;
+	z-index:5;
 }
 
 
@@ -189,6 +194,19 @@ a:hover {
 	position: absolute;
 	margin-left: -33px;
 	margin-top: 5.5px;
+}
+
+.sugerencias {
+	border: #572EE5 solid 1px;
+	height: 7.2vw;
+	margin-top: -8.6%;
+	border-radius: 15px;
+	z-index: 1;
+	position: relative;
+	width: 31.4vw;
+}
+.lupa-sugerencias{
+	padding: 2% 2%;
 }
 
 .trending {
