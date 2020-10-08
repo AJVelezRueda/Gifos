@@ -39,9 +39,9 @@ function getSearchSugestions(query) {
 }
 
 
-function copySugestionsInSpan(id,input){
+function copySugestionsInSpan(id,message){
 	const span1 = document.getElementById(id);
-	span1.innerText = input; 
+	span1.innerText = message; 
 
 }
 
@@ -50,7 +50,7 @@ function getSugestions(url) {
 	.then(response => response.json())
 	.then(response => response.data)
 	.catch(() => 'no hay sugerencias')
-	.then(response => copySugestions('sugerencia1',response));
+	.then(response => copySugestionsInSpan('sugerencia1',response));
 }
 
 
