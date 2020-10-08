@@ -1,7 +1,8 @@
 //fetch('https://api.giphy.com/v1/gifs/search?api_key=Nc8u10QS9qz9vLVNpc7W08yiQVxITRYJ&q=hamburguer').then(it => it.json().then(it => console.log(it))) ..//
 
-let carouselOffset = 0;
 
+//---------- Carousel --------------//
+let carouselOffset = 0;
 
 function actualizadorClasesCarousel () {
 	const listaGifs = Array.from(document.getElementsByClassName('gif'));
@@ -30,5 +31,29 @@ function backCarouselImage() {
 }
 
 
-document.getElementById('avanzar').addEventListener('click', nextCarouselImage)
-document.getElementById('retroceder').addEventListener('click', backCarouselImage)
+//----------- Searchs --------------//
+let Api_key = 'Nc8u10QS9qz9vLVNpc7W08yiQVxITRYJ'
+
+function getSearchSugestions(query) {
+    return `https://api.giphy.com/v1/gifs/search/tags?api_key=${Api_key}&q=${query}`
+}
+
+
+function copySugestionsInSpan(id,input){
+	const span1 = document.getElementById(id);
+	span1.innerText = input; 
+
+}
+
+function getSugestions(url) {
+	fetch(getSearchSugestions(url))
+	.then(response => response.json())
+	.then(response => response.data)
+	.catch(() => 'no hay sugerencias')
+	.then(response => copySugestions('sugerencia1',response));
+}
+
+
+document.getElementById('avanzar').addEventListener('click', nextCarouselImage);
+document.getElementById('retroceder').addEventListener('click', backCarouselImage);
+
