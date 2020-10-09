@@ -39,17 +39,21 @@ function getSearchSugestions(query) {
 }
 
 
-function copySugestionsInSpan(id,message){
-	const span1 = document.getElementById(id);
-	span1.innerText = message; 
+const sugestionslist = ['sugerencia1', 'sugerencia2', 'sugerencia3']
 
+function copySugestionsInSpan(id,list){
+
+	sugestionslist.forEach((elemento,indice) => {
+		const span = document.getElementById(elemento);
+		span.innerText = list[indice]; 
+	})
 }
 
 function getSugestions(url) {
 	fetch(getSearchSugestions(url))
 	.then(response => response.json())
 	.then(response => response.data.map(it => it.name))
-	.catch(() => 'no hay sugerencias')
+	.catch(() => ['no hay sugerencias'])
 	.then(response => copySugestionsInSpan('sugerencia1',response));
 }
 

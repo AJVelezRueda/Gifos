@@ -199,12 +199,15 @@ a:hover {
 .sugerencias {
 	border: #572EE5 solid 1px;
 	height: 7.2vw;
-	margin-top: -8.1%;
+	margin-top: 0%;
 	border-radius: 15px;
 	z-index: 1;
 	position: relative;
 	width: 31.4vw;
+	display: flex;
+	flex-direction: column;
 }
+
 .lupa-sugerencias{
 	padding: 2% 2%;
 }
