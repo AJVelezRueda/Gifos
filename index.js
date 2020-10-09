@@ -48,7 +48,7 @@ function copySugestionsInSpan(id,message){
 function getSugestions(url) {
 	fetch(getSearchSugestions(url))
 	.then(response => response.json())
-	.then(response => response.data)
+	.then(response => response.data.map(it => it.name))
 	.catch(() => 'no hay sugerencias')
 	.then(response => copySugestionsInSpan('sugerencia1',response));
 }
