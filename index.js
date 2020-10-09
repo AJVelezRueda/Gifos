@@ -34,15 +34,13 @@ function backCarouselImage() {
 //----------- Searchs --------------//
 let Api_key = 'Nc8u10QS9qz9vLVNpc7W08yiQVxITRYJ'
 
-function getSearchSugestions(query) {
+function searchSugestionsUrl(query) {
     return `https://api.giphy.com/v1/gifs/search/tags?api_key=${Api_key}&q=${query}`
 }
-
 
 const sugestionslist = ['sugerencia1', 'sugerencia2', 'sugerencia3']
 
 function copySugestionsInSpan(id,list){
-
 	sugestionslist.forEach((elemento,indice) => {
 		const span = document.getElementById(elemento);
 		span.innerText = list[indice]; 
@@ -50,7 +48,7 @@ function copySugestionsInSpan(id,list){
 }
 
 function getSugestions(url) {
-	fetch(getSearchSugestions(url))
+	fetch(searchSugestionsUrl(url))
 	.then(response => response.json())
 	.then(response => response.data.map(it => it.name))
 	.catch(() => ['no hay sugerencias'])
@@ -60,4 +58,7 @@ function getSugestions(url) {
 
 document.getElementById('avanzar').addEventListener('click', nextCarouselImage);
 document.getElementById('retroceder').addEventListener('click', backCarouselImage);
+
+let searchQuery = document.getElementById("buscador-buton");
+searchQuery.addEventListener("keypress", () => getSugestions(searchSugestionsUrl(searchQuery.value)));
 

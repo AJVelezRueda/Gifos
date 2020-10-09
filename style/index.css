@@ -203,7 +203,7 @@ a:hover {
 	border-radius: 15px;
 	z-index: 1;
 	position: relative;
-	width: 31.4vw;
+	width: 30vw;
 	display: flex;
 	flex-direction: column;
 }
