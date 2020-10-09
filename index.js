@@ -51,7 +51,7 @@ function getSugestions(url) {
 	fetch(searchSugestionsUrl(url))
 	.then(response => response.json())
 	.then(response => response.data.map(it => it.name))
-	.catch(() => ['no hay sugerencias'])
+	.catch(() => [' '])
 	.then(response => copySugestionsInSpan('sugerencia1',response));
 }
 
