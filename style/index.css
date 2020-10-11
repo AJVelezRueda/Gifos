@@ -285,7 +285,7 @@ a:hover {
 	padding: 2% 2%;
 }
 
-.gifos-results {
+.gifos-results.active {
 	display: flex;
 	flex-direction: column;
 }
