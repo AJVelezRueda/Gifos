@@ -171,26 +171,25 @@ a:hover {
 }
 
 
-.buscador-buton {
+.search-input {
 	border: #572EE5 solid 1px;
 	border-radius: 15px;
 	width: 27em;
+	padding-left: 3%;
 	height: 2.3em;
 	position:relative;
 	z-index:5;
 }
 
 
-.search-button {
-	border-top: #572EE5 solid 1px;
+.searching {
+	border: transparent;
 	border-radius: 15px;
 	width: 27em;
 	height: 2.3em;
 	position: relative;
+	background: transparent;
 	z-index: 5;
-	border-bottom: transparent;
-	border-left: transparent;
-	border-right: transparent;
 }
 
 .buscador {
@@ -211,19 +210,17 @@ a:hover {
 .sugerencias {
 	border: #572EE5 solid 1px;
 	height: 7.5vw;
-	margin-top: -7%;
+	margin-top: -8.5%;
 	border-radius: 15px;
 	z-index: 1;
 	position: relative;
 	width: 30.3vw;
-	display: flex;
 	flex-direction: column;
-	border-top: transparent;
 	display: none;
 }
 
 .sugerencias.active {
-	display: block;
+	display: flex;
 }
 
 .lupa-sugerencias{
@@ -231,10 +228,13 @@ a:hover {
 }
 
 .space-top{
-	width: 100%;
+	width: calc(100% - 30px);
 	height: 41px;
-	background: white;
+	background: transparent;
 	position: relative;
+	border-bottom: lightgray solid 1px;
+	margin-left: 11px;
+	margin-right: 5px;
 }
 
 .trending {
