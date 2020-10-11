@@ -266,6 +266,8 @@ a:hover {
 
 .gif.active {
 	display: block;
+	max-width: 260px;
+	max-height: 260px;
 }
 
 .gifs {
@@ -273,6 +275,7 @@ a:hover {
 	flex-direction: row;
 	width: 100%;
 	align-items: center;
+	justify-content: space-between;
 }
 
 .search-results {
@@ -291,6 +294,7 @@ a:hover {
 .gifo {
 	margin-left: 2%;
 	margin-bottom: 2%;
+	max-width: 17em;
 }
 
 .ver-mas {
