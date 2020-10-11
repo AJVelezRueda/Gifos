@@ -114,7 +114,6 @@ function creatinResultFigures(GifosList) {
 	})
 }
 
-
 function getingSearchResults(url) {
 	fetch(searchResultsUrl(url))
 	.then(response => response.json())
@@ -131,5 +130,7 @@ let searchQuery = document.getElementById("search-input");
 searchQuery.addEventListener("keypress", () => getSugestions(searchSugestionsUrl(searchQuery.value)));
 searchQuery.addEventListener("keypress", trySearch);
 document.addEventListener("click", stopSearch);
+
+searchQuery.addEventListener("", () => getingSearchResults(searchResultsUrl(searchQuery.value)))
 
 getTrendingGifos();
