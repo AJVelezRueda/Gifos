@@ -269,6 +269,7 @@ a:hover {
 	display: flex;
 	flex-direction: row;
 	width: 100%;
+	align-items: center;
 }
 
 .foto-carrusel {

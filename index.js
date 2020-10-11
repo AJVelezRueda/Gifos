@@ -1,7 +1,27 @@
-//fetch('https://api.giphy.com/v1/gifs/search?api_key=Nc8u10QS9qz9vLVNpc7W08yiQVxITRYJ&q=hamburguer').then(it => it.json().then(it => console.log(it))) ..//
-
-
 //---------- Carousel --------------//
+
+function trendingUrl() {
+    return `https://api.giphy.com/v1/gifs/trending?api_key=${Api_key}&limit=25`
+}
+
+
+function updateCarouselGifsSrc(gifs) {
+	const images = Array.from(document.getElementsByClassName('foto-carrusel'));
+	images.forEach((elemento,indice) => {
+		elemento.src = gifs[indice].src;
+		elemento.alt = gifs[indice].alt;			
+	});
+}
+
+
+function getTrendingGifos() {
+	fetch(trendingUrl())
+	.then(response => response.json())
+	.then(response => response.data.map(it => ({src: it.images.original.url, alt: it.title})))
+	.then(response => updateCarouselGifsSrc(response));
+}
+
+
 let carouselOffset = 0;
 
 function actualizadorClasesCarousel () {
@@ -83,3 +103,4 @@ searchQuery.addEventListener("keypress", () => getSugestions(searchSugestionsUrl
 searchQuery.addEventListener("keypress", trySearch);
 document.addEventListener("click", stopSearch);
 
+getTrendingGifos();
