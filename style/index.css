@@ -21,6 +21,7 @@ h1, h2 {
 	font-family: Montserrat-Bold, sans-serif;
     font-weight: normal;
     letter-spacing: 0;
+    text-align: center;
 }
 
 h1 {
@@ -289,6 +290,10 @@ a:hover {
 .gifo {
 	margin-left: 2%;
 	margin-bottom: 2%;
+}
+
+.ver-mas {
+	padding: 4% 0;
 }
 
 .result {
