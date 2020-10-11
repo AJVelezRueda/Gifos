@@ -56,16 +56,15 @@ function getSugestions(url) {
 }
 
 function sugestionsShow() {
-	const sugestionsDiv = document.getElementsByClassName('sugerencias')
+	const sugestionsDiv = document.getElementById('sugerencias')
 	const inputbutton = document.getElementById("buscador-buton")
 
-	if (inputbutton.length > 0) {
+	if (inputbutton.value.length > 0) {
 		sugestionsDiv.classList.add('active');
 	} else {
 		sugestionsDiv.classList.remove('active');
 	}
 }
-
 
 
 document.getElementById('avanzar').addEventListener('click', nextCarouselImage);
@@ -74,5 +73,4 @@ document.getElementById('retroceder').addEventListener('click', backCarouselImag
 let searchQuery = document.getElementById("buscador-buton");
 searchQuery.addEventListener("keypress", () => getSugestions(searchSugestionsUrl(searchQuery.value)));
 searchQuery.addEventListener("keypress", () => sugestionsShow());
-
 
