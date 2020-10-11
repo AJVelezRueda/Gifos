@@ -193,14 +193,8 @@ a:hover {
 	border-right: transparent;
 }
 
-
 .buscador {
 	display: inline-block;
-}
-
-.form input[type="text"] {
-    box-sizing: border-box;
-    padding-left: 2%;
 }
 
 .buscador-img {
@@ -225,6 +219,11 @@ a:hover {
 	display: flex;
 	flex-direction: column;
 	border-top: transparent;
+	display: none;
+}
+
+.sugerencias.active {
+	display: block;
 }
 
 .lupa-sugerencias{

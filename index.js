@@ -31,7 +31,7 @@ function backCarouselImage() {
 }
 
 
-//----------- Searchs --------------//
+//---------- Search sugestions ----------//
 let Api_key = 'Nc8u10QS9qz9vLVNpc7W08yiQVxITRYJ'
 
 function searchSugestionsUrl(query) {
@@ -55,10 +55,24 @@ function getSugestions(url) {
 	.then(response => copySugestionsInSpan('sugerencia1',response));
 }
 
+function sugestionsShow() {
+	const sugestionsDiv = document.getElementsByClassName('sugerencias')
+	const inputbutton = document.getElementById("buscador-buton")
+
+	if (inputbutton.length > 0) {
+		sugestionsDiv.classList.add('active');
+	} else {
+		sugestionsDiv.classList.remove('active');
+	}
+}
+
+
 
 document.getElementById('avanzar').addEventListener('click', nextCarouselImage);
 document.getElementById('retroceder').addEventListener('click', backCarouselImage);
 
 let searchQuery = document.getElementById("buscador-buton");
 searchQuery.addEventListener("keypress", () => getSugestions(searchSugestionsUrl(searchQuery.value)));
+searchQuery.addEventListener("keypress", () => sugestionsShow());
+
 
