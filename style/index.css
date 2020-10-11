@@ -253,6 +253,7 @@ a:hover {
 	flex-direction: row;
 	width: 90%;
     margin: 4% auto;
+    align-items: center;
 }
 
 .gif {
@@ -270,6 +271,22 @@ a:hover {
 	flex-direction: row;
 	width: 100%;
 	align-items: center;
+}
+
+.seach-results {
+	display: grid;
+	grid-template-columns: repeat(4, 20%);
+	grid-template-rows: repeat(4, 1fr);
+}
+
+.gifos-results {
+	display: flex;
+	flex-direction: column;
+}
+
+.result {
+	width: 100%;
+	height: auto;
 }
 
 .foto-carrusel {
