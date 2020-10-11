@@ -179,17 +179,12 @@ a:hover {
 	height: 2.3em;
 	position:relative;
 	z-index:5;
+	background: transparent;
 }
 
 
-.searching {
+.searching .search-input {
 	border: transparent;
-	border-radius: 15px;
-	width: 27em;
-	height: 2.3em;
-	position: relative;
-	background: transparent;
-	z-index: 5;
 }
 
 .buscador {
@@ -219,7 +214,7 @@ a:hover {
 	display: none;
 }
 
-.sugerencias.active {
+.searching .sugerencias {
 	display: flex;
 }
 
