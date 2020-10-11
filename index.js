@@ -43,7 +43,7 @@ const sugestionslist = ['sugerencia1', 'sugerencia2', 'sugerencia3']
 function copySugestionsInSpan(id,list){
 	sugestionslist.forEach((elemento,indice) => {
 		const span = document.getElementById(elemento);
-		span.innerText = list[indice]; 
+		span.innerText = list[indice] ||  ""; 
 	})
 }
 
