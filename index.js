@@ -95,6 +95,35 @@ function trySearch() {
 }
 
 
+//------- Results -------------//
+
+function searchResultsUrl(query) {
+    return `https://api.giphy.com/v1/gifs/search?api_key=${Api_key}&q=${query}&limit=48`
+}
+
+function creatingResulstDiv() {
+	document.createElement('div', {class: 'seach-results'});
+}
+
+function creatinResultFigures(GifosList) {
+	searchResults = document.getElementById('seach-results');
+	GifosList.forEach((elemento) => {
+		figure = document.createElement('figure', {class: 'gifo'});
+		figure.innerHTML = `<img src="${elemento.src}" class="result" alt="${elemento.alt}">`;
+		searchResults.appendChild(figure);
+	})
+}
+
+
+function getingSearchResults(url) {
+	fetch(searchResultsUrl(url))
+	.then(response => response.json())
+	.then(response => response.data.map(it => ({src: it.images.original.url, alt: it.title})))
+	.then(response => creatinResultFigures(response));
+}
+
+//----- Events ----------//
+
 document.getElementById('avanzar').addEventListener('click', nextCarouselImage);
 document.getElementById('retroceder').addEventListener('click', backCarouselImage);
 
