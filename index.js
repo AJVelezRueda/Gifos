@@ -17,7 +17,7 @@ function updateCarouselGifsSrc(gifs) {
 function getTrendingGifos() {
 	fetch(trendingUrl())
 	.then(response => response.json())
-	.then(response => response.data.map(it => ({src: it.images.original.url, alt: it.title})))
+	.then(response => response.data.map(it => ({src: it.images.downsized.url, alt: it.title})))
 	.then(response => updateCarouselGifsSrc(response));
 }
 
@@ -67,8 +67,8 @@ function copySugestionsInSpan(id,list){
 	})
 }
 
-function getSugestions(url) {
-	fetch(searchSugestionsUrl(url))
+function getSugestions(query) {
+	fetch(searchSugestionsUrl(query))
 	.then(response => response.json())
 	.then(response => response.data.map(it => it.name))
 	.catch(() => [' '])
@@ -98,27 +98,35 @@ function trySearch() {
 //------- Results -------------//
 
 function searchResultsUrl(query) {
-    return `https://api.giphy.com/v1/gifs/search?api_key=${Api_key}&q=${query}&limit=48`
+    return `https://api.giphy.com/v1/gifs/search?api_key=${Api_key}&q=${query}&limit=12`
 }
 
 function creatingResulstDiv() {
-	document.createElement('div', {class: 'seach-results'});
+	const divFather = document.getElementById('search-result-groups');
+	const div = document.createElement('div');
+	div.setAttribute("class", "search-results");
+	divFather.appendChild(div);
+	return div;
+
 }
 
-function creatinResultFigures(GifosList) {
-	searchResults = document.getElementById('seach-results');
-	GifosList.forEach((elemento) => {
-		figure = document.createElement('figure', {class: 'gifo'});
+function creatingResultFigures(gifosList) {
+	let searchResults = creatingResulstDiv();
+
+	gifosList.forEach((elemento) => {
+		figure = document.createElement('figure');
+		figure.setAttribute("class", "gifo")
 		figure.innerHTML = `<img src="${elemento.src}" class="result" alt="${elemento.alt}">`;
 		searchResults.appendChild(figure);
 	})
 }
 
-function getingSearchResults(url) {
-	fetch(searchResultsUrl(url))
+function getingSearchResults(query) {
+	fetch(searchResultsUrl(query))
 	.then(response => response.json())
-	.then(response => response.data.map(it => ({src: it.images.original.url, alt: it.title})))
-	.then(response => creatinResultFigures(response));
+	.then(response => response)
+	.then(response => response.data.map(it => ({src: it.images.downsized.url, alt: it.title})))
+	.then(response => creatingResultFigures(response));
 }
 
 //----- Events ----------//
@@ -127,10 +135,10 @@ document.getElementById('avanzar').addEventListener('click', nextCarouselImage);
 document.getElementById('retroceder').addEventListener('click', backCarouselImage);
 
 let searchQuery = document.getElementById("search-input");
-searchQuery.addEventListener("keypress", () => getSugestions(searchSugestionsUrl(searchQuery.value)));
+searchQuery.addEventListener("keypress", () => getSugestions(searchQuery.value));
 searchQuery.addEventListener("keypress", trySearch);
 document.addEventListener("click", stopSearch);
 
-searchQuery.addEventListener("", () => getingSearchResults(searchResultsUrl(searchQuery.value)))
+searchQuery.addEventListener("change", () => getingSearchResults(searchQuery.value));
 
 getTrendingGifos();

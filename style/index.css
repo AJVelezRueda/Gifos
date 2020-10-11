@@ -237,6 +237,7 @@ a:hover {
 	padding: 0 4%;
 	margin-bottom: 13%;
 	height: 9em;
+	text-align: center;
 }
 
 .trending-text {
@@ -274,7 +275,7 @@ a:hover {
 	align-items: center;
 }
 
-.seach-results {
+.search-results {
 	display: grid;
 	grid-template-columns: repeat(4, 25%);
 	grid-template-rows: repeat(3, 1fr);
