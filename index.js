@@ -101,17 +101,27 @@ function searchResultsUrl(query) {
     return `https://api.giphy.com/v1/gifs/search?api_key=${Api_key}&q=${query}&limit=12`
 }
 
-function creatingResulstDiv() {
-	const divFather = document.getElementById('search-result-groups');
+function createResultsDiv() {
+	const parentDiv = document.getElementById('search-result-groups');
 	const div = document.createElement('div');
 	div.setAttribute("class", "search-results");
-	divFather.appendChild(div);
+	parentDiv.appendChild(div);
 	return div;
 
 }
 
-function creatingResultFigures(gifosList) {
-	let searchResults = creatingResulstDiv();
+
+function activateResultsSection () {
+	const parentDiv = document.getElementById('gifos-results');
+	const searchQuery = document.getElementById("search-input");
+	const searchTitle = document.getElementById("results-title");
+	parentDiv.classList.add('active');
+	searchTitle.innerText = searchQuery.value;
+}
+
+function createResultFigures(gifosList) {
+	activateResultsSection();
+	let searchResults = createResultsDiv();
 
 	gifosList.forEach((elemento) => {
 		figure = document.createElement('figure');
@@ -126,8 +136,9 @@ function getingSearchResults(query) {
 	.then(response => response.json())
 	.then(response => response)
 	.then(response => response.data.map(it => ({src: it.images.downsized.url, alt: it.title})))
-	.then(response => creatingResultFigures(response));
+	.then(response => createResultFigures(response));
 }
+
 
 //----- Events ----------//
 

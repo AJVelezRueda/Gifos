@@ -285,16 +285,19 @@ a:hover {
 	padding: 2% 2%;
 }
 
+
+.gifos-results {
+	display: none;
+}
+
 .gifos-results.active {
 	display: flex;
 	flex-direction: column;
 }
 
-
 .gifo {
 	margin-left: 2%;
 	margin-bottom: 2%;
-	max-width: 17em;
 }
 
 .ver-mas {
