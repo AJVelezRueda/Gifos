@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.12.0/css/all.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;1,100&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet"> 
-    <script src="index.js" type="text/javascript" charset="utf-8" async defer></script>
+    <script src="crear.js" type="text/javascript" charset="utf-8" async defer></script>
 </head>
 
 <body>
@@ -41,8 +41,8 @@
     		<div class="camera-window">
     			<div class="camera-container">
     				<div class="text-container">
-    					<h2 class="camera-container-title">¿Nos das acceso a tu cámara?</h2>
-    					<p>El acceso a tu camara será válido sólo <br>por el tiempo en el que estés creando el GIFO.</p>
+    					<h2 class="camera-container-title">Aquí podrás <br>crear tus propios <span class="gifos-text">GIFOS<span></h2>
+    					<p>¡Crea tu GIFO en sólo 3 pasos! <br>(sólo necesitas una cámara para grabar un video)</p>
     				</div>
     				<video src="#" class="video"></video>
     			</div>
@@ -51,16 +51,17 @@
 
     	<section class="pasos">
     		<ul class="pasos-list">
-	    		<li><img src="images/paso-a-paso.svg" class="button-pasos"></li>
-	    		<li><img src="images/paso-a-paso-hover.svg" class="button-pasos"></li>
-	    		<li><img src="images/paso-a-paso-hover.svg" class="button-pasos"></li>
-	    		<li><p class="text-repetir">REPETIR CAPTURA</p></li>
+	    		<li class="button-pasos" id="button-paso1">1</li>
+	    		<li class="button-pasos" id="button-paso2">2</li>
+	    		<li class="button-pasos" id="button-paso3">3</li>
+	    		<li class="repetir-captura" id="repetir-captura"><p class="text-repetir">REPETIR CAPTURA</p></li>
     		</ul>
     		<figure class="element-cinta">
     			<img src="images/pelicula.svg" alt="element-cinta">
     		</figure>
     		<div class="violet-line">
-    			<button class="comenzar" id="comenzar"> COMENZAR</button>
+    			<button class="comenzar active" id="comenzar">COMENZAR</button>
+    			<button class="grabar" id="grabar">GRABAR</button>
     		</div>
     	</section>		
     </main>

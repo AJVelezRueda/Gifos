@@ -397,6 +397,7 @@ a:hover {
 .video {
 	display: none;
 }
+
 .pasos {
 	display: grid;
 	grid-template-columns: 20% repeat(2, 30%) 20%;
@@ -410,7 +411,7 @@ a:hover {
 	display: flex;
 	flex-direction: row;
 	margin-top: 3%;
-	margin-left: 28%;
+	margin-left: 8%;
 }
 
 .text-repetir {
@@ -420,6 +421,52 @@ a:hover {
 .button-pasos {
 	margin-left: 7%;
     margin-right: 2%;
+    border: 1px solid #572EE5;
+    border-radius: 50%;
+    height: 30px;
+	width: 30px;
+	text-align: center;
+}
+
+.button-pasos.active {
+	background: #572EE5;
+	color: white;
+}
+
+.comenzar.active {
+	background: transparent;
+	border: 1px solid #572EE5;
+	border-radius: 21px;
+	color: #572EE5;
+	height: 36px;
+	width: 99px;
+	margin-left: 43%;
+	margin-top: 3%;
+	display: block;
+}
+
+.comenzar {
+	display: none;
+}
+
+.grabar {
+	display: none;
+}
+
+.grabar.active {
+	background: transparent;
+	border: 1px solid #572EE5;
+	border-radius: 21px;
+	color: #572EE5;
+	height: 36px;
+	width: 99px;
+	margin-left: 43%;
+	margin-top: 3%;
+	display: block;
+}
+
+.repetir-captura{
+	display: none;
 }
 
 .element-cinta {

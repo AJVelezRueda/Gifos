@@ -8,3 +8,10 @@
 * seleccionar la sugerencia y disparar la busqueda
 * Mostrar vista de cuando no encuentra resultados
 * Mostrar vista de overlay en hover de imagenes
+
+
+
+
+###--- Comentarios ----###
+
+PAGINA CREAR: Tiene 6 estados que daremos en llamar "recordInit", "recordRequest", "recording", "recordFinished", "recordUpload"
