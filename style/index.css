@@ -383,6 +383,9 @@ a:hover {
 	text-align: center;
 }
 
+.video {
+	display: none;
+}
 .pasos {
 	display: grid;
 	grid-template-columns: 20% repeat(2, 30%) 20%;
@@ -396,7 +399,11 @@ a:hover {
 	display: flex;
 	flex-direction: row;
 	margin-top: 3%;
-	margin-left: 10%;
+	margin-left: 28%;
+}
+
+.text-repetir {
+	margin-left: 12%;
 }
 
 .button-pasos {
