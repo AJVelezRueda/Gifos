@@ -278,6 +278,17 @@ a:hover {
 	justify-content: space-between;
 }
 
+.overlay {
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+
+/* .foto-carrusel:hover {
+	opacity: 0;
+}
+*/
+
 .search-results {
 	display: grid;
 	grid-template-columns: repeat(4, 25%);
@@ -517,6 +528,7 @@ a:hover {
 		background: #572EE5;
 		grid-column: 2/4;
 		margin-left: 13%;
+		text-align: center;
 	}
 
     }

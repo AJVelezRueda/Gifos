@@ -7,4 +7,4 @@
 * la busqueda tiene que borrar los resultados previos (innerText vacio)
 * seleccionar la sugerencia y disparar la busqueda
 * Mostrar vista de cuando no encuentra resultados
-* Mostrar vista de hover
+* Mostrar vista de overlay en hover de imagenes
