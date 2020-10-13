@@ -443,7 +443,7 @@ a:hover {
 	display: block;
 }
 
-.button-pasos {
+.step-position {
 	margin-left: 3%;
     margin-right: 2%;
     border: 1px solid #572EE5;
@@ -453,13 +453,13 @@ a:hover {
 	text-align: center;
 }
 
-.button-pasos.active {
+.step-position.active {
 	background: #572EE5;
 	color: white;
 }
 
 
-.comenzar.active {
+.step-button.active {
 	background: transparent;
 	border: 1px solid #572EE5;
 	border-radius: 21px;
@@ -471,45 +471,8 @@ a:hover {
 	display: block;
 }
 
-.comenzar, .grabar , .finalizar, .subir {
+.step-button {
 	display: none;
-}
-
-.grabar.active {
-	background: transparent;
-	border: 1px solid #572EE5;
-	border-radius: 21px;
-	color: #572EE5;
-	height: 36px;
-	width: 99px;
-	margin-left: 43%;
-	margin-top: 3%;
-	display: block;
-}
-
-.subir.active {
-	background: transparent;
-	border: 1px solid #572EE5;
-	border-radius: 21px;
-	color: #572EE5;
-	height: 36px;
-	width: 99px;
-	margin-left: 43%;
-	margin-top: 3%;
-	display: block;
-}
-
-
-.finalizar.active {
-	background: transparent;
-	border: 1px solid #572EE5;
-	border-radius: 21px;
-	color: #572EE5;
-	height: 36px;
-	width: 99px;
-	margin-left: 43%;
-	margin-top: 3%;
-	display: block;
 }
 
 .repetir-captura{

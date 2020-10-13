@@ -7,7 +7,7 @@ function requestVideo() {
 	const video = document.getElementById("video");
 
 	navigator.mediaDevices
-		.getUserMedia({ audio: false, video: true })
+		.getUserMedia({ audio: false, video:  true })
 		.then((stream) => {
 		   video.srcObject = stream;
 		   video.play();
@@ -79,7 +79,7 @@ function recordingFinished() {
 	const buttonPaso3 = document.getElementById('button-paso3');
 	const video = document.getElementById("video");
 
-	recordingTimeText.classList.add('active');
+	recordingTimeText.classList.remove('active');
 	repetirText.classList.add('active');
 	buttonPaso2.classList.remove('active');
 	buttonPaso3.classList.add('active');
