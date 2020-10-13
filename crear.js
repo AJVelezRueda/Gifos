@@ -90,7 +90,7 @@ function recordingFinished() {
 function recordUpload() {
 	let form = new FormData();
 	form.append('file', blob, 'myGif.gif');
-	fetch(`https://upload.giphy.com/v1/gifs?api_key=${Api_key}&flie=${form}`);
+	fetch(`https://upload.giphy.com/v1/gifs?api_key=${Api_key}&flie=${form.get('file')}`);
 	console.log(form.get('file'));
 }
 
