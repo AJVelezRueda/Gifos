@@ -8,10 +8,6 @@
 * seleccionar la sugerencia y disparar la busqueda
 * Mostrar vista de cuando no encuentra resultados
 * Mostrar vista de overlay en hover de imagenes
-
-
-
-
-###--- Comentarios ----###
-
-PAGINA CREAR: Tiene 6 estados que daremos en llamar "recordInit", "recordRequest", "recording", "recordFinished", "recordUpload"
+* Lograr que el video tenga el tamañano adecuado, cuando escribo lo que propone acamica rompe
+* sacar repeticiones de codigo
+* Lograr subir el video a Gyphy, se genera pero no logro pegarle a la API para que lo suba

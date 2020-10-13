@@ -439,7 +439,7 @@ a:hover {
 	display: none;
 }
 
-.text-repetir.active, .recording-time.active {
+.repetir-captura.active, .recording-time.active {
 	display: block;
 }
 
@@ -478,6 +478,7 @@ a:hover {
 .repetir-captura{
 	display: none;
 }
+
 
 .element-cinta {
 	text-align: center;
