@@ -1,4 +1,6 @@
 //--------- Crear gif -----------//
+let recorder = null;
+
 function requestVideo() {
 	const video = document.getElementById("video");
 
@@ -12,13 +14,13 @@ function requestVideo() {
 }
 
 function startRecording(stream) {
-	let recorder = new RecordRTCPromisesHandler(stream, {
+	recorder = new RecordRTCPromisesHandler(stream, {
 	    type: 'video'
 	});
 	recorder.startRecording();	
 }
 
-function stopRecording() {
+function stopRecording(recorder) {
 	recorder
 		.stopRecording()
 		.then(() => recorder.getBlob()); 
@@ -62,10 +64,20 @@ function recording() {
 	grabarButton.classList.remove('active');
 	finalizarButton.classList.add('active');
 	recordingTimeText.classList.add('active');
-	
+	startRecording(video.srcObject);
+}
+
+function recordingFinished() {
+	const recordingTimeText = document.getElementById('recording-time');
+	const recordingTimeText = document.getElementById('repetir-captura');
+	const video = document.getElementById("video");
+
+	recordingTimeText.classList.add('active');
+	startRecording(video.srcObject);	
 }
 
 document.getElementById("comenzar").addEventListener('click', () => recordInit());
 document.getElementById("grabar").addEventListener('click', () => recording());
+document.getElementById("finalizar").addEventListener('click', () => recordingFinished());
 
 
