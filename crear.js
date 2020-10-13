@@ -1,14 +1,27 @@
 //--------- Crear gif -----------//
-function getStreamAndRecord () {
+function requestVideo() {
 	const video = document.getElementById("video");
 
 	navigator.mediaDevices
-	.getUserMedia({ audio: false, video: true })
-	.then((stream) => {
-	   video.srcObject = stream;
-	   video.play();
-	})
-	.then(recordRequest);
+		.getUserMedia({ audio: false, video: true })
+		.then((stream) => {
+		   video.srcObject = stream;
+		   video.play();
+		})
+		.then(recordRequest);
+}
+
+function startRecording(stream) {
+	let recorder = new RecordRTCPromisesHandler(stream, {
+	    type: 'video'
+	});
+	recorder.startRecording();	
+}
+
+function stopRecording() {
+	recorder
+		.stopRecording()
+		.then(() => recorder.getBlob()); 
 }
 
 
@@ -22,7 +35,7 @@ function recordInit() {
 
 	containerDiv.innerHTML = `<h2 class="camera-container-title">¿Nos das acceso a tu cámara?</h2>
 							<p>El acceso a tu camara será válido sólo <br>por el tiempo en el que estés creando el GIFO.</p>`;
-	getStreamAndRecord ();
+	requestVideo();
 }
 
 
@@ -39,5 +52,7 @@ function recordRequest() {
 	video.classList.add('active');
 	textContainer.remove('active');
 }
+
+
 
 document.getElementById("comenzar").addEventListener('click', () => recordInit());
