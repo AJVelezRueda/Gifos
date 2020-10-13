@@ -394,8 +394,28 @@ a:hover {
 	text-align: center;
 }
 
-.video {
+.text-container {
 	display: none;
+}
+
+.text-container.active {
+	display: block;
+}
+
+.camera-container-title {
+	margin-bottom: 2%;
+}
+
+.video {
+	display: block;
+	height: 90%;
+	width: 90%;
+	margin-left: 5%;
+	display: none;
+}
+
+.video.active{
+	display: block;
 }
 
 .pasos {
