@@ -23,7 +23,11 @@ function startRecording(stream) {
 function stopRecording() {
 	recorder
 		.stopRecording()
-		.then(() => recorder.getBlob());  
+		.then(() => {
+			let blob = recorder.getBlob();
+			recorder = null;
+			return blob;
+		});  
 }
 
 
