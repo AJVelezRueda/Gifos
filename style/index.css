@@ -431,11 +431,16 @@ a:hover {
 	display: flex;
 	flex-direction: row;
 	margin-top: 3%;
-	margin-left: 38%;
+	margin-left: 8%;
 }
 
 .text-repetir, .recording-time {
 	margin-left: 17%;
+	display: none;
+}
+
+.text-repetir.active, .recording-time.active {
+	display: block;
 }
 
 .button-pasos {

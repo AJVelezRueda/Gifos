@@ -53,6 +53,19 @@ function recordRequest() {
 	textContainer.remove('active');
 }
 
+function recording() {
+	const grabarButton = document.getElementById('grabar');
+	const finalizarButton = document.getElementById('finalizar');
+	const recordingTimeText = document.getElementById('recording-time')
+	const video = document.getElementById("video");
 
+	grabarButton.classList.remove('active');
+	finalizarButton.classList.add('active');
+	recordingTimeText.classList.add('active');
+	
+}
 
 document.getElementById("comenzar").addEventListener('click', () => recordInit());
+document.getElementById("grabar").addEventListener('click', () => recording());
+
+
