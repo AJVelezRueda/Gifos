@@ -36,7 +36,7 @@ function recordRequest() {
 	grabarButton.classList.add('active');
 	buttonPaso2.classList.add('active');
 	buttonPaso1.classList.remove('active');
-	video.classList.remove('active');
+	video.classList.add('active');
 	textContainer.remove('active');
 }
 
