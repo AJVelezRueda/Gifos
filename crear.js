@@ -20,10 +20,11 @@ function startRecording(stream) {
 	recorder.startRecording();	
 }
 
-function stopRecording(recorder) {
+function stopRecording() {
 	recorder
 		.stopRecording()
-		.then(() => recorder.getBlob()); 
+		.then(() => recorder.getBlob());
+	recorder = null; 
 }
 
 
@@ -69,11 +70,12 @@ function recording() {
 
 function recordingFinished() {
 	const recordingTimeText = document.getElementById('recording-time');
-	const recordingTimeText = document.getElementById('repetir-captura');
+	const repetirText = document.getElementById('repetir-captura');
 	const video = document.getElementById("video");
 
-	recordingTimeText.classList.add('active');
-	startRecording(video.srcObject);	
+	recordingTimeText.classList.remove('active');
+	repetirText.classList.add('active');
+	stopRecording();	
 }
 
 document.getElementById("comenzar").addEventListener('click', () => recordInit());
