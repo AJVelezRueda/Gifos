@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;1,100&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap');
 
 
 * {
@@ -444,6 +445,8 @@ a:hover {
 }
 
 .step-position {
+	font-family: 'Roboto', sans-serif;
+	font-weight: bold;
 	margin-left: 3%;
     margin-right: 2%;
     border: 1px solid #572EE5;
@@ -451,6 +454,7 @@ a:hover {
     height: 30px;
 	width: 30px;
 	text-align: center;
+	padding: 5px 9px;
 }
 
 .step-position.active {
