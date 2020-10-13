@@ -434,8 +434,8 @@ a:hover {
 	margin-left: 8%;
 }
 
-.text-repetir {
-	margin-left: 12%;
+.text-repetir, .recording-time {
+	margin-left: 17%;
 }
 
 .button-pasos {
@@ -453,6 +453,7 @@ a:hover {
 	color: white;
 }
 
+
 .comenzar.active {
 	background: transparent;
 	border: 1px solid #572EE5;
@@ -465,15 +466,24 @@ a:hover {
 	display: block;
 }
 
-.comenzar {
-	display: none;
-}
-
-.grabar {
+.comenzar, .grabar , .finalizar {
 	display: none;
 }
 
 .grabar.active {
+	background: transparent;
+	border: 1px solid #572EE5;
+	border-radius: 21px;
+	color: #572EE5;
+	height: 36px;
+	width: 99px;
+	margin-left: 43%;
+	margin-top: 3%;
+	display: block;
+}
+
+
+.finalizar.active {
 	background: transparent;
 	border: 1px solid #572EE5;
 	border-radius: 21px;
