@@ -1,5 +1,7 @@
 //--------- Crear gif -----------//
 let recorder = null;
+let blob = null;
+let Api_key = 'Nc8u10QS9qz9vLVNpc7W08yiQVxITRYJ'
 
 function requestVideo() {
 	const video = document.getElementById("video");
@@ -24,9 +26,8 @@ function stopRecording() {
 	recorder
 		.stopRecording()
 		.then(() => {
-			let blob = recorder.getBlob();
+			blob = recorder.getBlob();
 			recorder = null;
-			return blob;
 		});  
 }
 
@@ -83,6 +84,14 @@ function recordingFinished() {
 	buttonPaso2.classList.remove('active');
 	buttonPaso3.classList.add('active');
 	stopRecording();	
+}
+
+
+function recordUpload() {
+	let form = new FormData();
+	form.append('file', blob, 'myGif.gif');
+	fetch(`https://upload.giphy.com/v1/gifs?api_key=${Api_key}&flie=${form}`);
+	console.log(form.get('file'));
 }
 
 document.getElementById("comenzar").addEventListener('click', () => recordInit());

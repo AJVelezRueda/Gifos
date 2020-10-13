@@ -471,11 +471,23 @@ a:hover {
 	display: block;
 }
 
-.comenzar, .grabar , .finalizar {
+.comenzar, .grabar , .finalizar, .subir {
 	display: none;
 }
 
 .grabar.active {
+	background: transparent;
+	border: 1px solid #572EE5;
+	border-radius: 21px;
+	color: #572EE5;
+	height: 36px;
+	width: 99px;
+	margin-left: 43%;
+	margin-top: 3%;
+	display: block;
+}
+
+.subir.active {
 	background: transparent;
 	border: 1px solid #572EE5;
 	border-radius: 21px;
