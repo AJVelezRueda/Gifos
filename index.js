@@ -135,7 +135,7 @@ function getingSearchResults(query) {
     fetch(searchResultsUrl(query))
         .then(response => response.json())
         .then(response => response)
-        .then(response => response.data.map(it => ({ src: it.images.downsized.url, alt: it.title })))
+        .then(response => response.data.map(it => ({ src: it.images.downsized.url, alt: it.title, width: it.images.downsized.width, heigth: it.images.downsized.heigth })))
         .then(response => createResultFigures(response));
 }
 
