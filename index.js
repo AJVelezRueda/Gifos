@@ -132,23 +132,23 @@ function createResultFigures(gifosList) {
 }
 
 function getingSearchResults(query) {
-    fetch(searchResultsUrl(query)
+    fetch(searchResultsUrl(query))
         .then(response => response.json())
         .then(response => response)
         .then(response => response.data.map(it => ({ src: it.images.downsized.url, alt: it.title })))
         .then(response => createResultFigures(response));
-    }
+}
 
-    //----- Events ----------//
+//----- Events ----------//
 
-    document.getElementById('avanzar').addEventListener('click', nextCarouselImage);
-    document.getElementById('retroceder').addEventListener('click', backCarouselImage);
+document.getElementById('avanzar').addEventListener('click', nextCarouselImage);
+document.getElementById('retroceder').addEventListener('click', backCarouselImage);
 
-    let searchQuery = document.getElementById("search-input");
-    searchQuery.addEventListener("keypress", () => getSugestions(searchQuery.value));
-    searchQuery.addEventListener("keypress", trySearch);
-    document.addEventListener("click", stopSearch);
+let searchQuery = document.getElementById("search-input");
+searchQuery.addEventListener("keypress", () => getSugestions(searchQuery.value));
+searchQuery.addEventListener("keypress", trySearch);
+document.addEventListener("click", stopSearch);
 
-    searchQuery.addEventListener("change", () => getingSearchResults(searchQuery.value));
+searchQuery.addEventListener("change", () => getingSearchResults(searchQuery.value));
 
-    getTrendingGifos();
+getTrendingGifos();
