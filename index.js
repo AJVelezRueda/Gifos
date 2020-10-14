@@ -6,48 +6,48 @@ function trendingUrl() {
 
 
 function updateCarouselGifsSrc(gifs) {
-	const images = Array.from(document.getElementsByClassName('foto-carrusel'));
-	images.forEach((elemento,indice) => {
-		elemento.src = gifs[indice].src;
-		elemento.alt = gifs[indice].alt;			
-	});
+    const images = Array.from(document.getElementsByClassName('foto-carrusel'));
+    images.forEach((elemento, indice) => {
+        elemento.src = gifs[indice].src;
+        elemento.alt = gifs[indice].alt;
+    });
 }
 
 
 function getTrendingGifos() {
-	fetch(trendingUrl())
-	.then(response => response.json())
-	.then(response => response.data.map(it => ({src: it.images.downsized.url, alt: it.title})))
-	.then(response => updateCarouselGifsSrc(response));
+    fetch(trendingUrl())
+        .then(response => response.json())
+        .then(response => response.data.map(it => ({ src: it.images.downsized.url, alt: it.title })))
+        .then(response => updateCarouselGifsSrc(response));
 }
 
 
 let carouselOffset = 0;
 
-function actualizadorClasesCarousel () {
-	const listaGifs = Array.from(document.getElementsByClassName('gif'));
+function actualizadorClasesCarousel() {
+    const listaGifs = Array.from(document.getElementsByClassName('gif'));
 
-	carouselOffset = (listaGifs.length + carouselOffset) % listaGifs.length
+    carouselOffset = (listaGifs.length + carouselOffset) % listaGifs.length
 
-	listaGifs.forEach((elemento, indice) => {
-		if (indice < carouselOffset || indice >= carouselOffset +3) {
-			elemento.classList.remove('active');
-		} else {
-			elemento.classList.add('active');
-		}
-	})
+    listaGifs.forEach((elemento, indice) => {
+        if (indice < carouselOffset || indice >= carouselOffset + 3) {
+            elemento.classList.remove('active');
+        } else {
+            elemento.classList.add('active');
+        }
+    })
 }
 
 function nextCarouselImage() {
-	carouselOffset += 3;
+    carouselOffset += 3;
 
-	actualizadorClasesCarousel();
+    actualizadorClasesCarousel();
 }
 
 
 function backCarouselImage() {
-	carouselOffset -= 3;	
-	actualizadorClasesCarousel();	
+    carouselOffset -= 3;
+    actualizadorClasesCarousel();
 }
 
 
@@ -60,38 +60,38 @@ function searchSugestionsUrl(query) {
 
 const sugestionslist = ['sugerencia1', 'sugerencia2', 'sugerencia3']
 
-function copySugestionsInSpan(id,list){
-	sugestionslist.forEach((elemento,indice) => {
-		const span = document.getElementById(elemento);
-		span.innerText = list[indice] ||  ""; 
-	})
+function copySugestionsInSpan(id, list) {
+    sugestionslist.forEach((elemento, indice) => {
+        const span = document.getElementById(elemento);
+        span.innerText = list[indice] || "";
+    })
 }
 
 function getSugestions(query) {
-	fetch(searchSugestionsUrl(query))
-	.then(response => response.json())
-	.then(response => response.data.map(it => it.name))
-	.catch(() => [' '])
-	.then(response => copySugestionsInSpan('sugerencia1',response));
+    fetch(searchSugestionsUrl(query))
+        .then(response => response.json())
+        .then(response => response.data.map(it => it.name))
+        .catch(() => [' '])
+        .then(response => copySugestionsInSpan('sugerencia1', response));
 }
 
 function stopSearch() {
-	const buscador = document.getElementById('buscador')
-	buscador.classList.remove('searching');	
+    const buscador = document.getElementById('buscador')
+    buscador.classList.remove('searching');
 }
 
 function startSearch() {
-	const buscador = document.getElementById('buscador')
-	buscador.classList.add('searching');
+    const buscador = document.getElementById('buscador')
+    buscador.classList.add('searching');
 }
 
 function trySearch() {
-	const inputButton = document.getElementById("search-input")
-	if (inputButton.value.length > 0) {
-		startSearch();
-	} else {
-		stopSearch();
-	}
+    const inputButton = document.getElementById("search-input")
+    if (inputButton.value.length > 0) {
+        startSearch();
+    } else {
+        stopSearch();
+    }
 }
 
 
@@ -102,53 +102,53 @@ function searchResultsUrl(query) {
 }
 
 function createResultsDiv() {
-	const parentDiv = document.getElementById('search-result-groups');
-	const div = document.createElement('div');
-	div.setAttribute("class", "search-results");
-	parentDiv.appendChild(div);
-	return div;
+    const parentDiv = document.getElementById('search-result-groups');
+    const div = document.createElement('div');
+    div.setAttribute("class", "search-results");
+    parentDiv.appendChild(div);
+    return div;
 
 }
 
 
-function activateResultsSection () {
-	const parentDiv = document.getElementById('gifos-results');
-	const searchQuery = document.getElementById("search-input");
-	const searchTitle = document.getElementById("results-title");
-	parentDiv.classList.add('active');
-	searchTitle.innerText = searchQuery.value;
+function activateResultsSection() {
+    const parentDiv = document.getElementById('gifos-results');
+    const searchQuery = document.getElementById("search-input");
+    const searchTitle = document.getElementById("results-title");
+    parentDiv.classList.add('active');
+    searchTitle.innerText = searchQuery.value;
 }
 
 function createResultFigures(gifosList) {
-	activateResultsSection();
-	let searchResults = createResultsDiv();
+    activateResultsSection();
+    let searchResults = createResultsDiv();
 
-	gifosList.forEach((elemento) => {
-		figure = document.createElement('figure');
-		figure.setAttribute("class", "gifo")
-		figure.innerHTML = `<img src="${elemento.src}" class="result" alt="${elemento.alt}">`;
-		searchResults.appendChild(figure);
-	})
+    gifosList.forEach((elemento) => {
+        figure = document.createElement('figure');
+        figure.setAttribute("class", "gifo")
+        figure.innerHTML = `<img src="${elemento.src}" class="result" alt="${elemento.alt}">`;
+        searchResults.appendChild(figure);
+    })
 }
 
 function getingSearchResults(query) {
-	fetch(searchResultsUrl(query))
-	.then(response => response.json())
-	.then(response => response)
-	.then(response => response.data.map(it => ({src: it.images.downsized.url, alt: it.title})))
-	.then(response => createResultFigures(response));
-}
+    fetch(searchResultsUrl(query)
+        .then(response => response.json())
+        .then(response => response)
+        .then(response => response.data.map(it => ({ src: it.images.downsized.url, alt: it.title })))
+        .then(response => createResultFigures(response));
+    }
 
-//----- Events ----------//
+    //----- Events ----------//
 
-document.getElementById('avanzar').addEventListener('click', nextCarouselImage);
-document.getElementById('retroceder').addEventListener('click', backCarouselImage);
+    document.getElementById('avanzar').addEventListener('click', nextCarouselImage);
+    document.getElementById('retroceder').addEventListener('click', backCarouselImage);
 
-let searchQuery = document.getElementById("search-input");
-searchQuery.addEventListener("keypress", () => getSugestions(searchQuery.value));
-searchQuery.addEventListener("keypress", trySearch);
-document.addEventListener("click", stopSearch);
+    let searchQuery = document.getElementById("search-input");
+    searchQuery.addEventListener("keypress", () => getSugestions(searchQuery.value));
+    searchQuery.addEventListener("keypress", trySearch);
+    document.addEventListener("click", stopSearch);
 
-searchQuery.addEventListener("change", () => getingSearchResults(searchQuery.value));
+    searchQuery.addEventListener("change", () => getingSearchResults(searchQuery.value));
 
-getTrendingGifos();
+    getTrendingGifos();
