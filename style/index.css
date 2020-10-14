@@ -205,12 +205,12 @@ a:hover {
 
 .sugerencias {
     border: #572EE5 solid 1px;
-    height: 7.5vw;
-    margin-top: -8.5%;
+    height: 6.5em;
+    width: 27em;
+    margin-top: -8.2%;
     border-radius: 15px;
     z-index: 1;
     position: relative;
-    width: 30.3vw;
     flex-direction: column;
     display: none;
 }
