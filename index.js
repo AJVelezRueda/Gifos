@@ -116,7 +116,7 @@ function activateResultsSection() {
     const searchQuery = document.getElementById("search-input");
     const searchTitle = document.getElementById("results-title");
     parentDiv.classList.add('active');
-    searchTitle.innerText = searchQuery.value;
+    searchTitle.innerText = searchQuery.value.toUpperCase();
 }
 
 function createResultFigures(gifosList) {
