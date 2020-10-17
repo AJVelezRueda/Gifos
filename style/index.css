@@ -296,8 +296,10 @@ a:hover {
 }
 
 .gifo {
+    width: 260px;
+    height: 200px;
     margin-left: 2%;
-    margin-bottom: 2%;
+    margin-bottom: 3%;
 }
 
 .ver-mas {
@@ -305,8 +307,8 @@ a:hover {
 }
 
 .result {
-    width: 16em;
-    max-height: 7.9em;
+    width: 260px;
+    height: 200px;
 }
 
 .foto-carrusel {
