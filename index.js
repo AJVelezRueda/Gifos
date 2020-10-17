@@ -139,6 +139,10 @@ function getingSearchResults(query) {
         .then(response => createResultFigures(response));
 }
 
+function getMoreResults() {
+    getingSearchResults(query)
+}
+
 //----- Events ----------//
 
 document.getElementById('avanzar').addEventListener('click', nextCarouselImage);

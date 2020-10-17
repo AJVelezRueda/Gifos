@@ -255,7 +255,7 @@ a:hover {
 .carousel {
     display: flex;
     flex-direction: row;
-    width: 90%;
+    width: 100%;
     margin: 4% auto;
     align-items: center;
 }
@@ -286,12 +286,6 @@ a:hover {
     position: relative;
 }
 
-
-/* .foto-carrusel:hover {
-	opacity: 0;
-}
-*/
-
 .search-results {
     display: grid;
     grid-template-columns: repeat(4, 25%);
@@ -318,12 +312,14 @@ a:hover {
 }
 
 .result {
-    width: 100%;
-    height: auto;
+    width: 16em;
+    max-height: 7.9em;
 }
 
 .foto-carrusel {
-    width: 100%;
+    width: 10em;
+    max-height: 8.9em;
+    object-fit: cover;
 }
 
 .retroceder,
