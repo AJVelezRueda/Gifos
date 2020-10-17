@@ -1,109 +1,138 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Gifos</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta name="author" content="Ana Julia Velez Rueda">
     <link rel="stylesheet" type="text/css" href="style/index.css"></link>
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.12.0/css/all.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;1,100&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
     <script src="index.js" type="text/javascript" charset="utf-8" async defer></script>
 </head>
+
 <body>
     <header id="header">
-	    <nav class="nav-bar">
-	        <figure class="logo">
-	            <a href="index.html"><img src="images/logo-mobile.svg" alt="logo-mobile" class="logo-mobile"></a>
-	            <a href="index.html"><img src="images/logo-desktop.svg" alt="logo-desck" class="logo-desck"></a>
-	        </figure>
-	        <div class="ham-menu">
-	            <input type="checkbox" id="toggle" class="menu" />
-	            <label for="toggle" class="menu">
+        <nav class="nav-bar">
+            <figure class="logo">
+                <a href="index.html"><img src="images/logo-mobile.svg" alt="logo-mobile" class="logo-mobile"></a>
+                <a href="index.html"><img src="images/logo-desktop.svg" alt="logo-desck" class="logo-desck"></a>
+            </figure>
+            <div class="ham-menu">
+                <input type="checkbox" id="toggle" class="menu" />
+                <label for="toggle" class="menu">
 	                <i class="fas fa-bars"></i>
 	            </label>
-	            <ul class="main-menu menu-ul">
-	                <li></li>
-	                <li><a href="#" class="opciones">MODO NOCTURNO</a></li>
-	                <li><a href="#" class="opciones">FAVORITOS</a></li>
-	                <li><a href="#" class="opciones">MIS GIFOS</a></li>
-	                <li><a href="crear.html" class="opciones"><img src="images/button-crear-gifo.svg" alt="crear" class="crear"></a></li>
-	            </ul>
-	        </div>
-	    </nav>
+                <ul class="main-menu menu-ul">
+                    <li></li>
+                    <li><a href="#" class="opciones">MODO NOCTURNO</a></li>
+                    <li><a href="#" class="opciones">FAVORITOS</a></li>
+                    <li><a href="#" class="opciones">MIS GIFOS</a></li>
+                    <li>
+                        <a href="crear.html" class="opciones"><img src="images/button-crear-gifo.svg" alt="crear" class="crear"></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
     </header>
     <main>
-	    <section class="buscador-section" id="buscador-section">
-	    	<h1 class="title">Inspírate, busca, guarda, y crea <br> los mejores <span class="gifos-text">GIFOS</span></h1>
-	    	<img src="images/ilustra_header.svg" alt="buscador-img" class="buscador-img">
-	    	<div class="buscador" id="buscador">
-	  			<input type="text" placeholder=" Search.." name="search" class="search-input" id="search-input">
-	  			<img src="images/icon-search.svg" alt="lupa" class="lupa">
-	  			<ul class="sugerencias" id="sugerencias">
-	  				<li class="space-top"></li>
-	  				<li class="sugerencia1" id="sugerencia1"></li>
-	  				<li class="sugerencia2" id="sugerencia2"></li>
-	  				<li class="sugerencia3" id="sugerencia3"></li>
-	  			</ul>
-			</div>
-	    </section>
+        <section class="buscador-section" id="buscador-section">
+            <h1 class="title">Inspírate, busca, guarda, y crea <br> los mejores <span class="gifos-text">GIFOS</span></h1>
+            <img src="images/ilustra_header.svg" alt="buscador-img" class="buscador-img">
+            <div class="buscador" id="buscador">
+                <input type="text" placeholder=" Search.." name="search" class="search-input" id="search-input">
+                <img src="images/icon-search.svg" alt="lupa" class="lupa">
+                <ul class="sugerencias" id="sugerencias">
+                    <li class="space-top"></li>
+                    <li class="sugerencia1" id="sugerencia1"></li>
+                    <li class="sugerencia2" id="sugerencia2"></li>
+                    <li class="sugerencia3" id="sugerencia3"></li>
+                </ul>
+            </div>
+        </section>
 
 
-	    <sectionid class="trending">
-	    	<h3 class="trending-title">Trending:</h3>
-	    	<p class="trending-text">Reactions, Entertainment, Sports, Stickers, Artists</p>
-	    </section>
+        <sectionid class="trending">
+            <h3 class="trending-title">Trending:</h3>
+            <p class="trending-text">Reactions, Entertainment, Sports, Stickers, Artists</p>
+            </section>
 
-	    <section class="gifos-results" id="gifos-results">
-	    	<span class="sep-gifos-result"></span>
-	    	<h2 class="results-title" id="results-title"></h2>
-	    	<div class="search-result-groups" id="search-result-groups">
-	 		</div>
-	 		<input type="image" class="ver-mas" id="ver-mas" src="images/CTA-ver-mas.svg"/>
-	    </section>
-	    
-	    <section class="results center" id="results">
-	    	<h3>Trending GIFOS</h3>
-	    	<p>Mira los últimos GIFOS de nuestra comunidad</p>
-			<div class="carousel">
-			    <button id="retroceder" class="retroceder"><img src="images/Button-Slider-right.svg" alt="atrasar-img"></button>
-			    <div class="gifs">
-				    <figure class="gif active">
-				    	<img src="images/foto4.png" class="foto-carrusel" alt="foto-carrusel">
-				    	<div class="overlay"></div>
-				   	</figure>
-				    <figure class="gif active"><img src="images/foto4.png" class="foto-carrusel" alt="foto-carrusel"></figure>
-				    <figure class="gif active"><img src="images/foto4.png" class="foto-carrusel" alt="foto-carrusel"></figure>
-				    <figure class="gif"><img src="images/foto4.png" class="foto-carrusel" alt="foto-carrusel"></figure>
-				    <figure class="gif"><img src="images/foto4.png" class="foto-carrusel" alt="foto-carrusel"></figure>
-				    <figure class="gif"><img src="images/foto4.png" class="foto-carrusel" alt="foto-carrusel"></figure>
-				    <figure class="gif"><img src="images/foto4.png" class="foto-carrusel" alt="foto-carrusel"></figure>
-				    <figure class="gif"><img src="images/foto4.png" class="foto-carrusel" alt="foto-carrusel"></figure>
-				    <figure class="gif"><img src="images/foto4.png" class="foto-carrusel" alt="foto-carrusel"></figure>
-			    </div>
-			    <button id="avanzar" class="avanzar"><img src="images/Button-Slider-right-hover.svg" alt="avanzar-img"></button>
-			</div>
-	    </section>
+            <section class="gifos-results" id="gifos-results">
+                <span class="sep-gifos-result"></span>
+                <h2 class="results-title" id="results-title"></h2>
+                <div class="search-result-groups" id="search-result-groups">
+                </div>
+                <input type="image" class="ver-mas" id="ver-mas" src="images/CTA-ver-mas.svg" />
+            </section>
+
+            <section class="results center" id="results">
+                <h3>Trending GIFOS</h3>
+                <p>Mira los últimos GIFOS de nuestra comunidad</p>
+                <div class="carousel">
+                    <button id="retroceder" class="retroceder"><img src="images/Button-Slider-right.svg" alt="atrasar-img"></button>
+                    <div class="gifs">
+                        <figure class="gif active">
+                            <img src="images/foto4.png" class="foto-carrusel" alt="foto-carrusel">
+                            <div class="overlay"></div>
+                        </figure>
+                        <figure class="gif active">
+                            <img src="images/foto4.png" class="foto-carrusel" alt="foto-carrusel">
+                            <div class="overlay"></div>
+                        </figure>
+                        <figure class="gif active">
+                            <img src="images/foto4.png" class="foto-carrusel" alt="foto-carrusel">
+                            <div class="overlay"></div>
+                        </figure>
+                        <figure class="gif">
+                            <img src="images/foto4.png" class="foto-carrusel" alt="foto-carrusel">
+                            <div class="overlay"></div>
+                        </figure>
+                        <figure class="gif">
+                            <img src="images/foto4.png" class="foto-carrusel" alt="foto-carrusel">
+                            <div class="overlay"></div>
+                        </figure>
+                        <figure class="gif">
+                            <img src="images/foto4.png" class="foto-carrusel" alt="foto-carrusel">
+                            <div class="overlay"></div>
+                        </figure>
+                        <figure class="gif">
+                            <img src="images/foto4.png" class="foto-carrusel" alt="foto-carrusel">
+                            <div class="overlay"></div>
+                        </figure>
+                        <figure class="gif">
+                            <img src="images/foto4.png" class="foto-carrusel" alt="foto-carrusel">
+                            <div class="overlay"></div>
+                        </figure>
+                        <figure class="gif">
+                            <img src="images/foto4.png" class="foto-carrusel" alt="foto-carrusel">
+                            <div class="overlay"></div>
+                        </figure>
+                    </div>
+                    <button id="avanzar" class="avanzar"><img src="images/Button-Slider-right-hover.svg" alt="avanzar-img"></button>
+                </div>
+            </section>
     </main>
     <footer class="footer">
-    	<section class="footer" id="footer">
-    		<div class="socialnets">
-	    		<p>Compartir en:</p>
-	            <ul class="contac-icons">
-	                <li class="nav-item">
-	                    <a class="nav-link" href="#"><i class="fab fa-instagram"></i></a>
-	                </li>
-	                <li class="nav-item">
-	                    <a class="nav-link" href="#"><i class="fab fa-twitter"></i></a>
-	                </li>
-	                <li class="nav-item">
-	                    <a class="nav-link" href="#"><i class="fab fa-facebook"></i></a>
-	                </li>
-	            </ul>
+        <section class="footer" id="footer">
+            <div class="socialnets">
+                <p>Compartir en:</p>
+                <ul class="contac-icons">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fab fa-instagram"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fab fa-twitter"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fab fa-facebook"></i></a>
+                    </li>
+                </ul>
             </div>
             <p class="footer-text">© GIFOS 2020 All Rights Reserved</p>
         </section>
     </footer>
 </body>
+
 </html>
