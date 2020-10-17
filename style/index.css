@@ -261,8 +261,9 @@ a:hover {
 }
 
 .gif {
+    width: 260px;
+    height: 200px;
     background-size: cover;
-    padding: 0 2%;
     display: none;
 }
 
@@ -309,17 +310,16 @@ a:hover {
 }
 
 .foto-carrusel {
-    width: 17em;
-    max-height: 12.9em;
+    width: 260px;
+    height: 200px;
     object-fit: cover;
 }
 
 .overlay {
-    width: 17em;
-    height: 13em;
-    margin-top: -77%;
-    opacity: 0.2;
-    background: blueviolet;
+    margin-left: -7%;
+    margin-top: 1%;
+    position: absolute;
+    z-index: 99;
 }
 
 .overlay:hover {
