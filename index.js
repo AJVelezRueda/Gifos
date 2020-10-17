@@ -125,8 +125,13 @@ function createResultFigures(gifosList) {
 
     gifosList.forEach((elemento) => {
         figure = document.createElement('figure');
-        figure.setAttribute("class", "gifo")
-        figure.innerHTML = `<img src="${elemento.src}" class="result" alt="${elemento.alt}">`;
+        figure.setAttribute("class", "gifo");
+        figure.innerHTML = `<img src="${elemento.src}" class="result" alt="${elemento.alt}">
+        <span class="overlay">
+        <img src="images/icon-fav.svg" alt="fav">
+        <img src="images/icon-max-normal.svg" alt="icon-max">
+        <img src="images/icon-download.svg" alt="icon-download">
+        </span>`;
         searchResults.appendChild(figure);
     })
 }

@@ -283,7 +283,7 @@ a:hover {
     display: grid;
     grid-template-columns: repeat(4, 25%);
     grid-template-rows: repeat(3, 1fr);
-    padding: 2% 2%;
+    padding: 2% 7%;
 }
 
 .gifos-results {
@@ -298,7 +298,6 @@ a:hover {
 .gifo {
     width: 260px;
     height: 200px;
-    margin-left: 2%;
     margin-bottom: 3%;
 }
 
@@ -311,6 +310,10 @@ a:hover {
     height: 200px;
 }
 
+.result:hover {
+    opacity: 0.6;
+}
+
 .foto-carrusel {
     width: 260px;
     height: 200px;
@@ -318,15 +321,15 @@ a:hover {
 }
 
 .overlay {
-    margin-left: -7%;
+    margin-left: -9%;
     margin-top: 1%;
     position: absolute;
     z-index: 99;
 }
 
 .overlay:hover {
-    position: absolute;
     opacity: 1;
+    color: rebeccapurple;
 }
 
 .retroceder,
