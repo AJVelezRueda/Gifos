@@ -1,5 +1,5 @@
-function changheSelectedIcons(htmlElement, newSrc, oldSrc) {
-    htmlElement.src = htmlElement.src.replace(oldSrc, newSrc);
+function iconsHoverAndUnhover(htmlElement, newSrc) {
+    htmlElement.setAttribute('src', newSrc);
 }
 
 
@@ -17,7 +17,7 @@ function renderGifos(gifosList, parent) {
         favIcon = Array.from(figure.getElementsByClassName("fav-icon"))[0];
         favIcon.addEventListener('click', () => {
             saveFavs(elemento);
-            changheSelectedIcons(elemento, "images/icon-fav-active.svg", "images/icon-fav.svg");
+            iconsHoverAndUnhover(elemento, "images/icon-fav-active.svg");
         });
     })
 }
