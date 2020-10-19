@@ -197,6 +197,7 @@ sugestionsList.forEach((it) => {
         offset = 0;
         resetResultsDiv();
         getingSearchResults(it.innerText);
+        searchInput.value = it.innerText;
     });
 });
 
