@@ -1,3 +1,8 @@
+function changheSelectedIcons(htmlElement, newSrc, oldSrc) {
+    htmlElement.src = htmlElement.src.replace(oldSrc, newSrc);
+}
+
+
 function renderGifos(gifosList, parent) {
     gifosList.forEach((elemento) => {
         figure = document.createElement('figure');
@@ -10,7 +15,10 @@ function renderGifos(gifosList, parent) {
         </span>`;
         parent.appendChild(figure);
         favIcon = Array.from(figure.getElementsByClassName("fav-icon"))[0];
-        favIcon.addEventListener('click', () => saveFavs(elemento));
+        favIcon.addEventListener('click', () => {
+            saveFavs(elemento);
+            changheSelectedIcons(elemento, "images/icon-fav-active.svg", "images/icon-fav.svg");
+        });
     })
 }
 
