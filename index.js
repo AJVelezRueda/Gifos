@@ -104,6 +104,11 @@ function searchMoreResultsUrl(query) {
     return url;
 }
 
+function activateResultsSection(text) {
+    gifosResults.classList.add('active');
+    searchTitle.innerText = text.toUpperCase();
+}
+
 function createResultsDiv() {
     const div = document.createElement('div');
     div.setAttribute("class", "search-results");
@@ -112,29 +117,12 @@ function createResultsDiv() {
 
 }
 
-function activateResultsSection(text) {
-    gifosResults.classList.add('active');
-    searchTitle.innerText = text.toUpperCase();
-}
-
 function createResultFigures(gifosList, texto) {
     activateResultsSection(texto);
 
     let searchResults = createResultsDiv();
+    renderGifos(gifosList, searchResults);
 
-    gifosList.forEach((elemento) => {
-        figure = document.createElement('figure');
-        figure.setAttribute("class", "gifo");
-        figure.innerHTML = `<img src="${elemento.src}" class="result" alt="${elemento.alt}">
-        <span class="overlay">
-        <img src="images/icon-fav.svg" alt="fav" class="fav-icon">
-        <img src="images/icon-max-normal.svg" alt="icon-max" class="max-button">
-        <img src="images/icon-download.svg" alt="icon-download" class="download-button">
-        </span>`;
-        searchResults.appendChild(figure);
-        favIcon = Array.from(figure.getElementsByClassName("fav-icon"))[0];
-        favIcon.addEventListener('click', () => saveFavs(elemento));
-    })
 }
 
 function resetResultsDiv() {
@@ -159,6 +147,7 @@ function getFavorites() {
         return [];
     }
 }
+
 
 function saveFavs(gifo) {
     const favList = getFavorites();
@@ -186,7 +175,6 @@ document.addEventListener("click", stopSearch);
 
 searchInput.addEventListener("keyup", (event) => {
     if (event.key === "Enter") {
-        console.log("search! =)");
         offset = 0;
         resetResultsDiv();
         getingSearchResults(searchInput.value);
@@ -195,7 +183,6 @@ searchInput.addEventListener("keyup", (event) => {
 
 sugestionsList.forEach((it) => {
     it.addEventListener("click", () => {
-        console.log("sugestion");
         offset = 0;
         resetResultsDiv();
         getingSearchResults(it.innerText);

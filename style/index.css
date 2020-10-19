@@ -336,6 +336,9 @@ a:hover {
     height: 100%;
     width: 100%;
     padding: 10% 2%;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .retroceder,
