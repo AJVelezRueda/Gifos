@@ -346,6 +346,25 @@ a:hover {
     margin-bottom: 1%;
 }
 
+.icons-hover {
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 3px;
+    background-color: seashell;
+}
+
+.fav-icon-hover {
+    background-image: url('../images/icon-fav-active.svg');
+}
+
+.max-button-hover {
+    background-image: url('../images/icon-max-hover.svg');
+}
+
+.download-button {
+    background-image: url('../images/icon-max-hover.svg');
+}
+
 .retroceder,
 .avanzar {
     background: transparent;

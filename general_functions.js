@@ -1,7 +1,11 @@
-function iconsHoverAndUnhover(htmlElement, newSrc) {
-    htmlElement.setAttribute('src', newSrc);
+function IconsHover(elemento) {
+    elemento.classList.add('icons-hover');
 }
 
+
+function IconsUnhover(elemento) {
+    elemento.classList.remove('icons-hover');
+}
 
 function renderGifos(gifosList, parent) {
     gifosList.forEach((elemento) => {
@@ -17,7 +21,6 @@ function renderGifos(gifosList, parent) {
         favIcon = Array.from(figure.getElementsByClassName("fav-icon"))[0];
         favIcon.addEventListener('click', () => {
             saveFavs(elemento);
-            iconsHoverAndUnhover(elemento, "images/icon-fav-active.svg");
         });
     })
 }
