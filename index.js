@@ -1,7 +1,15 @@
+const gifosResults = document.getElementById('gifos-results');
+const searchQuery = document.getElementById("search-input");
+const searchTitle = document.getElementById("results-title");
+const buscador = document.getElementById('buscador');
+const searchMore = document.getElementById("ver-mas");
+const searchResultGroup = document.getElementById('search-result-groups');
+const apiKey = 'Nc8u10QS9qz9vLVNpc7W08yiQVxITRYJ';
+
 //---------- Carousel --------------//
 
 function trendingUrl() {
-    return `https://api.giphy.com/v1/gifs/trending?api_key=${Api_key}&limit=25`
+    return `https://api.giphy.com/v1/gifs/trending?api_key=${apiKey}&limit=25`
 }
 
 
@@ -52,10 +60,8 @@ function backCarouselImage() {
 
 
 //---------- Search sugestions ----------//
-let Api_key = 'Nc8u10QS9qz9vLVNpc7W08yiQVxITRYJ'
-
 function searchSugestionsUrl(query) {
-    return `https://api.giphy.com/v1/gifs/search/tags?api_key=${Api_key}&q=${query}`
+    return `https://api.giphy.com/v1/gifs/search/tags?api_key=${apiKey}&q=${query}`
 }
 
 const sugestionslist = ['sugerencia1', 'sugerencia2', 'sugerencia3']
@@ -76,18 +82,15 @@ function getSugestions(query) {
 }
 
 function stopSearch() {
-    const buscador = document.getElementById('buscador')
     buscador.classList.remove('searching');
 }
 
 function startSearch() {
-    const buscador = document.getElementById('buscador')
     buscador.classList.add('searching');
 }
 
 function trySearch() {
-    const inputButton = document.getElementById("search-input")
-    if (inputButton.value.length > 0) {
+    if (searchQuery.value.length > 0) {
         startSearch();
     } else {
         stopSearch();
@@ -96,26 +99,24 @@ function trySearch() {
 
 
 //------- Results -------------//
+let offset = 0;
 
-function searchResultsUrl(query) {
-    return `https://api.giphy.com/v1/gifs/search?api_key=${Api_key}&q=${query}&limit=12`
+function searchMoreResultsUrl(query) {
+    const url = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${query}&limit=12&offset=${offset}`;
+    return url;
 }
 
 function createResultsDiv() {
-    const parentDiv = document.getElementById('search-result-groups');
     const div = document.createElement('div');
     div.setAttribute("class", "search-results");
-    parentDiv.appendChild(div);
+    searchResultGroup.appendChild(div);
     return div;
 
 }
 
 
 function activateResultsSection() {
-    const parentDiv = document.getElementById('gifos-results');
-    const searchQuery = document.getElementById("search-input");
-    const searchTitle = document.getElementById("results-title");
-    parentDiv.classList.add('active');
+    gifosResults.classList.add('active');
     searchTitle.innerText = searchQuery.value.toUpperCase();
 }
 
@@ -136,32 +137,35 @@ function createResultFigures(gifosList) {
     })
 }
 
+
+function resetResultsDiv() {
+    searchResultGroup.innerHTML = '';
+
+}
+
 function getingSearchResults(query) {
-    fetch(searchResultsUrl(query))
+    fetch(searchMoreResultsUrl(query))
         .then(response => response.json())
-        .then(response => response)
         .then(response => response.data.map(it => ({ src: it.images.downsized.url, alt: it.title })))
         .then(response => createResultFigures(response));
-}
-
-function getMoreResults() {
-    getingSearchResults(query)
-}
-
-function verMas() {
-
 }
 
 //----- Events ----------//
 
 document.getElementById('avanzar').addEventListener('click', nextCarouselImage);
 document.getElementById('retroceder').addEventListener('click', backCarouselImage);
-
-let searchQuery = document.getElementById("search-input");
 searchQuery.addEventListener("keypress", () => getSugestions(searchQuery.value));
 searchQuery.addEventListener("keypress", trySearch);
+searchMore.addEventListener("click", () => {
+    offset += 12;
+    getingSearchResults(searchQuery.value);
+})
 document.addEventListener("click", stopSearch);
 
-searchQuery.addEventListener("change", () => getingSearchResults(searchQuery.value));
+searchQuery.addEventListener("change", () => {
+    offset = 0;
+    resetResultsDiv();
+    getingSearchResults(searchQuery.value);
+});
 
 getTrendingGifos();
