@@ -1,9 +1,10 @@
 const gifosResults = document.getElementById('gifos-results');
-const searchQuery = document.getElementById("search-input");
+const searchInput = document.getElementById("search-input");
 const searchTitle = document.getElementById("results-title");
 const buscador = document.getElementById('buscador');
 const searchMore = document.getElementById("ver-mas");
 const searchResultGroup = document.getElementById('search-result-groups');
+const sugestionsList = ['sugerencia1', 'sugerencia2', 'sugerencia3'].map((it) => document.getElementById(it));
 const apiKey = 'Nc8u10QS9qz9vLVNpc7W08yiQVxITRYJ';
 
 //---------- Carousel --------------//
@@ -61,15 +62,12 @@ function backCarouselImage() {
 
 //---------- Search sugestions ----------//
 function searchSugestionsUrl(query) {
-    return `https://api.giphy.com/v1/gifs/search/tags?api_key=${apiKey}&q=${query}`
+    return `https://api.giphy.com/v1/gifs/search/tags?api_key=${apiKey}&q=${query}`;
 }
 
-const sugestionslist = ['sugerencia1', 'sugerencia2', 'sugerencia3']
-
-function copySugestionsInSpan(id, list) {
-    sugestionslist.forEach((elemento, indice) => {
-        const span = document.getElementById(elemento);
-        span.innerText = list[indice] || "";
+function copySugestionsInSpan(list) {
+    sugestionsList.forEach((elemento, indice) => {
+        elemento.innerText = list[indice] || "";
     })
 }
 
@@ -78,7 +76,7 @@ function getSugestions(query) {
         .then(response => response.json())
         .then(response => response.data.map(it => it.name))
         .catch(() => [' '])
-        .then(response => copySugestionsInSpan('sugerencia1', response));
+        .then(response => copySugestionsInSpan(response));
 }
 
 function stopSearch() {
@@ -90,7 +88,7 @@ function startSearch() {
 }
 
 function trySearch() {
-    if (searchQuery.value.length > 0) {
+    if (searchInput.value.length > 0) {
         startSearch();
     } else {
         stopSearch();
@@ -114,14 +112,14 @@ function createResultsDiv() {
 
 }
 
-
-function activateResultsSection() {
+function activateResultsSection(text) {
     gifosResults.classList.add('active');
-    searchTitle.innerText = searchQuery.value.toUpperCase();
+    searchTitle.innerText = text.toUpperCase();
 }
 
-function createResultFigures(gifosList) {
-    activateResultsSection();
+function createResultFigures(gifosList, texto) {
+    activateResultsSection(texto);
+
     let searchResults = createResultsDiv();
 
     gifosList.forEach((elemento) => {
@@ -137,7 +135,6 @@ function createResultFigures(gifosList) {
     })
 }
 
-
 function resetResultsDiv() {
     searchResultGroup.innerHTML = '';
 
@@ -147,25 +144,61 @@ function getingSearchResults(query) {
     fetch(searchMoreResultsUrl(query))
         .then(response => response.json())
         .then(response => response.data.map(it => ({ src: it.images.downsized.url, alt: it.title })))
-        .then(response => createResultFigures(response));
+        .then(response => createResultFigures(response, query));
+}
+
+//----- Save fav -----//
+function getFavorites() {
+    const favoritesJson = localStorage.getItem("favorites");
+
+    if (favoritesJson) {
+        return JSON.parse(favoritesJson);
+    } else {
+        return [];
+    }
+}
+
+function saveFavs(gifo) {
+    const favList = getFavorites();
+
+    favList.push(gifo);
+    localStorage.setItem("favorites", JSON.stringify(favList));
 }
 
 //----- Events ----------//
 
 document.getElementById('avanzar').addEventListener('click', nextCarouselImage);
+
 document.getElementById('retroceder').addEventListener('click', backCarouselImage);
-searchQuery.addEventListener("keypress", () => getSugestions(searchQuery.value));
-searchQuery.addEventListener("keypress", trySearch);
+
+searchInput.addEventListener("input", () => getSugestions(searchInput.value));
+
+searchInput.addEventListener("input", trySearch);
+
 searchMore.addEventListener("click", () => {
     offset += 12;
-    getingSearchResults(searchQuery.value);
+    getingSearchResults(searchInput.value);
 })
+
 document.addEventListener("click", stopSearch);
 
-searchQuery.addEventListener("change", () => {
-    offset = 0;
-    resetResultsDiv();
-    getingSearchResults(searchQuery.value);
+searchInput.addEventListener("keyup", (event) => {
+    if (event.key === "Enter") {
+        console.log("search! =)");
+        offset = 0;
+        resetResultsDiv();
+        getingSearchResults(searchInput.value);
+    }
 });
+
+sugestionsList.forEach((it) => {
+    it.addEventListener("click", () => {
+        console.log("sugestion");
+        offset = 0;
+        resetResultsDiv();
+        getingSearchResults(it.innerText);
+    });
+});
+
 
 getTrendingGifos();
