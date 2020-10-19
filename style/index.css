@@ -332,6 +332,12 @@ a:hover {
     color: rebeccapurple;
 }
 
+.mis-favoritos {
+    height: 100%;
+    width: 100%;
+    padding: 10% 2%;
+}
+
 .retroceder,
 .avanzar {
     background: transparent;

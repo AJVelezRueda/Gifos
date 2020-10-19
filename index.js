@@ -127,11 +127,13 @@ function createResultFigures(gifosList, texto) {
         figure.setAttribute("class", "gifo");
         figure.innerHTML = `<img src="${elemento.src}" class="result" alt="${elemento.alt}">
         <span class="overlay">
-        <img src="images/icon-fav.svg" alt="fav">
-        <img src="images/icon-max-normal.svg" alt="icon-max">
-        <img src="images/icon-download.svg" alt="icon-download">
+        <img src="images/icon-fav.svg" alt="fav" class="fav-icon">
+        <img src="images/icon-max-normal.svg" alt="icon-max" class="max-button">
+        <img src="images/icon-download.svg" alt="icon-download" class="download-button">
         </span>`;
         searchResults.appendChild(figure);
+        favIcon = Array.from(figure.getElementsByClassName("fav-icon"))[0];
+        favIcon.addEventListener('click', () => saveFavs(elemento));
     })
 }
 
