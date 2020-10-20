@@ -26,12 +26,12 @@ function renderGifos(gifosList, parent) {
         const figure = document.createElement('figure');
         const overlayDiv = createOverlayDiv();
         const gifoImg = creatImgObjetc(elemento.src, 'result', elemento.alt);
-        const favImg = creatImgObjetc("images/icon-fav.svg", 'fav-icon', "fav");
-        const favImgHover = creatImgObjetc("images/icon-fav-hover.svg", "fav-icon icon-unhover", "fav-hover");
-        const maxImg = creatImgObjetc("images/icon-max-normal.svg", "max-button", "icon-max");
-        const maxImgHover = creatImgObjetc("images/icon-max-hover.svg", "max-button icon-unhover", "icon-max-hover");
-        const downloadImg = creatImgObjetc("images/icon-download.svg", "download-button", "download-button");
-        const downloadImgHover = creatImgObjetc("images/icon-download-hover.svg", "download-button icon-unhover", "download-button-hover");
+        const favImg = creatImgObjetc("images/icon-fav.svg", 'fav-icon overlay-icons', "fav");
+        const favImgHover = creatImgObjetc("images/icon-fav-hover.svg", "fav-icon overlay-icons  icon-unhover", "fav-hover");
+        const maxImg = creatImgObjetc("images/icon-max-normal.svg", "max-button overlay-icons", "icon-max");
+        const maxImgHover = creatImgObjetc("images/icon-max-hover.svg", "max-button overlay-icons icon-unhover", "icon-max-hover");
+        const downloadImg = creatImgObjetc("images/icon-download.svg", "download-button overlay-icons", "download-button");
+        const downloadImgHover = creatImgObjetc("images/icon-download-hover.svg", "download-button overlay-icons icon-unhover", "download-button-hover");
 
         figure.setAttribute("class", "gifo");
         figure.appendChild(gifoImg);

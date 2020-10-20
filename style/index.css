@@ -322,7 +322,7 @@ a:hover {
 }
 
 .overlay {
-    margin-left: 10%;
+    margin-left: 11%;
     margin-top: -14%;
     position: absolute;
     z-index: 99;
@@ -331,6 +331,10 @@ a:hover {
 .overlay:hover {
     opacity: 1;
     color: rebeccapurple;
+}
+
+.overlay-icons {
+    padding: 0 1px;
 }
 
 .icon-unhover {
@@ -598,5 +602,11 @@ a:hover {
         grid-column: 2/4;
         margin-left: 13%;
         text-align: center;
+    }
+    .results {
+        background: #F3F5F8;
+        padding: 5% 8%;
+        margin-right: 5%;
+        margin-left: 5%;
     }
 }
