@@ -247,9 +247,7 @@ a:hover {
 
 .results {
     background: #F3F5F8;
-    padding: 5% 8%;
-    margin-right: 5%;
-    margin-left: 5%;
+    padding: 12% 0;
 }
 
 .carousel {
@@ -280,10 +278,9 @@ a:hover {
 }
 
 .search-results {
-    display: grid;
-    grid-template-columns: repeat(4, 25%);
-    grid-template-rows: repeat(3, 1fr);
-    padding: 2% 7%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 3% 2%;
 }
 
 .gifos-results {
@@ -322,8 +319,8 @@ a:hover {
 }
 
 .overlay {
-    margin-left: 11%;
-    margin-top: -14%;
+    margin-left: 25%;
+    margin-top: 4%;
     position: absolute;
     z-index: 99;
 }
@@ -608,5 +605,27 @@ a:hover {
         padding: 5% 8%;
         margin-right: 5%;
         margin-left: 5%;
+    }
+    .search-results {
+        display: grid;
+        grid-template-columns: repeat(4, 25%);
+        grid-template-rows: repeat(3, 1fr);
+        padding: 2% 7%;
+    }
+    .overlay {
+        margin-left: 11%;
+        margin-top: -14%;
+        position: absolute;
+        z-index: 99;
+    }
+    .overlay:hover {
+        opacity: 1;
+        color: rebeccapurple;
+    }
+    .overlay-icons {
+        padding: 0 1px;
+    }
+    .icon-unhover {
+        display: none;
     }
 }
