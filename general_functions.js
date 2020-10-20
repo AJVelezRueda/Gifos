@@ -1,55 +1,24 @@
 function iconsHover(elemento) {
-    elemento.classList.add('icons-hover');
-
+    elemento.classList.add('icons-unhover');
 }
 
 function iconsUnhover(elemento) {
-    elemento.classList.remove('icons-hover');
+    elemento.classList.remove('icons-unhover');
 }
-
-function favIconHover(elemento) {
-    iconsHover(elemento);
-    elemento.classList.add('fav-icon-hover');
-}
-
-function favIconUnhover(elemento) {
-    iconsUnhover(elemento);
-    elemento.classList.remove('fav-icon-hover');
-}
-
-
-function maxIconHover(elemento) {
-    iconsHover(elemento);
-    elemento.classList.add('max-icon-hover');
-}
-
-function maxIconUnhover(elemento) {
-    iconsUnhover(elemento);
-    elemento.classList.remove('max-icon-hover');
-}
-
-
-function downloadIconHover(elemento) {
-    iconsHover(elemento);
-    elemento.classList.add('download-icon-hover');
-}
-
-function downloadIconUnhover(elemento) {
-    iconsUnhover(elemento);
-    elemento.classList.remove('download-icon-hover');
-}
-
 
 function renderGifos(gifosList, parent) {
     gifosList.forEach((elemento) => {
-        figure = document.createElement('figure');
+        const figure = document.createElement('figure');
         figure.setAttribute("class", "gifo");
         figure.innerHTML = `<img src="${elemento.src}" class="result" alt="${elemento.alt}">
-        <span class="overlay">
+        <div class="overlay">
         <img src="images/icon-fav.svg" alt="fav" class="fav-icon">
+        <img src="images/icon-fav-hover.svg" alt="fav" class="fav-icon icon-unhover">
         <img src="images/icon-max-normal.svg" alt="icon-max" class="max-button">
+        <img src="images/icon-max-hover.svg" alt="icon-max" class="max-button icon-unhover">
         <img src="images/icon-download-hover.svg" alt="icon-download" class="download-button">
-        </span>`;
+        <img src="images/icon-download.svg" alt="icon-download" class="download-button icon-unhover">
+        </div>`;
         parent.appendChild(figure);
         favIcon = Array.from(figure.getElementsByClassName("fav-icon"))[0];
         favIcon.addEventListener('click', () => {

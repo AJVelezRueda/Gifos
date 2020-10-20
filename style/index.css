@@ -322,8 +322,8 @@ a:hover {
 }
 
 .overlay {
-    margin-left: -9%;
-    margin-top: 1%;
+    margin-left: 10%;
+    margin-top: -14%;
     position: absolute;
     z-index: 99;
 }
@@ -331,6 +331,10 @@ a:hover {
 .overlay:hover {
     opacity: 1;
     color: rebeccapurple;
+}
+
+.icon-unhover {
+    display: none;
 }
 
 .mis-favoritos {
@@ -344,25 +348,6 @@ a:hover {
 
 .icon-heart-fav {
     margin-bottom: 1%;
-}
-
-.icons-hover {
-    background-repeat: no-repeat;
-    background-position: center;
-    border-radius: 3px;
-    background-color: seashell;
-}
-
-.fav-icon-hover {
-    background-image: url('../images/icon-fav-active.svg');
-}
-
-.max-icon-hover {
-    background-image: url('../images/icon-max-hover.svg');
-}
-
-.download-icon-hover {
-    background-image: url('../images/icon-max-hover.svg');
 }
 
 .retroceder,
