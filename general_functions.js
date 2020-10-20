@@ -1,11 +1,44 @@
-function IconsHover(elemento) {
+function iconsHover(elemento) {
     elemento.classList.add('icons-hover');
+
 }
 
-
-function IconsUnhover(elemento) {
+function iconsUnhover(elemento) {
     elemento.classList.remove('icons-hover');
 }
+
+function favIconHover(elemento) {
+    iconsHover(elemento);
+    elemento.classList.add('fav-icon-hover');
+}
+
+function favIconUnhover(elemento) {
+    iconsUnhover(elemento);
+    elemento.classList.remove('fav-icon-hover');
+}
+
+
+function maxIconHover(elemento) {
+    iconsHover(elemento);
+    elemento.classList.add('max-icon-hover');
+}
+
+function maxIconUnhover(elemento) {
+    iconsUnhover(elemento);
+    elemento.classList.remove('max-icon-hover');
+}
+
+
+function downloadIconHover(elemento) {
+    iconsHover(elemento);
+    elemento.classList.add('download-icon-hover');
+}
+
+function downloadIconUnhover(elemento) {
+    iconsUnhover(elemento);
+    elemento.classList.remove('download-icon-hover');
+}
+
 
 function renderGifos(gifosList, parent) {
     gifosList.forEach((elemento) => {
