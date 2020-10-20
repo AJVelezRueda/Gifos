@@ -8,3 +8,4 @@
 * solucionar los eventos de los iconos de descargar, agrandar y favoritos (estaba usando algo de esto: https://stackoverflow.com/questions/18813299/changing-image-on-hover-with-css-html, https://www.w3schools.com/jsref/event_onmouseover.asp)
 * Generar modo nocturno
 * Seccion de trending
+* Ver como se acomoda mobile
