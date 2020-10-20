@@ -9,3 +9,4 @@
 * Generar modo nocturno
 * Seccion de trending
 * Ver como se acomoda mobile
+* Favoritos tiene que mostrar menos y que solo se desplieguen más si tocan el botón

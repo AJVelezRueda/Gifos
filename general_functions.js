@@ -15,7 +15,7 @@ function renderGifos(gifosList, parent) {
         <span class="overlay">
         <img src="images/icon-fav.svg" alt="fav" class="fav-icon">
         <img src="images/icon-max-normal.svg" alt="icon-max" class="max-button">
-        <img src="images/icon-download.svg" alt="icon-download" class="download-button">
+        <img src="images/icon-download-hover.svg" alt="icon-download" class="download-button">
         </span>`;
         parent.appendChild(figure);
         favIcon = Array.from(figure.getElementsByClassName("fav-icon"))[0];
