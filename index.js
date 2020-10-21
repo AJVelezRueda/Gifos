@@ -137,24 +137,6 @@ function getingSearchResults(query) {
         .then(response => createResultFigures(response, query));
 }
 
-//----- Save fav -----//
-function getFavorites() {
-    const favoritesJson = localStorage.getItem("favorites");
-
-    if (favoritesJson) {
-        return JSON.parse(favoritesJson);
-    } else {
-        return [];
-    }
-}
-
-
-function saveFavs(gifo) {
-    const favList = getFavorites();
-
-    favList.push(gifo);
-    localStorage.setItem("favorites", JSON.stringify(favList));
-}
 
 //----- Events ----------//
 

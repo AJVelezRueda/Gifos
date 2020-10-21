@@ -28,6 +28,23 @@ function createOverlayDiv() {
     return overlayDiv
 }
 
+function getFavorites() {
+    const favoritesJson = localStorage.getItem("favorites");
+
+    if (favoritesJson) {
+        return JSON.parse(favoritesJson);
+    } else {
+        return [];
+    }
+}
+
+function saveFavs(gifo) {
+    const favList = getFavorites();
+
+    favList.push(gifo);
+    localStorage.setItem("favorites", JSON.stringify(favList));
+}
+
 function renderGifos(gifosList, parent) {
     gifosList.forEach((elemento) => {
         const figure = document.createElement('figure');
@@ -88,15 +105,6 @@ function renderGifos(gifosList, parent) {
 
         parent.appendChild(figure);
     })
-}
-
-function getFavorites() {
-    const favoritesJson = localStorage.getItem("favorites");
-    if (favoritesJson) {
-        return JSON.parse(favoritesJson);
-    } else {
-        return [];
-    }
 }
 
 function filterAList(list, value) {
