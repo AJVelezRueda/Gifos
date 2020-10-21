@@ -92,6 +92,11 @@ function renderGifos(gifosList, parent) {
     })
 }
 
+function filterAList(list, value) {
+    list = list.filter(item => item.src !== value);
+    return list
+}
+
 function getFavorites() {
     if (favoritesJson) {
         return JSON.parse(favoritesJson);
@@ -100,13 +105,11 @@ function getFavorites() {
     }
 }
 
-function getFavoriteItem(value) {
+function deletAFavoriteItem(value) {
     const allFavorites = getFavorites();
     if (allFavorites) {
-        console.log(allFavorites);
-    });
-}
-
-function deleteAlistElement(list) {
-    list.forEach((element, index) => console.log(element.findIndex(index)));
+        return filterAList(allFavorites, value);
+    } else {
+        return allFavorites
+    };
 }
