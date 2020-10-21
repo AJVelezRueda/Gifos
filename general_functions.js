@@ -63,7 +63,7 @@ function deletAFavoriteItem(value) {
 }
 
 
-function renderGifos(gifosList, parent) {
+function renderGifos(gifosList, parent, deleteAfterUnfav = false) {
     const allFavorites = getFavorites();
 
     gifosList.forEach((elemento) => {
@@ -113,7 +113,11 @@ function renderGifos(gifosList, parent) {
 
         favImgHover.addEventListener('click', () => {
             deletAFavoriteItem(elemento.src);
-            iconHoverUnhover(favImgHover, favImg);
+            if (deleteAfterUnfav) {
+                parent.removeChild(figure)
+            } else {
+                iconHoverUnhover(favImgHover, favImg);
+            }
         });
 
         maxImgHover.addEventListener('click', () => {
