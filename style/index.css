@@ -280,7 +280,8 @@ a:hover {
 .search-results {
     display: flex;
     flex-wrap: wrap;
-    padding: 3% 2%;
+    padding: 3% 9%;
+	justify-content: space-around;
 }
 
 .gifos-results {
@@ -319,10 +320,10 @@ a:hover {
 }
 
 .overlay {
-    margin-left: 25%;
-    margin-top: 4%;
-    position: absolute;
-    z-index: 99;
+	margin-left: 20%;
+	margin-top: -27%;
+	position: absolute;
+	z-index: 99;
 }
 
 .overlay:hover {
