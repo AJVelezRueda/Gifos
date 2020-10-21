@@ -6,6 +6,13 @@ function iconsDisplay(elemento) {
     elemento.classList.remove('icon-undisplay');
 }
 
+
+function iconHoverUnhover(elemento1, elemento2) {
+    iconsUndisplay(elemento1);
+    iconsDisplay(elemento2);
+}
+
+
 function creatImgObjetc(imgSrc, imgClassName, imgAltName) {
     const img = document.createElement('img');
     img.className = imgClassName;
@@ -27,14 +34,18 @@ function renderGifos(gifosList, parent) {
         const overlayDiv = createOverlayDiv();
         const gifoImg = creatImgObjetc(elemento.src, 'result', elemento.alt);
         const favImg = creatImgObjetc("images/icon-fav.svg", 'fav-icon overlay-icons', "fav");
-        const favImgHover = creatImgObjetc("images/icon-fav-hover.svg", "fav-icon overlay-icons  icon-unhover", "fav-hover");
+        const favImgHover = creatImgObjetc("images/icon-fav-hover.svg", "fav-icon overlay-icons", "fav-hover");
         const maxImg = creatImgObjetc("images/icon-max-normal.svg", "max-button overlay-icons", "icon-max");
-        const maxImgHover = creatImgObjetc("images/icon-max-hover.svg", "max-button overlay-icons icon-unhover", "icon-max-hover");
+        const maxImgHover = creatImgObjetc("images/icon-max-hover.svg", "max-button overlay-icons", "icon-max-hover");
         const downloadImg = creatImgObjetc("images/icon-download.svg", "download-button overlay-icons", "download-button");
-        const downloadImgHover = creatImgObjetc("images/icon-download-hover.svg", "download-button overlay-icons icon-unhover", "download-button-hover");
+        const downloadImgHover = creatImgObjetc("images/icon-download-hover.svg", "download-button overlay-icons", "download-button-hover");
 
         figure.setAttribute("class", "gifo");
         figure.appendChild(gifoImg);
+
+        iconsUndisplay(favImgHover);
+        iconsUndisplay(maxImgHover);
+        iconsUndisplay(downloadImgHover);
 
         overlayDiv.appendChild(favImg);
         overlayDiv.appendChild(favImgHover);
@@ -47,7 +58,17 @@ function renderGifos(gifosList, parent) {
 
         favImg.addEventListener('click', () => {
             saveFavs(elemento);
-            favImg.className = favImg.className + ' icon-undisplay';
+            iconHoverUnhover(favImg, favImgHover);
+        });
+
+        maxImg.addEventListener('click', () => {
+            saveFavs(elemento);
+            iconHoverUnhover(maxImg, maxImgHover);
+        });
+
+        downloadImg.addEventListener('click', () => {
+            saveFavs(elemento);
+            iconHoverUnhover(downloadImg, downloadImgHover);
         });
 
         parent.appendChild(figure);
