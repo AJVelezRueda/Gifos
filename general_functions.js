@@ -1,5 +1,3 @@
-const favoritesJson = localStorage.getItem("favorites");
-
 function iconsUndisplay(elemento) {
     elemento.classList.add('icon-undisplay');
 }
@@ -93,6 +91,7 @@ function renderGifos(gifosList, parent) {
 }
 
 function getFavorites() {
+    const favoritesJson = localStorage.getItem("favorites");
     if (favoritesJson) {
         return JSON.parse(favoritesJson);
     } else {
@@ -101,19 +100,12 @@ function getFavorites() {
 }
 
 function filterAList(list, value) {
-    list = list.filter(item => item.src !== value);
-    return list
+    return list.filter(item => item.src !== value);
 }
 
 function deletAFavoriteItem(value) {
     const allFavorites = getFavorites();
-    if (allFavorites) {
-        return filterAList(allFavorites, value);
-    } else {
-        return allFavorites
-    };
-}
+    const filteredFavorites = filterAList(allFavorites, value);
+    return localStorage.setItem("favorites", JSON.stringify(filteredFavorites));
 
-function rewriteFavLocalStorage(value) {
-    localStorage.setItem("favorites", JSON.stringify(deletAFavoriteItem(value)));
 }
