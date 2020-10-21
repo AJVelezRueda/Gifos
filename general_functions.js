@@ -1,3 +1,5 @@
+const favoritesJson = localStorage.getItem("favorites");
+
 function iconsUndisplay(elemento) {
     elemento.classList.add('icon-undisplay');
 }
@@ -91,11 +93,20 @@ function renderGifos(gifosList, parent) {
 }
 
 function getFavorites() {
-    const favoritesJson = localStorage.getItem("favorites");
-
     if (favoritesJson) {
         return JSON.parse(favoritesJson);
     } else {
         return [];
     }
+}
+
+function getFavoriteItem(value) {
+    const allFavorites = getFavorites();
+    if (allFavorites) {
+        console.log(allFavorites);
+    });
+}
+
+function deleteAlistElement(list) {
+    list.forEach((element, index) => console.log(element.findIndex(index)));
 }
