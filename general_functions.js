@@ -45,7 +45,14 @@ function saveFavs(gifo) {
     localStorage.setItem("favorites", JSON.stringify(favList));
 }
 
+
+function isFavortite(list, src) {
+    return list.some(item => item.src === src);
+}
+
 function renderGifos(gifosList, parent) {
+    const allFavorites = getFavorites();
+
     gifosList.forEach((elemento) => {
         const figure = document.createElement('figure');
         const overlayDiv = createOverlayDiv();
@@ -60,7 +67,12 @@ function renderGifos(gifosList, parent) {
         figure.setAttribute("class", "gifo");
         figure.appendChild(gifoImg);
 
-        iconsUndisplay(favImgHover);
+        if (isFavortite(allFavorites, elemento.src)) {
+            iconsUndisplay(favImg);
+        } else {
+            iconsUndisplay(favImgHover);
+        }
+
         iconsUndisplay(maxImgHover);
         iconsUndisplay(downloadImgHover);
 
@@ -79,27 +91,22 @@ function renderGifos(gifosList, parent) {
         });
 
         maxImg.addEventListener('click', () => {
-            saveFavs(elemento);
             iconHoverUnhover(maxImg, maxImgHover);
         });
 
         downloadImg.addEventListener('click', () => {
-            saveFavs(elemento);
             iconHoverUnhover(downloadImg, downloadImgHover);
         });
 
         favImgHover.addEventListener('click', () => {
-            saveFavs(elemento);
             iconHoverUnhover(favImgHover, favImg);
         });
 
         maxImgHover.addEventListener('click', () => {
-            saveFavs(elemento);
             iconHoverUnhover(maxImgHover, maxImg);
         });
 
         downloadImgHover.addEventListener('click', () => {
-            saveFavs(elemento);
             iconHoverUnhover(downloadImgHover, downloadImg);
         });
 
