@@ -1,9 +1,9 @@
-function iconsHover(elemento) {
-    elemento.classList.add('icons-unhover');
+function iconsUndisplay(elemento) {
+    elemento.classList.add('icon-undisplay');
 }
 
-function iconsUnhover(elemento) {
-    elemento.classList.remove('icons-unhover');
+function iconsDisplay(elemento) {
+    elemento.classList.remove('icon-undisplay');
 }
 
 function creatImgObjetc(imgSrc, imgClassName, imgAltName) {
@@ -44,10 +44,10 @@ function renderGifos(gifosList, parent) {
         overlayDiv.appendChild(downloadImgHover);
         figure.appendChild(overlayDiv);
 
-        favIcon = Array.from(figure.getElementsByClassName("fav-icon"))[0];
 
-        favIcon.addEventListener('click', () => {
+        favImg.addEventListener('click', () => {
             saveFavs(elemento);
+            favImg.className = favImg.className + ' icon-undisplay';
         });
 
         parent.appendChild(figure);
