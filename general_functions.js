@@ -113,3 +113,7 @@ function deletAFavoriteItem(value) {
         return allFavorites
     };
 }
+
+function rewriteFavLocalStorage(value) {
+    localStorage.setItem("favorites", JSON.stringify(deletAFavoriteItem(value)));
+}
