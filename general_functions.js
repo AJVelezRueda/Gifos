@@ -50,6 +50,19 @@ function isFavortite(list, src) {
     return list.some(item => item.src === src);
 }
 
+
+function filterAList(list, value) {
+    return list.filter(item => item.src !== value);
+}
+
+function deletAFavoriteItem(value) {
+    const allFavorites = getFavorites();
+    const filteredFavorites = filterAList(allFavorites, value);
+    return localStorage.setItem("favorites", JSON.stringify(filteredFavorites));
+
+}
+
+
 function renderGifos(gifosList, parent) {
     const allFavorites = getFavorites();
 
@@ -99,6 +112,7 @@ function renderGifos(gifosList, parent) {
         });
 
         favImgHover.addEventListener('click', () => {
+            deletAFavoriteItem(elemento.src);
             iconHoverUnhover(favImgHover, favImg);
         });
 
@@ -112,15 +126,4 @@ function renderGifos(gifosList, parent) {
 
         parent.appendChild(figure);
     })
-}
-
-function filterAList(list, value) {
-    return list.filter(item => item.src !== value);
-}
-
-function deletAFavoriteItem(value) {
-    const allFavorites = getFavorites();
-    const filteredFavorites = filterAList(allFavorites, value);
-    return localStorage.setItem("favorites", JSON.stringify(filteredFavorites));
-
 }
