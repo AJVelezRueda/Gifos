@@ -92,17 +92,17 @@ function renderGifos(gifosList, parent) {
     })
 }
 
-function filterAList(list, value) {
-    list = list.filter(item => item.src !== value);
-    return list
-}
-
 function getFavorites() {
     if (favoritesJson) {
         return JSON.parse(favoritesJson);
     } else {
         return [];
     }
+}
+
+function filterAList(list, value) {
+    list = list.filter(item => item.src !== value);
+    return list
 }
 
 function deletAFavoriteItem(value) {
