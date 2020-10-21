@@ -71,6 +71,21 @@ function renderGifos(gifosList, parent) {
             iconHoverUnhover(downloadImg, downloadImgHover);
         });
 
+        favImgHover.addEventListener('click', () => {
+            saveFavs(elemento);
+            iconHoverUnhover(favImgHover, favImg);
+        });
+
+        maxImgHover.addEventListener('click', () => {
+            saveFavs(elemento);
+            iconHoverUnhover(maxImgHover, maxImg);
+        });
+
+        downloadImgHover.addEventListener('click', () => {
+            saveFavs(elemento);
+            iconHoverUnhover(downloadImgHover, downloadImg);
+        });
+
         parent.appendChild(figure);
     })
 }
