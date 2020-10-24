@@ -15,11 +15,9 @@ function trendingUrl() {
 
 
 function updateCarouselGifsSrc(gifs) {
-    const images = Array.from(document.getElementsByClassName('foto-carrusel'));
-    images.forEach((elemento, indice) => {
-        elemento.src = gifs[indice].src;
-        elemento.alt = gifs[indice].alt;
-    });
+    const gifsDiv = document.getElementById("gifs")
+    renderGifos(gifs, gifsDiv);
+    actualizadorClasesCarousel();
 }
 
 
@@ -34,7 +32,8 @@ function getTrendingGifos() {
 let carouselOffset = 0;
 
 function actualizadorClasesCarousel() {
-    const listaGifs = Array.from(document.getElementsByClassName('gif'));
+    const parentDiv = document.getElementById('gifs')
+    const listaGifs = Array.from(parentDiv.getElementsByClassName('gifo'));
 
     carouselOffset = (listaGifs.length + carouselOffset) % listaGifs.length
 
