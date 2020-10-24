@@ -506,6 +506,13 @@ a:hover {
     text-align: center;
 }
 
+.max-section {
+    height: 100%;
+    position: absolute;
+    width: 20vw;
+    background-color: sienna;
+}
+
 @media screen and (min-width: 720px) {
     #toggle:checked~.menu i::before {
         content: none;

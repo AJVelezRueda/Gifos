@@ -82,17 +82,23 @@ function createGifo(elemento) {
 
 
 function maximizingDiv(elemento) {
+    const mainSection = document.getElementById('max-section')
     const root = document.createElement('div');
+    const closeImg = document.createElement('img')
     const figure = createGifo(elemento);
     const allFavorites = getFavorites();
     const div = document.createElement('div');
     const figureTitle = document.createElement('h3')
 
+    root.className = "max-root"
+    closeImg.src = "images/close.svg"
 
+    root.appendChild(closeImg);
     root.appendChild(figure);
     div.appendChild(figureTitle);
     createFavImage(allFavorites, elemento, div, figure, false);
     root.appendChild(div);
+    mainSection.appendChild(root);
 }
 
 
@@ -174,6 +180,7 @@ function renderGifos(gifosList, parent, deleteAfterUnfav = false) {
 
         maxImg.addEventListener('click', () => {
             iconHoverUnhover(maxImg, maxImgHover);
+            maximizingDiv(elemento);
         });
 
         maxImgHover.addEventListener('click', () => {
