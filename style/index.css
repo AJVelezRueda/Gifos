@@ -16,6 +16,18 @@ body {
     border-top: 4px solid #572EE5;
 }
 
+.main,
+.footer,
+.header {
+    display: none;
+}
+
+.main.active,
+.footer.active,
+.header.active {
+    display: block;
+}
+
 h1,
 h2 {
     font-family: Montserrat-Bold, sans-serif;

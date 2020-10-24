@@ -81,6 +81,17 @@ function createGifo(elemento) {
 }
 
 
+function ocultarTodo() {
+    const header = document.getElementById('header')
+    const main = document.getElementById('main')
+    const footer = document.getElementById('footer')
+
+    hideElement(header);
+    hideElement(main);
+    hideElement(footer);
+}
+
+
 function maximizingDiv(elemento) {
     const mainSection = document.getElementById('max-section')
     const root = document.createElement('div');
@@ -99,6 +110,7 @@ function maximizingDiv(elemento) {
     createFavImage(allFavorites, elemento, div, figure, false);
     root.appendChild(div);
     mainSection.appendChild(root);
+    ocultarTodo();
 }
 
 
