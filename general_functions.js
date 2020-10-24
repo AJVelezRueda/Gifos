@@ -89,6 +89,7 @@ function renderGifos(gifosList, parent, deleteAfterUnfav = false) {
         iconsUndisplay(maxImgHover);
         iconsUndisplay(downloadImgHover);
 
+
         overlayDiv.appendChild(favImg);
         overlayDiv.appendChild(favImgHover);
         overlayDiv.appendChild(maxImg);
@@ -97,6 +98,13 @@ function renderGifos(gifosList, parent, deleteAfterUnfav = false) {
         overlayDiv.appendChild(downloadImgHover);
         figure.appendChild(overlayDiv);
 
+
+        figure.addEventListener("mouseover", () => {
+            overlayDiv.classList.add('active');
+        });
+        figure.addEventListener("mouseout", () => {
+            overlayDiv.classList.remove('active');
+        });
 
         favImg.addEventListener('click', () => {
             saveFavs(elemento);

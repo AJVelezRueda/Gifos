@@ -318,11 +318,11 @@ a:hover {
     margin-top: -27%;
     position: absolute;
     z-index: 99;
+    display: none;
 }
 
-.overlay:hover {
-    opacity: 1;
-    color: rebeccapurple;
+.overlay.active {
+    display: block;
 }
 
 .overlay-icons {
