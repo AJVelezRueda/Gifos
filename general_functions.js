@@ -13,7 +13,7 @@ function iconHoverUnhover(elemento1, elemento2) {
 }
 
 
-function creatImgObjetc(imgSrc, imgClassName, imgAltName) {
+function creatImgObject(imgSrc, imgClassName, imgAltName) {
     const img = document.createElement('img');
     img.className = imgClassName;
     img.alt = imgAltName;
@@ -63,77 +63,121 @@ function deletAFavoriteItem(value) {
 }
 
 
+function hideElement(elemento) {
+    elemento.classList.remove('active')
+}
+
+function showElement(elemento) {
+    elemento.classList.add('active')
+}
+
+
+function createGifo(elemento) {
+    const figure = document.createElement('figure');
+    const gifoImg = creatImgObject(elemento.src, 'result', elemento.alt);
+    figure.setAttribute("class", "gifo");
+    figure.appendChild(gifoImg);
+    return figure;
+}
+
+
+function maximizingDiv(elemento) {
+    const root = document.createElement('div');
+    const figure = createGifo(elemento);
+    const allFavorites = getFavorites();
+    const div = document.createElement('div');
+    const figureTitle = document.createElement('h3')
+
+
+    root.appendChild(figure);
+    div.appendChild(figureTitle);
+    createFavImage(allFavorites, elemento, div, figure, false);
+    root.appendChild(div);
+}
+
+
+function createFavImage(allFavorites, elemento, parent, figure, deleteAfterUnfav) {
+    const favImg = creatImgObject("images/icon-fav.svg", 'fav-icon overlay-icons', "fav");
+    const favImgHover = creatImgObject("images/icon-fav-hover.svg", "fav-icon overlay-icons", "fav-hover");
+
+    if (isFavortite(allFavorites, elemento.src)) {
+        iconsUndisplay(favImg);
+    } else {
+        iconsUndisplay(favImgHover);
+    }
+
+    parent.appendChild(favImg);
+    parent.appendChild(favImgHover);
+
+
+    favImg.addEventListener('click', () => {
+        saveFavs(elemento);
+        iconHoverUnhover(favImg, favImgHover);
+    });
+
+    favImgHover.addEventListener('click', () => {
+        deletAFavoriteItem(elemento.src);
+
+        if (deleteAfterUnfav) {
+            parent.removeChild(figure)
+        } else {
+            iconHoverUnhover(favImgHover, favImg);
+        }
+    });
+
+}
+
+function createDownloadImage(parent) {
+    const downloadImg = creatImgObject("images/icon-download.svg", "download-button overlay-icons", "download-button");
+    const downloadImgHover = creatImgObject("images/icon-download-hover.svg", "download-button overlay-icons", "download-button-hover");
+
+    iconsUndisplay(downloadImgHover);
+
+    parent.appendChild(downloadImg);
+    parent.appendChild(downloadImgHover);
+
+    downloadImg.addEventListener('click', () => {
+        iconHoverUnhover(downloadImg, downloadImgHover);
+    });
+
+    downloadImgHover.addEventListener('click', () => {
+        iconHoverUnhover(downloadImgHover, downloadImg);
+    });
+}
+
+
 function renderGifos(gifosList, parent, deleteAfterUnfav = false) {
     const allFavorites = getFavorites();
 
     gifosList.forEach((elemento) => {
-        const figure = document.createElement('figure');
+        const figure = createGifo(elemento);
+
         const overlayDiv = createOverlayDiv();
-        const gifoImg = creatImgObjetc(elemento.src, 'result', elemento.alt);
-        const favImg = creatImgObjetc("images/icon-fav.svg", 'fav-icon overlay-icons', "fav");
-        const favImgHover = creatImgObjetc("images/icon-fav-hover.svg", "fav-icon overlay-icons", "fav-hover");
-        const maxImg = creatImgObjetc("images/icon-max-normal.svg", "max-button overlay-icons", "icon-max");
-        const maxImgHover = creatImgObjetc("images/icon-max-hover.svg", "max-button overlay-icons", "icon-max-hover");
-        const downloadImg = creatImgObjetc("images/icon-download.svg", "download-button overlay-icons", "download-button");
-        const downloadImgHover = creatImgObjetc("images/icon-download-hover.svg", "download-button overlay-icons", "download-button-hover");
-
-        figure.setAttribute("class", "gifo");
-        figure.appendChild(gifoImg);
-
-        if (isFavortite(allFavorites, elemento.src)) {
-            iconsUndisplay(favImg);
-        } else {
-            iconsUndisplay(favImgHover);
-        }
+        createFavImage(allFavorites, elemento, overlayDiv, figure, deleteAfterUnfav);
+        const maxImg = creatImgObject("images/icon-max-normal.svg", "max-button overlay-icons", "icon-max");
+        const maxImgHover = creatImgObject("images/icon-max-hover.svg", "max-button overlay-icons", "icon-max-hover");
+        createDownloadImage(overlayDiv);
 
         iconsUndisplay(maxImgHover);
-        iconsUndisplay(downloadImgHover);
 
-
-        overlayDiv.appendChild(favImg);
-        overlayDiv.appendChild(favImgHover);
         overlayDiv.appendChild(maxImg);
         overlayDiv.appendChild(maxImgHover);
-        overlayDiv.appendChild(downloadImg);
-        overlayDiv.appendChild(downloadImgHover);
         figure.appendChild(overlayDiv);
 
 
         figure.addEventListener("mouseover", () => {
-            overlayDiv.classList.add('active');
+            showElement(overlayDiv);
         });
         figure.addEventListener("mouseout", () => {
-            overlayDiv.classList.remove('active');
-        });
-
-        favImg.addEventListener('click', () => {
-            saveFavs(elemento);
-            iconHoverUnhover(favImg, favImgHover);
+            hideElement(overlayDiv);
         });
 
         maxImg.addEventListener('click', () => {
             iconHoverUnhover(maxImg, maxImgHover);
         });
 
-        downloadImg.addEventListener('click', () => {
-            iconHoverUnhover(downloadImg, downloadImgHover);
-        });
-
-        favImgHover.addEventListener('click', () => {
-            deletAFavoriteItem(elemento.src);
-            if (deleteAfterUnfav) {
-                parent.removeChild(figure)
-            } else {
-                iconHoverUnhover(favImgHover, favImg);
-            }
-        });
-
         maxImgHover.addEventListener('click', () => {
             iconHoverUnhover(maxImgHover, maxImg);
-        });
-
-        downloadImgHover.addEventListener('click', () => {
-            iconHoverUnhover(downloadImgHover, downloadImg);
         });
 
         parent.appendChild(figure);
