@@ -519,10 +519,16 @@ a:hover {
 }
 
 .max-section {
-    height: 100%;
-    position: absolute;
-    width: 20vw;
-    background-color: sienna;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5% 15%;
+}
+
+.max-root {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 @media screen and (min-width: 720px) {

@@ -81,14 +81,20 @@ function createGifo(elemento) {
 }
 
 
-function ocultarTodo() {
+function hideAllSections() {
     const header = document.getElementById('header')
     const main = document.getElementById('main')
-    const footer = document.getElementById('footer')
 
     hideElement(header);
     hideElement(main);
-    hideElement(footer);
+}
+
+function showAllSections() {
+    const header = document.getElementById('header')
+    const main = document.getElementById('main')
+
+    showElement(header);
+    showElement(main);
 }
 
 
@@ -104,13 +110,18 @@ function maximizingDiv(elemento) {
     root.className = "max-root"
     closeImg.src = "images/close.svg"
 
+    closeImg.addEventListener('click', () => {
+        showAllSections();
+        mainSection.removeChild(root);
+    })
+
     root.appendChild(closeImg);
     root.appendChild(figure);
     div.appendChild(figureTitle);
     createFavImage(allFavorites, elemento, div, figure, false);
     root.appendChild(div);
     mainSection.appendChild(root);
-    ocultarTodo();
+    hideAllSections();
 }
 
 

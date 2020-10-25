@@ -17,36 +17,39 @@
 
 <body>
     <header id="header">
-        <nav class="nav-bar">
-            <figure class="logo">
-                <a href="index.html"><img src="images/logo-mobile.svg" alt="logo-mobile" class="logo-mobile"></a>
-                <a href="index.html"><img src="images/logo-desktop.svg" alt="logo-desck" class="logo-desck"></a>
-            </figure>
-            <div class="ham-menu">
-                <input type="checkbox" id="toggle" class="menu" />
-                <label for="toggle" class="menu">
-	                <i class="fas fa-bars"></i>
-	            </label>
-                <ul class="main-menu menu-ul">
-                    <li></li>
-                    <li><a href="#" class="opciones">MODO NOCTURNO</a></li>
-                    <li><a href="#" class="opciones">FAVORITOS</a></li>
-                    <li><a href="#" class="opciones">MIS GIFOS</a></li>
-                    <li>
-                        <a href="crear.html" class="opciones"><img src="images/CTA-crear-gifo-active.svg" alt="crear" class="crear"></a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </header>
-    <main class="main-crear">
-        <section class="camara-viewer">
-            <img src="images/camara.svg" alt="camara">
-            <img src="images/element-luz-camara.svg" class="element-luz-camara" alt="element-luz-camara">
-            <div class="camera-window">
-                <div class="camera-container">
-                    <div class="text-container active" id="text-container">
-                        <h2 class="camera-container-title">Aquí podrás <br>crear tus propios <span class="gifos-text">GIFOS<span></h2>
+        <header id="header" class="main active">
+            <nav class="nav-bar">
+                <figure class="logo">
+                    <a href="index.html"><img src="images/logo-mobile.svg" alt="logo-mobile" class="logo-mobile"></a>
+                    <a href="index.html"><img src="images/logo-desktop.svg" alt="logo-desck" class="logo-desck"></a>
+                </figure>
+                <div class="ham-menu">
+                    <input type="checkbox" id="toggle" class="menu" />
+                    <label for="toggle" class="menu">
+                        <i class="fas fa-bars"></i>
+                    </label>
+                    <ul class="main-menu menu-ul">
+                        <li></li>
+                        <li><a href="#" class="opciones">MODO NOCTURNO</a></li>
+                        <li><a href="favorites.html" class="opciones">FAVORITOS</a></li>
+                        <li><a href="#" class="opciones">MIS GIFOS</a></li>
+                        <li>
+                            <a href="crear.html" class="opciones"><img src="images/button-crear-gifo.svg" alt="crear" class="crear"></a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <section id="max-section" class="max-section">
+        </section>
+        <main class="main-crear">
+            <section class="camara-viewer">
+                <img src="images/camara.svg" alt="camara">
+                <img src="images/element-luz-camara.svg" class="element-luz-camara" alt="element-luz-camara">
+                <div class="camera-window">
+                    <div class="camera-container">
+                        <div class="text-container active" id="text-container">
+                            <h2 class="camera-container-title">Aquí podrás <br>crear tus propios <span class="gifos-text">GIFOS<span></h2>
     					<p>¡Crea tu GIFO en sólo 3 pasos! <br>(sólo necesitas una cámara para grabar un video)</p>
     				</div>
     				<video src="#" class="video" id="video"></video>
