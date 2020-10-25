@@ -77,18 +77,20 @@ function recordingFinished() {
     const repetirText = document.getElementById('repetir-captura');
     const buttonPaso2 = document.getElementById('button-paso2');
     const buttonPaso3 = document.getElementById('button-paso3');
-    const video = document.getElementById("video");
+    const subir = document.getElementById('subir')
+    const finalizar = document.getElementById("finalizar")
 
     recordingTimeText.classList.remove('active');
     repetirText.classList.add('active');
     buttonPaso2.classList.remove('active');
     buttonPaso3.classList.add('active');
     stopRecording();
+    finalizar.classList.remove('active');
+    subir.classList.add('active');
 }
 
-
 function recordUpload() {
-    let form = new FormData();
+    const form = new FormData();
     form.append('file', blob, 'myGif.gif');
     fetch(`https://upload.giphy.com/v1/gifs?api_key=${Api_key}&file=${form.get('file')}`);
     console.log(form.get('file'));
