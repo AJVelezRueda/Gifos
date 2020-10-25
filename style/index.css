@@ -462,7 +462,6 @@ a:hover {
     display: flex;
     flex-direction: row;
     margin-top: 3%;
-    margin-left: 8%;
 }
 
 .text-repetir,
@@ -501,8 +500,8 @@ a:hover {
     color: #572EE5;
     height: 36px;
     width: 99px;
-    margin-left: 43%;
-    margin-top: 3%;
+    margin-left: 46%;
+    margin-top: 2%;
     display: block;
 }
 
@@ -623,14 +622,13 @@ a:hover {
         flex-direction: row;
         justify-content: space-between;
         padding: 0 6%;
-        margin-top: 15%;
+        margin-top: 20%;
     }
     .violet-line {
         height: 5px;
         border-radius: 20px;
         background: #572EE5;
         grid-column: 2/4;
-        margin-left: 13%;
         text-align: center;
     }
     .results {

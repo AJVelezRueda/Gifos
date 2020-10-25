@@ -90,17 +90,16 @@ function recordingFinished() {
 
 function recordUpload() {
     const form = new FormData();
-    //form.append('file', blob, 'myGif.gif');
-    form.append("source_image_url", "ajhadoh")
-    form.append("api_key", Api_key);
+    form.append('file', blob, 'myGif.gif');
     form.append("username", "AJVelezRueda");
+    form.append("tags", "");
     console.log(form);
-    fetch(`https://upload.giphy.com/v1/gifs`, {
+    fetch(`https://upload.giphy.com/v1/gifs?api_key=${Api_key}`, {
             method: 'POST',
             body: form,
-            mode: 'no-cors'
         }).then((it) => it.text())
         .then((it) => console.log(it));
+    console.log('Donde');
 }
 
 document.getElementById("comenzar").addEventListener('click', recordInit);
