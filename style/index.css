@@ -531,6 +531,18 @@ a:hover {
     align-items: center;
 }
 
+.close-img {
+    margin-left: 41%;
+    margin-bottom: 4%;
+}
+
+.caption-maxdiv {
+    display: flex;
+    flex-direction: row;
+    margin-top: -4%;
+    margin-left: -25%;
+}
+
 @media screen and (min-width: 720px) {
     #toggle:checked~.menu i::before {
         content: none;

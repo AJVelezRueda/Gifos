@@ -105,10 +105,13 @@ function maximizingDiv(elemento) {
     const figure = createGifo(elemento);
     const allFavorites = getFavorites();
     const div = document.createElement('div');
-    const figureTitle = document.createElement('h3')
+    const figureTitle = document.createElement('p')
 
     root.className = "max-root"
+    div.className = "caption-maxdiv"
     closeImg.src = "images/close.svg"
+    closeImg.className = "close-img"
+    figureTitle.innerText = elemento.alt
 
     closeImg.addEventListener('click', () => {
         showAllSections();
@@ -119,6 +122,7 @@ function maximizingDiv(elemento) {
     root.appendChild(figure);
     div.appendChild(figureTitle);
     createFavImage(allFavorites, elemento, div, figure, false);
+    createDownloadImage(div);
     root.appendChild(div);
     mainSection.appendChild(root);
     hideAllSections();
