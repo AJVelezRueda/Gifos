@@ -38,6 +38,16 @@ function getFavorites() {
     }
 }
 
+function getMisFavorites() {
+    const favoritesJson = localStorage.getItem("mis_gifs");
+
+    if (favoritesJson) {
+        return JSON.parse(favoritesJson);
+    } else {
+        return [];
+    }
+}
+
 function saveFavs(gifo) {
     const favList = getFavorites();
 

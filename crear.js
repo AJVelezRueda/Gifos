@@ -1,6 +1,8 @@
 //--------- Crear gif -----------//
 let recorder = null;
-const apiKey = 'Nc8u10QS9qz9vLVNpc7W08yiQVxITRYJ'
+const apiKey = 'Nc8u10QS9qz9vLVNpc7W08yiQVxITRYJ';
+const listMisFav = getMisFavorites();
+
 
 function requestVideo() {
     const video = document.getElementById("video");
@@ -92,13 +94,30 @@ function recordingFinished() {
 
 function recordUpload() {
     const form = new FormData();
+
     form.append('file', recorder.getBlob(), 'myGif.gif');
     form.append("tags", "");
     fetch(`http://upload.giphy.com/v1/gifs?api_key=${apiKey}`, {
             method: 'POST',
             body: form,
         }).then((it) => it.json())
-        .then((it) => localStorage.setItem("mis_gifs", it.data.id));
+        .then((it) => {
+            listMisFav.push(it.data.id);
+            localStorage.setItem("mis_gifs", JSON.stringify(listMisFav));
+        });
+}
+
+function getUrlMyGif(id) {
+    return `https://api.giphy.com/v1/gifs?api_key=${apiKey}&ids=${id}`;
+}
+
+
+function addmyFavoriteItemsObj(id) {
+    const misFavorites = getMisFavorites()
+    const misGifs = localStorage.getItem("mis_gifs_obj");
+
+    console.log(misFavorites);
+    //return localStorage.setItem("favorites", JSON.stringify(filteredFavorites));
 }
 
 document.getElementById("comenzar").addEventListener('click', recordInit);
