@@ -10,9 +10,8 @@ const apiKey = 'Nc8u10QS9qz9vLVNpc7W08yiQVxITRYJ';
 //---------- Carousel --------------//
 
 function trendingUrl() {
-    return `https://api.giphy.com/v1/gifs/trending?api_key=${apiKey}&limit=25`
+    return `https://api.giphy.com/v1/gifs/trending?api_key=${apiKey}&limit=25`;
 }
-
 
 function updateCarouselGifsSrc(gifs) {
     const gifsDiv = document.getElementById("gifs")
@@ -135,6 +134,13 @@ function getingSearchResults(query) {
         .then(response => response.data.map(it => ({ src: it.images.downsized.url, alt: it.title })))
         .then(response => createResultFigures(response, query));
 }
+
+//----- Trending -------//
+
+function trendingWords() {
+    return `https://api.giphy.com/v1/trending/searches?api_key=${apiKey}&limit=5`;
+}
+
 
 
 //----- Events ----------//

@@ -1,7 +1,7 @@
 //--------- Crear gif -----------//
-let recorder = null;
-let blob = null;
-let Api_key = 'Nc8u10QS9qz9vLVNpc7W08yiQVxITRYJ'
+const recorder = null;
+const blob = null;
+const apiKey = 'Nc8u10QS9qz9vLVNpc7W08yiQVxITRYJ'
 
 function requestVideo() {
     const video = document.getElementById("video");
@@ -91,10 +91,8 @@ function recordingFinished() {
 function recordUpload() {
     const form = new FormData();
     form.append('file', blob, 'myGif.gif');
-    form.append("username", "AJVelezRueda");
     form.append("tags", "");
-    console.log(form);
-    fetch(`https://upload.giphy.com/v1/gifs?api_key=${Api_key}`, {
+    fetch(`http://upload.giphy.com/v1/gifs?api_key=${apiKey}`, {
             method: 'POST',
             body: form,
         }).then((it) => it.text())
