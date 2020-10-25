@@ -62,7 +62,6 @@ function deletAFavoriteItem(value) {
 
 }
 
-
 function hideElement(elemento) {
     elemento.classList.remove('active')
 }

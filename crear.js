@@ -1,6 +1,5 @@
 //--------- Crear gif -----------//
-const recorder = null;
-const blob = null;
+let recorder = null;
 const apiKey = 'Nc8u10QS9qz9vLVNpc7W08yiQVxITRYJ'
 
 function requestVideo() {
@@ -16,18 +15,21 @@ function requestVideo() {
 }
 
 function startRecording(stream) {
-    recorder = new RecordRTCPromisesHandler(stream, {
-        type: 'video'
+    recorder = RecordRTC(stream, {
+        type: "gif",
+        frameRate: 1,
+        quality: 10,
+        width: 360,
+        hidden: 240,
     });
     recorder.startRecording();
 }
 
+
 function stopRecording() {
     recorder
-        .stopRecording()
-        .then(() => recorder.getBlob())
-        .then((it) => blob = it)
-        .then(() => recorder = null);
+        .stopRecording();
+    console.log(recorder);
 }
 
 
@@ -90,14 +92,13 @@ function recordingFinished() {
 
 function recordUpload() {
     const form = new FormData();
-    form.append('file', blob, 'myGif.gif');
+    form.append('file', recorder.getBlob(), 'myGif.gif');
     form.append("tags", "");
     fetch(`http://upload.giphy.com/v1/gifs?api_key=${apiKey}`, {
             method: 'POST',
             body: form,
-        }).then((it) => it.text())
-        .then((it) => console.log(it));
-    console.log('Donde');
+        }).then((it) => it.json())
+        .then((it) => localStorage.setItem("mis_gifs", it.data.id));
 }
 
 document.getElementById("comenzar").addEventListener('click', recordInit);
