@@ -25,10 +25,9 @@ function startRecording(stream) {
 function stopRecording() {
     recorder
         .stopRecording()
-        .then(() => {
-            blob = recorder.getBlob();
-            recorder = null;
-        });
+        .then(() => recorder.getBlob())
+        .then((it) => blob = it)
+        .then(() => recorder = null);
 }
 
 
@@ -91,11 +90,20 @@ function recordingFinished() {
 
 function recordUpload() {
     const form = new FormData();
-    form.append('file', blob, 'myGif.gif');
-    fetch(`https://upload.giphy.com/v1/gifs?api_key=${Api_key}&file=${form.get('file')}`);
-    console.log(form.get('file'));
+    //form.append('file', blob, 'myGif.gif');
+    form.append("source_image_url", "ajhadoh")
+    form.append("api_key", Api_key);
+    form.append("username", "AJVelezRueda");
+    console.log(form);
+    fetch(`https://upload.giphy.com/v1/gifs`, {
+            method: 'POST',
+            body: form,
+            mode: 'no-cors'
+        }).then((it) => it.text())
+        .then((it) => console.log(it));
 }
 
-document.getElementById("comenzar").addEventListener('click', () => recordInit());
-document.getElementById("grabar").addEventListener('click', () => recording());
-document.getElementById("finalizar").addEventListener('click', () => recordingFinished());
+document.getElementById("comenzar").addEventListener('click', recordInit);
+document.getElementById("grabar").addEventListener('click', recording);
+document.getElementById("finalizar").addEventListener('click', recordingFinished);
+document.getElementById("subir").addEventListener("click", recordUpload)

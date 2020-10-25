@@ -645,8 +645,8 @@ a:hover {
         grid-template-rows: repeat(3, 1fr);
     }
     .overlay {
-        margin-left: 10.5%;
-        margin-top: -14%;
+        margin-left: 7.5%;
+        margin-top: -10%;
         position: absolute;
         z-index: 99;
     }
