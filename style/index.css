@@ -313,12 +313,18 @@ a:hover {
 
 .ver-mas {
     padding: 4% 0;
+    margin-top: 5%;
 }
 
 .result {
     width: 16em;
     height: 12em;
     display: block;
+}
+
+.max {
+    width: 26em;
+    height: 18em;
 }
 
 .result:hover {
@@ -643,7 +649,7 @@ a:hover {
         grid-template-rows: repeat(3, 1fr);
     }
     .overlay {
-        margin-left: 7.5%;
+        margin-left: 131px;
         margin-top: -10%;
         position: absolute;
         z-index: 99;
@@ -655,6 +661,9 @@ a:hover {
     .overlay-icons {
         padding: 0 1px;
         margin-top: 7%;
+    }
+    .maxi-icons {
+        margin-top: -2%;
     }
     .icon-unhover {
         display: none;

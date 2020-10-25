@@ -90,7 +90,7 @@ function hideAllSections() {
 
 function showAllSections() {
     const header = document.getElementById('header')
-    const main = document.getElementById('main')
+    const main = document.getElementById('main');
 
     showElement(header);
     showElement(main);
@@ -98,19 +98,22 @@ function showAllSections() {
 
 
 function maximizingDiv(elemento) {
-    const mainSection = document.getElementById('max-section')
+    const mainSection = document.getElementById('max-section');
     const root = document.createElement('div');
-    const closeImg = document.createElement('img')
+    const closeImg = document.createElement('img');
     const figure = createGifo(elemento);
     const allFavorites = getFavorites();
     const div = document.createElement('div');
-    const figureTitle = document.createElement('p')
+    const figureTitle = document.createElement('p');
+    const imgResult = figure.childNodes[0];
 
-    root.className = "max-root"
-    div.className = "caption-maxdiv"
-    closeImg.src = "images/close.svg"
-    closeImg.className = "close-img"
-    figureTitle.innerText = elemento.alt
+    figure.classList.add('max');
+    imgResult.classList.add('max');
+    root.className = "max-root";
+    div.className = "caption-maxdiv";
+    closeImg.src = "images/close.svg";
+    closeImg.className = "close-img";
+    figureTitle.innerText = elemento.alt;
 
     closeImg.addEventListener('click', () => {
         showAllSections();
@@ -122,6 +125,13 @@ function maximizingDiv(elemento) {
     div.appendChild(figureTitle);
     createFavImage(allFavorites, elemento, div, figure, false);
     createDownloadImage(div);
+
+    const favIcon = div.childNodes[1];
+    const downloadIcon = div.childNodes[3];
+
+    console.log(downloadIcon)
+    favIcon.classList.add('maxi-icons');
+    downloadIcon.classList.add('maxi-icons');
     root.appendChild(div);
     mainSection.appendChild(root);
     hideAllSections();
@@ -205,12 +215,7 @@ function renderGifos(gifosList, parent, deleteAfterUnfav = false) {
         });
 
         maxImg.addEventListener('click', () => {
-            iconHoverUnhover(maxImg, maxImgHover);
             maximizingDiv(elemento);
-        });
-
-        maxImgHover.addEventListener('click', () => {
-            iconHoverUnhover(maxImgHover, maxImg);
         });
 
         parent.appendChild(figure);
