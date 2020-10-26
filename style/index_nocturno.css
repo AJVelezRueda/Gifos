@@ -16,16 +16,16 @@ body.nocturno {
     color: #CDD6E0;
 }
 
-a.nocturno {
+body a.nocturno {
     color: white;
 }
 
-a.nocturno:hover {
+body a.nocturno:hover {
     color: #572EE5;
 }
 
 
-p.nocturno {
+body p.nocturno {
     color: white;
 }
 

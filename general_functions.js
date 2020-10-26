@@ -248,8 +248,12 @@ function renderGifos(gifosList, parent, deleteAfterUnfav = false) {
 }
 
 
-function modoNocturno(){
-    const body = document.getElementById("body");
+function addNocturnoMode(ListOfelement) {
+    return ListOfelement.forEach((element) => {document.getElementById(element).classList.toggle('nocturno')});
+}
 
-    body.classList.toggle('nocturno');
+const listaElementosNocturnos = ["body","search-input", "result", 'nav-link']
+
+function modoNocturno(){
+    addNocturnoMode(listaElementosNocturnos);
 }
