@@ -186,7 +186,7 @@ function createFavImage(allFavorites, elemento, parent, figure, deleteAfterUnfav
         deletAFavoriteItem(elemento.src);
 
         if (deleteAfterUnfav) {
-            parent.removeChild(figure)
+            figure.parentNode.removeChild(figure)
         } else {
             iconHoverUnhover(favImgHover, favImg);
         }
