@@ -19,11 +19,10 @@ function updateCarouselGifsSrc(gifs) {
     actualizadorClasesCarousel();
 }
 
-
 function getTrendingGifos() {
     fetch(trendingUrl())
         .then(response => response.json())
-        .then(response => response.data.map(it => ({ src: it.images.downsized.url, alt: it.title })))
+        .then(response => response.data.map(createGifoObject))
         .then(response => updateCarouselGifsSrc(response));
 }
 
@@ -145,6 +144,7 @@ function trendingWords() {
 
 //----- Events ----------//
 
+console.log(document.getElementById('avanzar'));
 document.getElementById('avanzar').addEventListener('click', nextCarouselImage);
 
 document.getElementById('retroceder').addEventListener('click', backCarouselImage);

@@ -100,9 +100,11 @@ function recordUpload() {
     fetch(`http://upload.giphy.com/v1/gifs?api_key=${apiKey}`, {
             method: 'POST',
             body: form,
-        }).then((it) => it.json())
-        .then((it) => {
-            listMisFav.push(it.data.id);
+        })
+        .then((it) => it.json())
+        .then(it => fetchGifoObject(it.data.id))
+        .then(gifo => {
+            listMisFav.push(gifo);
             localStorage.setItem("mis_gifs", JSON.stringify(listMisFav));
         });
 }
@@ -111,22 +113,10 @@ function getUrlMyGif(id) {
     return `https://api.giphy.com/v1/gifs?api_key=${apiKey}&ids=${id}`;
 }
 
-function getMyCreatedGifosData(url) {
-    const misGifs = getMisFavoritesObj();
-
-    fetch(url)
+function fetchGifoObject(id) {
+    return fetch(getUrlMyGif(id))
         .then(response => response.json())
-        .then(response => response.data.map(it => ({ src: it.images.downsized.url })))
-        .then(response => misGifs.push(response));
-    console.log(misGifs);
-}
-
-function addmyFavoriteItemsObj() {
-    const misFavorites = getMisFavorites()
-
-    misFavorites.forEach((item) => {
-        return localStorage.setItem("created_gifs", JSON.stringify(getMyCreatedGifosData(getUrlMyGif(item))));
-    });
+        .then(response => createGifoObject(response.data[0]));
 }
 
 document.getElementById("comenzar").addEventListener('click', recordInit);

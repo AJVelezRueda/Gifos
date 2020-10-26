@@ -1,0 +1,115 @@
+diff --git a/crear.js b/crear.js
+index 54ac1a8..c380d0e 100644
+--- a/crear.js
++++ b/crear.js
+@@ -100,9 +100,11 @@ function recordUpload() {
+     fetch(`http://upload.giphy.com/v1/gifs?api_key=${apiKey}`, {
+             method: 'POST',
+             body: form,
+-        }).then((it) => it.json())
+-        .then((it) => {
+-            listMisFav.push(it.data.id);
++        })
++        .then((it) => it.json())
++        .then(it => fetchGifoObject(it.data.id))
++        .then(gifo => {
++            listMisFav.push(gifo);
+             localStorage.setItem("mis_gifs", JSON.stringify(listMisFav));
+         });
+ }
+@@ -111,6 +113,12 @@ function getUrlMyGif(id) {
+     return `https://api.giphy.com/v1/gifs?api_key=${apiKey}&ids=${id}`;
+ }
+ 
++function fetchGifoObject(id) {
++    return fetch(getUrlMyGif(id))
++        .then(response => response.json())
++        .then(response => createGifoObject(response.data[0]));
++}
++
+ function getMyCreatedGifosData(url) {
+     const misGifs = getMisFavoritesObj();
+ 
+@@ -132,4 +140,4 @@ function addmyFavoriteItemsObj() {
+ document.getElementById("comenzar").addEventListener('click', recordInit);
+ document.getElementById("grabar").addEventListener('click', recording);
+ document.getElementById("finalizar").addEventListener('click', recordingFinished);
+-document.getElementById("subir").addEventListener("click", recordUpload)
+\ No newline at end of file
++document.getElementById("subir").addEventListener("click", recordUpload)
+diff --git a/general_functions.js b/general_functions.js
+index 933851e..88a0b52 100644
+--- a/general_functions.js
++++ b/general_functions.js
+@@ -92,6 +92,10 @@ function showElement(elemento) {
+ }
+ 
+ 
++function createGifoObject(data) {
++    return { src: data.images.downsized.url, alt: data.title };
++}
++
+ function createGifo(elemento) {
+     const figure = document.createElement('figure');
+     const gifoImg = creatImgObject(elemento.src, 'result', elemento.alt);
+@@ -241,4 +245,4 @@ function renderGifos(gifosList, parent, deleteAfterUnfav = false) {
+ 
+         parent.appendChild(figure);
+     })
+-}
+\ No newline at end of file
++}
+diff --git a/index.html b/index.html
+index d76505f..edc9e59 100644
+--- a/index.html
++++ b/index.html
+@@ -10,8 +10,8 @@
+     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.12.0/css/all.css">
+     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;1,100&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
+-    <script src="general_functions.js" type="text/javascript" charset="utf-8" async defer></script>
+-    <script src="index.js" type="text/javascript" charset="utf-8" async defer></script>
++    <script src="general_functions.js" type="text/javascript" charset="utf-8" defer></script>
++    <script src="index.js" type="text/javascript" charset="utf-8" defer></script>
+ </head>
+ 
+ <body>
+@@ -101,4 +101,4 @@
+     </footer>
+ </body>
+ 
+-</html>
+\ No newline at end of file
++</html>
+diff --git a/index.js b/index.js
+index 789a790..272f37b 100644
+--- a/index.js
++++ b/index.js
+@@ -19,11 +19,10 @@ function updateCarouselGifsSrc(gifs) {
+     actualizadorClasesCarousel();
+ }
+ 
+-
+ function getTrendingGifos() {
+     fetch(trendingUrl())
+         .then(response => response.json())
+-        .then(response => response.data.map(it => ({ src: it.images.downsized.url, alt: it.title })))
++        .then(response => response.data.map(createGifoObject))
+         .then(response => updateCarouselGifsSrc(response));
+ }
+ 
+@@ -145,6 +144,7 @@ function trendingWords() {
+ 
+ //----- Events ----------//
+ 
++console.log(document.getElementById('avanzar'));
+ document.getElementById('avanzar').addEventListener('click', nextCarouselImage);
+ 
+ document.getElementById('retroceder').addEventListener('click', backCarouselImage);
+@@ -178,4 +178,4 @@ sugestionsList.forEach((it) => {
+ });
+ 
+ 
+-getTrendingGifos();
+\ No newline at end of file
++getTrendingGifos();

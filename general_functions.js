@@ -92,6 +92,10 @@ function showElement(elemento) {
 }
 
 
+function createGifoObject(data) {
+    return { src: data.images.downsized.url, alt: data.title };
+}
+
 function createGifo(elemento) {
     const figure = document.createElement('figure');
     const gifoImg = creatImgObject(elemento.src, 'result', elemento.alt);
