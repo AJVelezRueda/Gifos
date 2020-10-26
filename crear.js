@@ -112,11 +112,13 @@ function getUrlMyGif(id) {
 }
 
 
-function addmyFavoriteItemsObj(id) {
+function addmyFavoriteItemsObj() {
     const misFavorites = getMisFavorites()
     const misGifs = localStorage.getItem("mis_gifs_obj");
 
-    console.log(misFavorites);
+    misFavorites.forEach((item) => {
+        console.log(getUrlMyGif(item));
+    });
     //return localStorage.setItem("favorites", JSON.stringify(filteredFavorites));
 }
 
