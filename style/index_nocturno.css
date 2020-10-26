@@ -86,7 +86,7 @@ body p.nocturno {
 }
 
 .step-position.nocturno {
-    border: 1px solid white;
+    border: 2px solid white;
 }
 
 .step-position.active.nocturno {
@@ -96,6 +96,6 @@ body p.nocturno {
 
 .step-button.active.nocturno {
     background: transparent;
-    border: 1px solid white;
-    color: #222326;
+    border: 2px solid white;
+    color: white;
 }

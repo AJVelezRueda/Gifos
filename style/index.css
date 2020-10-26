@@ -500,7 +500,7 @@ a:hover {
 
 .step-button.active {
     background: transparent;
-    border: 1px solid #572EE5;
+    border: 2px solid #572EE5;
     border-radius: 21px;
     color: #572EE5;
     height: 36px;
