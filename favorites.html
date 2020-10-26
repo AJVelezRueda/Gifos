@@ -7,11 +7,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta name="author" content="Ana Julia Velez Rueda">
     <link rel="stylesheet" type="text/css" href="style/index.css"></link>
+    <link rel="stylesheet" type="text/css" href="style/index_nocturno.css"></link>
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.12.0/css/all.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;1,100&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
-    <script src="general_functions.js" type="text/javascript" charset="utf-8" defer></script>
-    <script src="favorites.js" type="text/javascript" charset="utf-8" defer></script>
+    <script src="general_functions.js" type="text/javascript" charset="utf-8" async defer></script>
+    <script src="favorites.js" type="text/javascript" charset="utf-8" async defer></script>
 </head>
 
 <body id="body">
@@ -28,7 +29,7 @@
 	            </label>
                 <ul class="main-menu menu-ul">
                     <li></li>
-                    <li><a href="#" class="opciones" id="nocturno">MODO NOCTURNO</a></li>
+                    <li><a href="#" class="opciones" id="boton-nocturno">MODO NOCTURNO</a></li>
                     <li><a href="favorites.html" class="opciones">FAVORITOS</a></li>
                     <li><a href="#" class="opciones">MIS GIFOS</a></li>
                     <li>
@@ -46,7 +47,7 @@
             <h2 class="results-title" id="results-title">Favoritos</h2>
             <div class="search-results" id="search-results">
             </div>
-            <input type="image" class="ver-mas" id="ver-mas" src="images/CTA-ver-mas.svg" />
+            <button class="step-button ver-mas active" id="ver-mas">VER MAS</button>
         </section>
     </main>
     <footer class="footer active" id="footer">

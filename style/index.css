@@ -312,8 +312,7 @@ a:hover {
 }
 
 .ver-mas {
-    padding: 4% 0;
-    margin-top: 5%;
+    margin-bottom: 25px;
 }
 
 .result {
@@ -613,6 +612,8 @@ a:hover {
         flex-direction: row;
         justify-content: space-between;
         padding: 4% 6%;
+    }
+    .crear-footer {
         margin-top: 10%;
     }
     .socialnets {
