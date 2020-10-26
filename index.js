@@ -143,8 +143,6 @@ function trendingWords() {
 
 
 //----- Events ----------//
-
-console.log(document.getElementById('avanzar'));
 document.getElementById('avanzar').addEventListener('click', nextCarouselImage);
 
 document.getElementById('retroceder').addEventListener('click', backCarouselImage);

@@ -246,3 +246,16 @@ function renderGifos(gifosList, parent, deleteAfterUnfav = false) {
         parent.appendChild(figure);
     })
 }
+
+
+function modoNocturno(){
+    const headID = document.getElementsByTagName('head')[0];
+    const link = document.createElement('link');
+    link.type = 'text/css';
+    link.rel = 'stylesheet';
+
+    headID.appendChild(link);
+
+    link.href = "style/index_nocturno.css";
+}
+
