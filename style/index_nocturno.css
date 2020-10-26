@@ -24,7 +24,6 @@ body a.nocturno:hover {
     color: #572EE5;
 }
 
-
 body p.nocturno {
     color: white;
 }
@@ -33,6 +32,10 @@ body p.nocturno {
     color: #50E3C2;
 }
 
+.trending-text.nocturno,
+.center-text.nocturno {
+    color: white;
+}
 
 .fa.nocturno,
 .fas.nocturno {
@@ -43,7 +46,6 @@ body p.nocturno {
     color: #5ED7C6;
 }
 
-
 .search-input.nocturno {
     border: #FFFFFF solid 1px;
 }
@@ -51,7 +53,6 @@ body p.nocturno {
 .searching .search-input.nocturno {
     border: transparent;
 }
-
 
 .sugerencias.nocturno {
     border: white solid 1px;
@@ -66,7 +67,7 @@ body p.nocturno {
 }
 
 .results.nocturno {
-    background: #222326 ;
+    background: #222326;
     padding: 12% 0;
 }
 

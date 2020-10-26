@@ -249,11 +249,11 @@ function renderGifos(gifosList, parent, deleteAfterUnfav = false) {
 
 
 function addNocturnoMode(ListOfelement) {
-    return ListOfelement.forEach((element) => {document.getElementById(element).classList.toggle('nocturno')});
+    return ListOfelement.forEach((element) => { document.getElementById(element).classList.toggle('nocturno') });
 }
 
-const listaElementosNocturnos = ["body","search-input", "result", 'nav-link']
+const listaElementosNocturnos = ['body', 'search-input', 'results', 'nav-link', 'trending-text', 'center-text']
 
-function modoNocturno(){
+function modoNocturno() {
     addNocturnoMode(listaElementosNocturnos);
 }
