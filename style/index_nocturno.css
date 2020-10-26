@@ -7,91 +7,91 @@
     box-sizing: border-box;
 }
 
-body {
+body.nocturno {
     color: white;
     background-color: #37383C;
 }
 
-.nav-link {
+.nav-link.nocturno {
     color: #CDD6E0;
 }
 
-a {
+a.nocturno {
     color: white;
 }
 
-a:hover {
+a.nocturno:hover {
     color: #572EE5;
 }
 
 
-p {
+p.nocturno {
     color: white;
 }
 
-.opciones:hover {
+.opciones.nocturno:hover {
     color: #50E3C2;
 }
 
 
-.fa,
-.fas {
+.fa.nocturno,
+.fas.nocturno {
     color: #CDD6E0;
 }
 
-.gifos-text {
+.gifos-text.nocturno {
     color: #5ED7C6;
 }
 
 
-.search-input {
+.search-input.nocturno {
     border: #FFFFFF solid 1px;
 }
 
-.searching .search-input {
+.searching .search-input.nocturno {
     border: transparent;
 }
 
 
-.sugerencias {
+.sugerencias.nocturno {
     border: white solid 1px;
 }
 
-.space-top {
+.space-top.nocturno {
     border-bottom: lightgray solid 1px;
 }
 
-.trending-text {
+.trending-text.nocturno {
     color: white;
 }
 
-.results {
+.results.nocturno {
     background: #222326 ;
     padding: 12% 0;
 }
 
-.gifo {
+.gifo.nocturno {
     background-color: white;
 }
 
-.camera-window {
+.camera-window.nocturno {
     border: 2px solid white;
 }
 
-.camera-container {
+.camera-container.nocturno {
     border: 2px solid #50E3C2;
 }
 
-.step-position {
+.step-position.nocturno {
     border: 1px solid white;
 }
 
-.step-position.active {
+.step-position.active.nocturno {
     background: #572EE5;
     color: white;
 }
 
-.step-button.active {
+.step-button.active.nocturno {
     background: transparent;
     border: 1px solid white;
     color: #222326;

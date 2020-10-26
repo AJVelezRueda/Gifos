@@ -249,13 +249,7 @@ function renderGifos(gifosList, parent, deleteAfterUnfav = false) {
 
 
 function modoNocturno(){
-    const headID = document.getElementsByTagName('head')[0];
-    const link = document.createElement('link');
-    link.type = 'text/css';
-    link.rel = 'stylesheet';
+    const body = document.getElementById("body");
 
-    headID.appendChild(link);
-
-    link.href = "style/index_nocturno.css";
+    body.classList.toggle('nocturno');
 }
-
