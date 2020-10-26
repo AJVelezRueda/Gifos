@@ -111,15 +111,22 @@ function getUrlMyGif(id) {
     return `https://api.giphy.com/v1/gifs?api_key=${apiKey}&ids=${id}`;
 }
 
+function getMyCreatedGifosData(url) {
+    const misGifs = getMisFavoritesObj();
+
+    fetch(url)
+        .then(response => response.json())
+        .then(response => response.data.map(it => ({ src: it.images.downsized.url })))
+        .then(response => misGifs.push(response));
+    console.log(misGifs);
+}
 
 function addmyFavoriteItemsObj() {
     const misFavorites = getMisFavorites()
-    const misGifs = localStorage.getItem("mis_gifs_obj");
 
     misFavorites.forEach((item) => {
-        console.log(getUrlMyGif(item));
+        return localStorage.setItem("created_gifs", JSON.stringify(getMyCreatedGifosData(getUrlMyGif(item))));
     });
-    //return localStorage.setItem("favorites", JSON.stringify(filteredFavorites));
 }
 
 document.getElementById("comenzar").addEventListener('click', recordInit);

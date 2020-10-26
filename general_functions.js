@@ -48,6 +48,17 @@ function getMisFavorites() {
     }
 }
 
+
+function getMisFavoritesObj() {
+    const favoritesJson = localStorage.getItem("mis_gifs_obj");
+
+    if (favoritesJson) {
+        return JSON.parse(favoritesJson);
+    } else {
+        return [];
+    }
+}
+
 function saveFavs(gifo) {
     const favList = getFavorites();
 
