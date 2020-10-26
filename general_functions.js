@@ -252,7 +252,7 @@ function addNocturnoMode(ListOfelement) {
     return ListOfelement.forEach((element) => { document.getElementById(element).classList.toggle('nocturno') });
 }
 
-const listaElementosNocturnos = ['body', 'search-input', 'results', 'nav-link', 'trending-text', 'center-text']
+const listaElementosNocturnos = ['body', 'search-input', 'results', 'nav-link', 'trending-text', 'center-text', 'compartir-text', 'footer-text']
 
 function modoNocturno() {
     addNocturnoMode(listaElementosNocturnos);

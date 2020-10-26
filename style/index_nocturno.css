@@ -16,24 +16,22 @@ body.nocturno {
     color: #CDD6E0;
 }
 
-body a.nocturno {
-    color: white;
+.opciones.nocturno {
+    color: #50E3C2;
 }
 
-body a.nocturno:hover {
-    color: #572EE5;
+a.nocturno:hover {
+    color: white;
 }
 
 body p.nocturno {
     color: white;
 }
 
-.opciones.nocturno:hover {
-    color: #50E3C2;
-}
-
 .trending-text.nocturno,
-.center-text.nocturno {
+.center-text.nocturno,
+.footer-text.nocturno,
+.compartir-text.nocturno {
     color: white;
 }
 
@@ -68,7 +66,7 @@ body p.nocturno {
 
 .results.nocturno {
     background: #222326;
-    padding: 12% 0;
+    padding: 12% 8%;
 }
 
 .gifo.nocturno {
