@@ -182,4 +182,4 @@ getTrendingGifos();
 
 document.getElementById('boton-nocturno').addEventListener('click', () => modoNocturno(listaElementosNocturnos));
 
-NocturnoModeOn(listaElementosNocturnos);
+nocturnoModeOn(listaElementosNocturnos);

@@ -265,7 +265,7 @@ function addNocturnoMode(ListOfelement) {
     return ListOfelement.forEach((element) => { document.getElementById(element).classList.toggle('nocturno') });
 }
 
-function NocturnoModeOn(ListOfelement) {
+function nocturnoModeOn(ListOfelement) {
     if (localStorage.getItem('dark_mode') === 'true') {
         ListOfelement.forEach((element) => { document.getElementById(element).classList.add('nocturno') });
     }
@@ -274,9 +274,9 @@ function NocturnoModeOn(ListOfelement) {
 function modoNocturno(listaElementosNocturnos) {
     const body = document.getElementById('body')
     if (body.classList.contains('nocturno')) {
-        localStorage.dark_mode = true;
+        localStorage.setItem('dark_mode') === 'true';
     } else {
-        localStorage.dark_mode = false;
+        localStorage.setItem('dark_mode') === 'false';
     }
     addNocturnoMode(listaElementosNocturnos);
 }
