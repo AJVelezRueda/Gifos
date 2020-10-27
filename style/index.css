@@ -663,6 +663,7 @@ a:hover {
     .overlay-icons {
         padding: 0 1px;
         margin-top: -1%;
+        margin-left: 5px;
     }
     .maxi-icons {
         margin-top: -2%;

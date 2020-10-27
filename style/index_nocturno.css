@@ -64,7 +64,8 @@ body p.nocturno {
     border-bottom: lightgray solid 1px;
 }
 
-.trending-text.nocturno {
+.trending-text.nocturno,
+.max-tex.nocturno {
     color: white;
 }
 

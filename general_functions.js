@@ -138,6 +138,8 @@ function maximizingDiv(elemento) {
     div.className = "caption-maxdiv";
     closeImg.src = "images/close.svg";
     closeImg.className = "close-img";
+    figureTitle.className = 'max-tex';
+    figureTitle.id = 'max-tex'
     figureTitle.innerText = elemento.alt;
 
     closeImg.addEventListener('click', () => {
