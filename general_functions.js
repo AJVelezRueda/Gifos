@@ -265,6 +265,11 @@ function addNocturnoMode(ListOfelement) {
     return ListOfelement.forEach((element) => { document.getElementById(element).classList.toggle('nocturno') });
 }
 
+function NocturnoModeOn(ListOfelement) {
+    if (localStorage.getItem('dark_mode') === 'true') {
+        ListOfelement.forEach((element) => { document.getElementById(element).classList.add('nocturno') });
+    }
+}
 
 function modoNocturno(listaElementosNocturnos) {
     const body = document.getElementById('body')
@@ -275,7 +280,6 @@ function modoNocturno(listaElementosNocturnos) {
     }
     addNocturnoMode(listaElementosNocturnos);
 }
-
 
 async function downloadBlobAsFile(url) {
     const a = document.createElement('a');

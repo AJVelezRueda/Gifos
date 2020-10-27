@@ -181,3 +181,5 @@ sugestionsList.forEach((it) => {
 getTrendingGifos();
 
 document.getElementById('boton-nocturno').addEventListener('click', () => modoNocturno(listaElementosNocturnos));
+
+NocturnoModeOn(listaElementosNocturnos);
