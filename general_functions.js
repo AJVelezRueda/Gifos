@@ -256,3 +256,14 @@ function addNocturnoMode(ListOfelement) {
 function modoNocturno(listaElementosNocturnos) {
     addNocturnoMode(listaElementosNocturnos);
 }
+
+
+async function downloadBlobAsFile(url) {
+    const a = document.createElement('a');
+    const response = await fetch(url);
+    const file = await response.blob();
+    a.download = 'myGif';
+    a.href = window.URL.createObjectURL(file);
+    a.dataset.downloadurl = ['application/octet-stream', a.download, a.href].join(':');
+    a.click();
+}
