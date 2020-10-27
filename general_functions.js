@@ -59,6 +59,17 @@ function getMisFavoritesObj() {
     }
 }
 
+
+function getModoNocturnoStatus() {
+    const modoNocturnoJson = localStorage.getItem("dark_mode");
+
+    if (modoNocturnoJson) {
+        return JSON.parse(modoNocturnoJson);
+    } else {
+        return ['False'];
+    }
+}
+
 function saveFavs(gifo) {
     const favList = getFavorites();
 
@@ -256,6 +267,12 @@ function addNocturnoMode(ListOfelement) {
 
 
 function modoNocturno(listaElementosNocturnos) {
+    const body = document.getElementById('body')
+    if (body.classList.contains('nocturno')) {
+        localStorage.dark_mode = true;
+    } else {
+        localStorage.dark_mode = false;
+    }
     addNocturnoMode(listaElementosNocturnos);
 }
 
