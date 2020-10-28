@@ -357,6 +357,11 @@ a:hover {
     justify-content: center;
     display: flex;
     flex-direction: column;
+    display: none;
+}
+
+.mis-favoritos.active {
+    display: block;
 }
 
 .icon-heart-fav {

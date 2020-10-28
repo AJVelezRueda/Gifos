@@ -144,6 +144,18 @@ function trendingWords() {
 
 
 
+//------- Mis Fav ----------//
+
+function getingMyCreatedGifs() {
+    const listaMisGifs = JSON.parse(localStorage.getItem('mis_gifs'));
+
+    listaMisGifs.forEach((item) => {
+        console.log(item.src);
+    })
+
+}
+
+
 //----- Events ----------//
 document.getElementById('avanzar').addEventListener('click', nextCarouselImage);
 
