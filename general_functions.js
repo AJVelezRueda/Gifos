@@ -271,16 +271,6 @@ function nocturnoModeOn(ListOfelement) {
     }
 }
 
-function modoNocturno(listaElementosNocturnos) {
-    const body = document.getElementById('body')
-    if (body.classList.contains('nocturno')) {
-        localStorage.setItem('dark_mode') === 'true';
-    } else {
-        localStorage.setItem('dark_mode') === 'false';
-    }
-    addNocturnoMode(listaElementosNocturnos);
-}
-
 async function downloadBlobAsFile(url) {
     const a = document.createElement('a');
     const response = await fetch(url);
