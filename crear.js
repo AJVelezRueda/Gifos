@@ -93,6 +93,28 @@ function recordingFinished() {
     subir.classList.add('active');
 }
 
+function recordingUpload() {
+    const subir = document.getElementById('subir');
+    const repetir = document.getElementById('repetir-captura');
+    const buttonPaso2 = document.getElementById('button-paso2');
+    const buttonPaso3 = document.getElementById('button-paso3');
+
+    subir.addEventListener('click', () => {
+        subir.classList.remove('active');
+        repetir.classList.remove('active');
+        buttonPaso2.classList.remove('active');
+        buttonPaso3.classList.add('active');
+    });
+
+    repetir.addEventListener('click', () => {
+        subir.classList.remove('active');
+        repetir.classList.remove('active');
+        buttonPaso2.classList.remove('active');
+        buttonPaso3.classList.add('active');
+    });
+
+}
+
 function recordUpload() {
     const form = new FormData();
 
@@ -121,8 +143,8 @@ function fetchGifoObject(id) {
 }
 
 function timer() {
-    var sec = 30;
-    var timer = setInterval(function() {
+    let sec = 60;
+    let timer = setInterval(function() {
         document.getElementById('recording-time').innerHTML = '00:' + sec;
         sec--;
         if (sec < 0) {
@@ -132,11 +154,13 @@ function timer() {
 }
 
 
-
 document.getElementById("comenzar").addEventListener('click', recordInit);
 document.getElementById("grabar").addEventListener('click', recording);
 document.getElementById("finalizar").addEventListener('click', recordingFinished);
-document.getElementById("subir").addEventListener("click", recordUpload)
+document.getElementById("subir").addEventListener("click", () => {
+    recordUpload();
+    recordingUpload();
+});
 
 document.getElementById('boton-nocturno').addEventListener('click', () => addNocturnoMode(listaElementosNocturnos));
 nocturnoModeOn(listaElementosNocturnos);
