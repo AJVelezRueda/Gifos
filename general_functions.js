@@ -262,6 +262,11 @@ function renderGifos(gifosList, parent, deleteAfterUnfav = false) {
 
 
 function addNocturnoMode(ListOfelement) {
+    if (localStorage.getItem('dark_mode') === 'true'){
+        localStorage.setItem('dark_mode','false');
+    }else{
+        localStorage.setItem('dark_mode','true');
+    };
     return ListOfelement.forEach((element) => { document.getElementById(element).classList.toggle('nocturno') });
 }
 
