@@ -5,3 +5,4 @@ const listaElementosNocturnos = ['body', 'ver-mas', 'compartir-text', 'footer-te
 renderGifos(favorites, document.getElementById("search-results"), true);
 
 document.getElementById('boton-nocturno').addEventListener('click', () => addNocturnoMode(listaElementosNocturnos));
+nocturnoModeOn(listaElementosNocturnos);
