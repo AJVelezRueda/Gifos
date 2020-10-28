@@ -2,6 +2,7 @@
 let recorder = null;
 const apiKey = 'Nc8u10QS9qz9vLVNpc7W08yiQVxITRYJ';
 const listMisFav = getMisFavorites();
+const listaElementosNocturnos = ['body','text-camera','violet-line','camera-window','button-paso1','button-paso2','button-paso3','comenzar','compartir-text','footer-text']
 
 
 function requestVideo() {
@@ -123,3 +124,6 @@ document.getElementById("comenzar").addEventListener('click', recordInit);
 document.getElementById("grabar").addEventListener('click', recording);
 document.getElementById("finalizar").addEventListener('click', recordingFinished);
 document.getElementById("subir").addEventListener("click", recordUpload)
+
+document.getElementById('boton-nocturno').addEventListener('click', () => addNocturnoMode(listaElementosNocturnos));
+nocturnoModeOn(listaElementosNocturnos);

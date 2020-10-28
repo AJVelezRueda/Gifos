@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta name="author" content="Ana Julia Velez Rueda">
     <link rel="stylesheet" type="text/css" href="style/index.css"></link>
+    <link rel="stylesheet" type="text/css" href="style/index_nocturno.css"></link>
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.12.0/css/all.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;1,100&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
@@ -30,7 +31,7 @@
                     </label>
                 <ul class="main-menu menu-ul">
                     <li></li>
-                    <li><a href="#" class="opciones" id="nocturno">MODO NOCTURNO</a></li>
+                    <li><a href="#" class="opciones" id="boton-nocturno">MODO NOCTURNO</a></li>
                     <li><a href="favorites.html" class="opciones">FAVORITOS</a></li>
                     <li><a href="#" class="opciones">MIS GIFOS</a></li>
                     <li>
@@ -44,11 +45,11 @@
         <section class="camara-viewer">
             <img src="images/camara.svg" alt="camara">
             <img src="images/element-luz-camara.svg" class="element-luz-camara" alt="element-luz-camara">
-            <div class="camera-window">
+            <div class="camera-window" id="camera-window">
                 <div class="camera-container">
                     <div class="text-container active" id="text-container">
                         <h2 class="camera-container-title">Aquí podrás <br>crear tus propios <span class="gifos-text">GIFOS<span></h2>
-    					<p id="text-camera">¡Crea tu GIFO en sólo 3 pasos! <br>(sólo necesitas una cámara para grabar un video)</p>
+    					<p id="text-camera" class="text-camera">¡Crea tu GIFO en sólo 3 pasos! <br>(sólo necesitas una cámara para grabar un video)</p>
     				</div>
     				<video src="#" class="video" id="video"></video>
     			</div>
@@ -66,7 +67,7 @@
     		<figure class="element-cinta">
     			<img src="images/pelicula.svg" alt="element-cinta">
     		</figure>
-    		<div class="violet-line">
+    		<div class="violet-line" id="violet-line">
     			<button class="step-button active" id="comenzar">COMENZAR</button>
     			<button class="step-button" id="grabar">GRABAR</button>
     			<button class="step-button" id="finalizar">FINALIZAR</button>

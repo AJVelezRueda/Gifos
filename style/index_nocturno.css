@@ -64,8 +64,33 @@ body p.nocturno {
     border-bottom: lightgray solid 1px;
 }
 
-.trending-text.nocturno,
-.max-tex.nocturno {
+.text-camera.nocturno {
+    color: white;
+}
+
+.violet-line.nocturno {
+    background-color: white;
+}
+
+.camera-window {
+    color: white;
+}
+
+.step-position.nocturno {
+    border: 1px solid white;
+}
+
+
+.step-position.active.nocturno {
+    background-color: #5ED7C6;
+    color: white;
+}
+.step-button.active.nocturno{
+    border: 1px solid white;
+}
+
+
+.trending-text.nocturno {
     color: white;
 }
 
