@@ -291,7 +291,7 @@ a:hover {
 .search-results {
     display: flex;
     flex-wrap: wrap;
-    padding: 0 7%;
+    padding: 0 1%;
     justify-content: space-around;
 }
 
