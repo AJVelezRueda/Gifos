@@ -98,21 +98,17 @@ function recordingUpload() {
     const repetir = document.getElementById('repetir-captura');
     const buttonPaso2 = document.getElementById('button-paso2');
     const buttonPaso3 = document.getElementById('button-paso3');
+    const cameraContainer = document.getElementById('camera-container');
+    const video = document.getElementById('video')
 
     subir.addEventListener('click', () => {
         subir.classList.remove('active');
         repetir.classList.remove('active');
         buttonPaso2.classList.remove('active');
         buttonPaso3.classList.add('active');
+        cameraContainer.classList.add('done');
+        video.classList.add('done');
     });
-
-    repetir.addEventListener('click', () => {
-        subir.classList.remove('active');
-        repetir.classList.remove('active');
-        buttonPaso2.classList.remove('active');
-        buttonPaso3.classList.add('active');
-    });
-
 }
 
 function recordUpload() {
