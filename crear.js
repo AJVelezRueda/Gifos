@@ -2,7 +2,7 @@
 let recorder = null;
 const apiKey = 'Nc8u10QS9qz9vLVNpc7W08yiQVxITRYJ';
 const listMisFav = getMisFavorites();
-const listaElementosNocturnos = ['body','text-camera','violet-line','camera-window','button-paso1','button-paso2','button-paso3','comenzar','compartir-text','footer-text']
+const listaElementosNocturnos = ['body', 'text-camera', 'violet-line', 'camera-window', 'button-paso1', 'button-paso2', 'button-paso3', 'comenzar', 'compartir-text', 'footer-text']
 
 
 function requestVideo() {
@@ -32,7 +32,6 @@ function startRecording(stream) {
 function stopRecording() {
     recorder
         .stopRecording();
-    console.log(recorder);
 }
 
 
@@ -74,6 +73,7 @@ function recording() {
     finalizarButton.classList.add('active');
     recordingTimeText.classList.add('active');
     startRecording(video.srcObject);
+    timer();
 }
 
 function recordingFinished() {
@@ -119,6 +119,19 @@ function fetchGifoObject(id) {
         .then(response => response.json())
         .then(response => createGifoObject(response.data[0]));
 }
+
+function timer() {
+    var sec = 30;
+    var timer = setInterval(function() {
+        document.getElementById('recording-time').innerHTML = '00:' + sec;
+        sec--;
+        if (sec < 0) {
+            clearInterval(timer);
+        }
+    }, 1000);
+}
+
+
 
 document.getElementById("comenzar").addEventListener('click', recordInit);
 document.getElementById("grabar").addEventListener('click', recording);

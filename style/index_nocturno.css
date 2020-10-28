@@ -12,6 +12,14 @@ body.nocturno {
     background-color: #37383C;
 }
 
+body.nocturno a {
+    color: white;
+}
+
+body.nocturno p {
+    color: white;
+}
+
 .nav-link.nocturno {
     color: #CDD6E0;
 }
@@ -72,23 +80,18 @@ body p.nocturno {
     background-color: white;
 }
 
-.camera-window {
-    color: white;
-}
-
 .step-position.nocturno {
     border: 1px solid white;
 }
-
 
 .step-position.active.nocturno {
     background-color: #5ED7C6;
     color: white;
 }
-.step-button.active.nocturno{
+
+.step-button.active.nocturno {
     border: 1px solid white;
 }
-
 
 .trending-text.nocturno {
     color: white;
