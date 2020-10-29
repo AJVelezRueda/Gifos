@@ -152,12 +152,23 @@ function renderMyCreatedGifs() {
     renderGifos(listaMisGifs, document.getElementById("mis-gifos"), true);
 }
 
-function showingMyCreatedGifs() {
+function showMyCreatedGifs() {
     const misGifosSection = document.getElementById('mis-gifos-section');
     const buscadorSection = document.getElementById('buscador-section');
     const trendingSection = document.getElementById('trending');
 
     misGifosSection.classList.add('active');
+    buscadorSection.classList.remove('active');
+    trendingSection.classList.remove('active');
+    renderMyCreatedGifs();
+}
+
+function locationSensing() {
+    const actualLocation = window.location.href;
+
+    if (actualLocation.includes('#')) {
+        showMyCreatedGifs();
+    }
 }
 
 
@@ -198,5 +209,6 @@ sugestionsList.forEach((it) => {
 getTrendingGifos();
 
 document.getElementById('boton-nocturno').addEventListener('click', () => addNocturnoMode(listaElementosNocturnos));
-document.getElementById('mis-gifos-button').addEventListener('click', () => showingMyCreatedGifs());
+document.getElementById('mis-gifos-button').addEventListener('click', () => showMyCreatedGifs());
 nocturnoModeOn(listaElementosNocturnos);
+locationSensing();
