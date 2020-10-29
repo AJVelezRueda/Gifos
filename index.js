@@ -146,13 +146,18 @@ function trendingWords() {
 
 //------- Mis Fav ----------//
 
-function getingMyCreatedGifs() {
+function renderMyCreatedGifs() {
     const listaMisGifs = JSON.parse(localStorage.getItem('mis_gifs'));
 
-    listaMisGifs.forEach((item) => {
-        console.log(item.src);
-    })
+    renderGifos(listaMisGifs, document.getElementById("mis-gifos"), true);
+}
 
+function showingMyCreatedGifs() {
+    const misGifosSection = document.getElementById('mis-gifos-section');
+    const buscadorSection = document.getElementById('buscador-section');
+    const trendingSection = document.getElementById('trending');
+
+    misGifosSection.classList.add('active');
 }
 
 
@@ -193,4 +198,5 @@ sugestionsList.forEach((it) => {
 getTrendingGifos();
 
 document.getElementById('boton-nocturno').addEventListener('click', () => addNocturnoMode(listaElementosNocturnos));
+document.getElementById('mis-gifos-button').addEventListener('click', () => showingMyCreatedGifs());
 nocturnoModeOn(listaElementosNocturnos);
