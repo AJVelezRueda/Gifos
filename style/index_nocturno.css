@@ -20,6 +20,10 @@ body.nocturno p {
     color: white;
 }
 
+body.nocturno .main-menu {
+    background-color: black;
+}
+
 .nav-link.nocturno {
     color: #CDD6E0;
 }
