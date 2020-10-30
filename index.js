@@ -142,7 +142,11 @@ function trendingWords() {
     return `https://api.giphy.com/v1/trending/searches?api_key=${apiKey}&limit=5`;
 }
 
-
+function getTrendingWords() {
+    fetch(trendingWords())
+        .then(response => response.json())
+        .then(response => response.data.map(it => console.log(it)))
+}
 
 //------- Mis Fav ----------//
 
