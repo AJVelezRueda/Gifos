@@ -143,9 +143,23 @@ function trendingWords() {
 }
 
 function getTrendingWords() {
+    const trendingDiv = document.getElementById('trending')
+    const listaPalabras = document.createElement('ul')
+
+    listaPalabras.className = 'trending-text'
+    listaPalabras.id = 'trending-text'
+
     fetch(trendingWords())
         .then(response => response.json())
-        .then(response => response.data.map(it => console.log(it)))
+        .then(response => response.data.slice(0, 4).map(it => {
+            const liobj = document.createElement('li');
+            liobj.className = "trending-text";
+            liobj.id = it;
+            liobj.innerText = it;
+
+            listaPalabras.appendChild(liobj);
+            trendingDiv.appendChild(listaPalabras);
+        }))
 }
 
 //------- Mis Fav ----------//
@@ -216,3 +230,4 @@ document.getElementById('boton-nocturno').addEventListener('click', () => addNoc
 document.getElementById('mis-gifos-button').addEventListener('click', () => showMyCreatedGifs());
 nocturnoModeOn(listaElementosNocturnos);
 locationSensing();
+getTrendingWords();
