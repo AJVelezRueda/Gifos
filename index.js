@@ -142,6 +142,14 @@ function trendingWords() {
     return `https://api.giphy.com/v1/trending/searches?api_key=${apiKey}&limit=5`;
 }
 
+
+function copyTrendingWordToSearcher(id) {
+    const element = document.getElementById(id)
+
+    textToFind = element.innerText
+    getingSearchResults(textToFind);
+}
+
 function getTrendingWords() {
     const trendingDiv = document.getElementById('trending')
     const listaPalabras = document.createElement('ul')
@@ -157,20 +165,24 @@ function getTrendingWords() {
                 const liobj = document.createElement('li');
 
                 liobj.className = "trending-text";
-                liobj.id = it + index;
+                liobj.id = 'Trending-Word' + index;
                 liobj.innerText = it + ', ';
 
                 listaPalabras.appendChild(liobj);
                 trendingDiv.appendChild(listaPalabras);
+
+                liobj.addEventListener('click', () => copyTrendingWordToSearcher(liobj.id.replace(/,/g, "")));
+
             } else {
                 const liobj = document.createElement('li');
 
                 liobj.className = "trending-text";
-                liobj.id = it + index;
+                liobj.id = 'Trending-Word' + index;
                 liobj.innerText = it;
 
                 listaPalabras.appendChild(liobj);
                 trendingDiv.appendChild(listaPalabras);
+                liobj.addEventListener('click', () => copyTrendingWordToSearcher(liobj.id));
             };
         }))
 }
