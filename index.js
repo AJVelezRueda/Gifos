@@ -12,7 +12,7 @@ const listaElementosNocturnos = ['body', 'search-input', 'results', 'nav-link', 
 //---------- Carousel --------------//
 
 function trendingUrl() {
-    return `https://api.giphy.com/v1/gifs/trending?api_key=${apiKey}&limit=9`;
+    return `https://api.giphy.com/v1/gifs/trending?api_key=${apiKey}&limit=12`;
 }
 
 function updateCarouselGifsSrc(gifs) {
@@ -151,14 +151,27 @@ function getTrendingWords() {
 
     fetch(trendingWords())
         .then(response => response.json())
-        .then(response => response.data.slice(0, 4).map(it => {
-            const liobj = document.createElement('li');
-            liobj.className = "trending-text";
-            liobj.id = it;
-            liobj.innerText = it;
+        .then(response => response.data.slice(0, 4).map((it, index) => {
 
-            listaPalabras.appendChild(liobj);
-            trendingDiv.appendChild(listaPalabras);
+            if (index !== 3) {
+                const liobj = document.createElement('li');
+
+                liobj.className = "trending-text";
+                liobj.id = it + index;
+                liobj.innerText = it + ', ';
+
+                listaPalabras.appendChild(liobj);
+                trendingDiv.appendChild(listaPalabras);
+            } else {
+                const liobj = document.createElement('li');
+
+                liobj.className = "trending-text";
+                liobj.id = it + index;
+                liobj.innerText = it;
+
+                listaPalabras.appendChild(liobj);
+                trendingDiv.appendChild(listaPalabras);
+            };
         }))
 }
 
