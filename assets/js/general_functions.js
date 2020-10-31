@@ -207,10 +207,11 @@ function createFavImage(allFavorites, elemento, parent, figure, deleteAfterUnfav
 
 }
 
-function createDownloadImage(parent) {
+function createDownloadImage(parent, id) {
     const downloadImg = creatImgObject("assets/images/icon-download.svg", "download-button overlay-icons", "download-button");
     const downloadImgHover = creatImgObject("assets/images/icon-download-hover.svg", "download-button overlay-icons", "download-button-hover");
 
+    downloadImg.id = id + '-downgload';
     iconsUndisplay(downloadImgHover);
 
     parent.appendChild(downloadImg);
@@ -231,19 +232,17 @@ function renderGifos(gifosList, parent, deleteAfterUnfav = false) {
 
     gifosList.forEach((elemento) => {
         const figure = createGifo(elemento);
-
         const overlayDiv = createOverlayDiv();
         createFavImage(allFavorites, elemento, overlayDiv, figure, deleteAfterUnfav);
         const maxImg = creatImgObject("assets/images/icon-max-normal.svg", "max-button overlay-icons", "icon-max");
         const maxImgHover = creatImgObject("assets/images/icon-max-hover.svg", "max-button overlay-icons", "icon-max-hover");
-        createDownloadImage(overlayDiv);
+        createDownloadImage(overlayDiv, elemento.alt);
 
         iconsUndisplay(maxImgHover);
 
         overlayDiv.appendChild(maxImg);
         overlayDiv.appendChild(maxImgHover);
         figure.appendChild(overlayDiv);
-
 
         figure.addEventListener("mouseover", () => {
             showElement(overlayDiv);
@@ -257,6 +256,8 @@ function renderGifos(gifosList, parent, deleteAfterUnfav = false) {
         });
 
         parent.appendChild(figure);
+
+        document.getElementById(elemento.alt + '-downgload').addEventListener('click', () => downloadBlobAsFile(elemento.src));
     })
 }
 
