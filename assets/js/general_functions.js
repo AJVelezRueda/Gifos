@@ -147,7 +147,7 @@ function maximizingDiv(elemento) {
     imgResult.classList.add('max');
     root.className = "max-root";
     div.className = "caption-maxdiv";
-    closeImg.src = "images/close.svg";
+    closeImg.src = "assets/images/close.svg";
     closeImg.className = "close-img";
     figureTitle.className = 'max-tex';
     figureTitle.id = 'max-tex'
@@ -177,8 +177,8 @@ function maximizingDiv(elemento) {
 
 
 function createFavImage(allFavorites, elemento, parent, figure, deleteAfterUnfav) {
-    const favImg = creatImgObject("images/icon-fav.svg", 'fav-icon overlay-icons', "fav");
-    const favImgHover = creatImgObject("images/icon-fav-hover.svg", "fav-icon overlay-icons", "fav-hover");
+    const favImg = creatImgObject("assets/images/icon-fav.svg", 'fav-icon overlay-icons', "fav");
+    const favImgHover = creatImgObject("assets/images/icon-fav-hover.svg", "fav-icon overlay-icons", "fav-hover");
 
     if (isFavortite(allFavorites, elemento.src)) {
         iconsUndisplay(favImg);
@@ -208,8 +208,8 @@ function createFavImage(allFavorites, elemento, parent, figure, deleteAfterUnfav
 }
 
 function createDownloadImage(parent) {
-    const downloadImg = creatImgObject("images/icon-download.svg", "download-button overlay-icons", "download-button");
-    const downloadImgHover = creatImgObject("images/icon-download-hover.svg", "download-button overlay-icons", "download-button-hover");
+    const downloadImg = creatImgObject("assets/images/icon-download.svg", "download-button overlay-icons", "download-button");
+    const downloadImgHover = creatImgObject("assets/images/icon-download-hover.svg", "download-button overlay-icons", "download-button-hover");
 
     iconsUndisplay(downloadImgHover);
 
@@ -234,8 +234,8 @@ function renderGifos(gifosList, parent, deleteAfterUnfav = false) {
 
         const overlayDiv = createOverlayDiv();
         createFavImage(allFavorites, elemento, overlayDiv, figure, deleteAfterUnfav);
-        const maxImg = creatImgObject("images/icon-max-normal.svg", "max-button overlay-icons", "icon-max");
-        const maxImgHover = creatImgObject("images/icon-max-hover.svg", "max-button overlay-icons", "icon-max-hover");
+        const maxImg = creatImgObject("assets/images/icon-max-normal.svg", "max-button overlay-icons", "icon-max");
+        const maxImgHover = creatImgObject("assets/images/icon-max-hover.svg", "max-button overlay-icons", "icon-max-hover");
         createDownloadImage(overlayDiv);
 
         iconsUndisplay(maxImgHover);
@@ -262,10 +262,10 @@ function renderGifos(gifosList, parent, deleteAfterUnfav = false) {
 
 
 function addNocturnoMode(ListOfelement) {
-    if (localStorage.getItem('dark_mode') === 'true'){
-        localStorage.setItem('dark_mode','false');
-    }else{
-        localStorage.setItem('dark_mode','true');
+    if (localStorage.getItem('dark_mode') === 'true') {
+        localStorage.setItem('dark_mode', 'false');
+    } else {
+        localStorage.setItem('dark_mode', 'true');
     };
     return ListOfelement.forEach((element) => { document.getElementById(element).classList.toggle('nocturno') });
 }
