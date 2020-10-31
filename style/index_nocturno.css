@@ -21,7 +21,16 @@ body.nocturno p {
 }
 
 body.nocturno .main-menu {
-    background-color: black;
+    background-color: #37383C;
+}
+
+body.nocturno .trending-text {
+    color: white;
+}
+
+body.nocturno .step-button.active {
+    color: white;
+    border: 2px solid white;
 }
 
 .nav-link.nocturno {

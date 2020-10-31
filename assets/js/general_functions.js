@@ -273,7 +273,9 @@ function addNocturnoMode(ListOfelement) {
 
 function nocturnoModeOn(ListOfelement) {
     if (localStorage.getItem('dark_mode') === 'true') {
-        ListOfelement.forEach((element) => { document.getElementById(element).classList.add('nocturno') });
+        ListOfelement.forEach((element) => {
+            document.getElementById(element).classList.add('nocturno');
+        });
     }
 }
 

@@ -6,7 +6,7 @@ const searchMore = document.getElementById("ver-mas");
 const searchResultGroup = document.getElementById('search-result-groups');
 const sugestionsList = ['sugerencia1', 'sugerencia2', 'sugerencia3'].map((it) => document.getElementById(it));
 const apiKey = 'Nc8u10QS9qz9vLVNpc7W08yiQVxITRYJ';
-const listaElementosNocturnos = ['body', 'search-input', 'results', 'nav-link', 'trending-text', 'center-text', 'compartir-text', 'footer-text']
+const listaElementosNocturnos = ['body', 'search-input', 'results', 'nav-link', 'center-text', 'compartir-text', 'footer-text']
 
 
 //---------- Carousel --------------//
