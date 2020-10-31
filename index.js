@@ -12,7 +12,7 @@ const listaElementosNocturnos = ['body', 'search-input', 'results', 'nav-link', 
 //---------- Carousel --------------//
 
 function trendingUrl() {
-    return `https://api.giphy.com/v1/gifs/trending?api_key=${apiKey}&limit=25`;
+    return `https://api.giphy.com/v1/gifs/trending?api_key=${apiKey}&limit=9`;
 }
 
 function updateCarouselGifsSrc(gifs) {
