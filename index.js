@@ -105,7 +105,7 @@ function searchMoreResultsUrl(query) {
 
 function activateResultsSection(text) {
     gifosResults.classList.add('active');
-    searchTitle.innerText = text.toUpperCase();
+    searchTitle.innerText = text[0].toUpperCase() + text.slice(1, text.lenght);
 }
 
 function createResultsDiv() {
@@ -147,7 +147,12 @@ function copyTrendingWordToSearcher(id) {
     const element = document.getElementById(id)
 
     textToFind = element.innerText
-    getingSearchResults(textToFind);
+
+    if (textToFind.includes(',')) {
+        getingSearchResults(textToFind.replace(',', ''));
+    } else {
+        getingSearchResults(textToFind);
+    }
 }
 
 function getTrendingWords() {
@@ -171,7 +176,7 @@ function getTrendingWords() {
                 listaPalabras.appendChild(liobj);
                 trendingDiv.appendChild(listaPalabras);
 
-                liobj.addEventListener('click', () => copyTrendingWordToSearcher(liobj.id.replace(/,/g, "")));
+                liobj.addEventListener('click', () => copyTrendingWordToSearcher(liobj.id));
 
             } else {
                 const liobj = document.createElement('li');
