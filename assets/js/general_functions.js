@@ -167,7 +167,6 @@ function maximizingDiv(elemento) {
     const favIcon = div.childNodes[1];
     const downloadIcon = div.childNodes[3];
 
-    console.log(downloadIcon)
     favIcon.classList.add('maxi-icons');
     downloadIcon.classList.add('maxi-icons');
     root.appendChild(div);
