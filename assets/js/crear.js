@@ -3,7 +3,10 @@ let recorder = null;
 const apiKey = 'Nc8u10QS9qz9vLVNpc7W08yiQVxITRYJ';
 const listMisFav = getMisFavorites();
 const listaElementosNocturnos = ['body', 'text-camera', 'violet-line', 'camera-window', 'button-paso1', 'button-paso2', 'button-paso3', 'comenzar', 'compartir-text', 'footer-text']
-
+const buttonPaso2 = document.getElementById('button-paso2');
+const buttonPaso3 = document.getElementById('button-paso3');
+const subir = document.getElementById('subir');
+let timer = null;
 
 function requestVideo() {
     const video = document.getElementById("video");
@@ -50,7 +53,6 @@ function recordInit() {
 
 
 function recordRequest() {
-    const buttonPaso2 = document.getElementById('button-paso2');
     const buttonPaso1 = document.getElementById('button-paso1');
     const grabarButton = document.getElementById('grabar');
     const video = document.getElementById("video");
@@ -69,19 +71,19 @@ function recording() {
     const recordingTimeText = document.getElementById('recording-time')
     const video = document.getElementById("video");
 
+    buttonPaso3.classList.remove('active');
+    buttonPaso2.classList.add('active');
+    subir.classList.remove('active');
     grabarButton.classList.remove('active');
     finalizarButton.classList.add('active');
     recordingTimeText.classList.add('active');
     startRecording(video.srcObject);
-    timer();
+    startTimer();
 }
 
 function recordingFinished() {
     const recordingTimeText = document.getElementById('recording-time');
     const repetirText = document.getElementById('repetir-captura');
-    const buttonPaso2 = document.getElementById('button-paso2');
-    const buttonPaso3 = document.getElementById('button-paso3');
-    const subir = document.getElementById('subir')
     const finalizar = document.getElementById("finalizar")
 
     recordingTimeText.classList.remove('active');
@@ -91,13 +93,11 @@ function recordingFinished() {
     stopRecording();
     finalizar.classList.remove('active');
     subir.classList.add('active');
+    stopTimer();
 }
 
 function recordingUpload() {
-    const subir = document.getElementById('subir');
     const repetir = document.getElementById('repetir-captura');
-    const buttonPaso2 = document.getElementById('button-paso2');
-    const buttonPaso3 = document.getElementById('button-paso3');
     const cameraContainer = document.getElementById('camera-container');
     const video = document.getElementById('video')
 
@@ -138,13 +138,17 @@ function fetchGifoObject(id) {
         .then(response => createGifoObject(response.data[0]));
 }
 
-function timer() {
+function stopTimer() {
+    clearInterval(timer);
+}
+
+function startTimer() {
     let sec = 60;
-    let timer = setInterval(function() {
+    timer = setInterval(function() {
         document.getElementById('recording-time').innerHTML = '00:' + sec;
         sec--;
         if (sec < 0) {
-            clearInterval(timer);
+            stopTimer();
         }
     }, 1000);
 }
@@ -159,4 +163,5 @@ document.getElementById("subir").addEventListener("click", () => {
 });
 
 document.getElementById('boton-nocturno').addEventListener('click', () => addNocturnoMode(listaElementosNocturnos));
+document.getElementById('repetir-captura').addEventListener('click', () => recording());
 nocturnoModeOn(listaElementosNocturnos);
