@@ -336,7 +336,7 @@ a:hover {
 }
 
 .overlay {
-    margin-left: 20%;
+    margin-left: 15%;
     margin-top: -27%;
     position: absolute;
     z-index: 99;
@@ -566,7 +566,7 @@ a:hover {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 5% 15%;
+    padding: 20% 15%;
 }
 
 .max-root {
@@ -583,7 +583,6 @@ a:hover {
 .caption-maxdiv {
     display: flex;
     flex-direction: row;
-    margin-top: -4%;
     margin-left: -25%;
 }
 
@@ -744,5 +743,8 @@ a:hover {
     }
     .icon-unhover {
         display: none;
+    }
+    .caption-maxdiv {
+        margin-top: -4%;
     }
 }
