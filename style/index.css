@@ -306,29 +306,33 @@ a:hover {
 }
 
 .gifo {
-    width: 16em;
-    height: 12em;
     margin-bottom: 12%;
     background-color: #572EE5;
+}
+
+.result {
+    display: block;
+}
+
+.result:hover {
+    opacity: 0.5;
+}
+
+.gifo,
+.result {
+    width: 16em;
+    height: 12em;
+    max-width: 33vw;
+    max-height: 33vw;
 }
 
 .ver-mas {
     margin-bottom: 25px;
 }
 
-.result {
-    width: 16em;
-    height: 12em;
-    display: block;
-}
-
 .max {
     width: 26em;
     height: 18em;
-}
-
-.result:hover {
-    opacity: 0.5;
 }
 
 .overlay {
