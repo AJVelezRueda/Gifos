@@ -398,8 +398,9 @@ a:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 20% 6%;
     width: 100%;
+    margin-top: 62%;
+    margin-bottom: 25%;
 }
 
 .socialnets {
@@ -676,6 +677,8 @@ a:hover {
         flex-direction: row;
         justify-content: space-between;
         padding: 4% 6%;
+        margin-bottom: 2%;
+        margin-top: 2%;
     }
     .crear-footer {
         margin-top: 10%;
