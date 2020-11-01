@@ -182,7 +182,7 @@ a:hover {
     flex-direction: column;
     padding-left: 9%;
     padding-right: 9%;
-    padding-top: 37%;
+    padding-top: 7%;
     padding-bottom: 5%;
     align-items: center;
 }
@@ -398,7 +398,7 @@ a:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 4% 6%;
+    padding: 20% 6%;
     width: 100%;
 }
 
@@ -425,7 +425,7 @@ a:hover {
 .camara-viewer {
     display: flex;
     flex-direction: row;
-    padding: 0 7%;
+    padding: 25% 7%;
     margin-left: 1%;
 }
 
@@ -496,9 +496,8 @@ a:hover {
 }
 
 .pasos {
-    display: grid;
-    grid-template-columns: 20% repeat(2, 30%) 20%;
-    grid-template-rows: 1fr;
+    display: flex;
+    flex-direction: column;
 }
 
 .pasos-list {
@@ -604,7 +603,7 @@ a:hover {
     display: none;
 }
 
-@media screen and (min-width: 720px) {
+@media screen and (min-width: 834px) {
     #toggle:checked~.menu i::before {
         content: none;
     }
@@ -705,6 +704,18 @@ a:hover {
         padding: 0 6%;
         margin-top: 20%;
     }
+    .pasos {
+        display: grid;
+        grid-template-columns: 20% repeat(2, 30%) 20%;
+        grid-template-rows: 1fr;
+    }
+    .pasos-list {
+        grid-column: 2/4;
+        justify-content: center;
+        display: flex;
+        flex-direction: row;
+        margin-top: 3%;
+    }
     .violet-line {
         height: 5px;
         border-radius: 20px;
@@ -746,5 +757,11 @@ a:hover {
     }
     .caption-maxdiv {
         margin-top: -4%;
+    }
+    .max-section {
+        padding: 8% 15%;
+    }
+    .camara-viewer {
+        padding: 0 7%;
     }
 }
