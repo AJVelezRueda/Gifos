@@ -56,7 +56,7 @@ h5 {
 
 p {
     font-family: 'Roboto', sans-serif;
-    font-size: 1em;
+    font-size: 1.1vw;
     color: black;
 }
 
@@ -89,7 +89,7 @@ nav {
 }
 
 .nav-bar {
-    margin-top: 3%;
+    margin-top: 8%;
 }
 
 .nav-link {
@@ -426,8 +426,14 @@ a:hover {
 .camara-viewer {
     display: flex;
     flex-direction: row;
-    padding: 25% 7%;
+    padding: 0 7%;
     margin-left: 1%;
+    margin-top: 27%;
+    margin-bottom: 15%;
+}
+
+.camara-viewer img {
+    width: 20%;
 }
 
 .element-luz-camara {
@@ -474,6 +480,7 @@ a:hover {
 
 .camera-container-title {
     margin-bottom: 2%;
+    font-size: 2.3vw;
 }
 
 .video {
@@ -545,7 +552,7 @@ a:hover {
     color: #572EE5;
     height: 36px;
     width: 99px;
-    margin-left: 46%;
+    margin-left: 41%;
     margin-top: 2%;
     display: block;
 }
@@ -560,6 +567,12 @@ a:hover {
 
 .element-cinta {
     text-align: center;
+    margin-left: 64%;
+    margin-top: -11%;
+}
+
+.element-cinta img {
+    width: 75%;
 }
 
 .max-section {
@@ -621,6 +634,9 @@ a:hover {
     .logo-desck {
         opacity: 1;
     }
+    .nav-bar {
+        margin-top: 3%;
+    }
     .menu {
         display: none;
     }
@@ -676,7 +692,7 @@ a:hover {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        padding: 4% 6%;
+        padding: 10% 6%;
         margin-bottom: 2%;
         margin-top: 2%;
     }
@@ -719,8 +735,16 @@ a:hover {
         flex-direction: row;
         margin-top: 3%;
     }
+    .step-button.active {
+        margin-left: 46%;
+    }
     .element-cinta {
         text-align: center;
+        margin-left: -8%;
+        margin-top: -1%;
+    }
+    .element-cinta img {
+        width: 38%;
     }
     .violet-line {
         height: 5px;
@@ -728,6 +752,9 @@ a:hover {
         background: #572EE5;
         grid-column: 2/4;
         text-align: center;
+    }
+    .camara-viewer img {
+        width: 10%;
     }
     .results {
         background: #F3F5F8;
@@ -769,5 +796,7 @@ a:hover {
     }
     .camara-viewer {
         padding: 0 7%;
+        margin-top: 5%;
+        margin-bottom: 1%;
     }
 }
