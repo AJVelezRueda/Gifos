@@ -193,9 +193,18 @@ function getTrendingWords() {
 }
 
 //------- Mis Fav ----------//
-
 function renderMyCreatedGifs() {
-    renderGifos(getMisFavorites(), document.getElementById("mis-gifos"), true);
+    const section = document.getElementById('mis-gifos-section');
+    const misGifos = getMisFavorites();
+
+    if (misGifos.lenght) {
+        renderGifos(misGifos, document.getElementById("mis-gifos"), true);
+        section.classList.remove('nr');
+
+    } else {
+        section.classList.add('nr');
+    }
+
 }
 
 function showMyCreatedGifs() {

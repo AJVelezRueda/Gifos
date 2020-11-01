@@ -586,6 +586,24 @@ a:hover {
     margin-left: -25%;
 }
 
+.mis-gifos-section .mis-gifos-nr {
+    display: none;
+}
+
+.mis-gifos-section.nr .mis-gifos-nr {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2%;
+}
+
+.mis-gifos-section .ver-mas {
+    display: block;
+}
+
+.mis-gifos-section.nr .ver-mas {
+    display: none;
+}
+
 @media screen and (min-width: 720px) {
     #toggle:checked~.menu i::before {
         content: none;
