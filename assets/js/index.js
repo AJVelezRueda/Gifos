@@ -195,9 +195,7 @@ function getTrendingWords() {
 //------- Mis Fav ----------//
 
 function renderMyCreatedGifs() {
-    const listaMisGifs = JSON.parse(localStorage.getItem('mis_gifs'));
-
-    renderGifos(listaMisGifs, document.getElementById("mis-gifos"), true);
+    renderGifos(getMisFavorites(), document.getElementById("mis-gifos"), true);
 }
 
 function showMyCreatedGifs() {
