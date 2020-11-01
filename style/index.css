@@ -719,6 +719,9 @@ a:hover {
         flex-direction: row;
         margin-top: 3%;
     }
+    .element-cinta {
+        text-align: center;
+    }
     .violet-line {
         height: 5px;
         border-radius: 20px;
