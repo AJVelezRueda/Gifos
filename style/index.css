@@ -355,13 +355,26 @@ a:hover {
     display: none;
 }
 
-.mis-favoritos {
+.mis-favoritos-section {
     height: 100%;
     width: 100%;
     padding: 4% 9%;
     justify-content: center;
     display: flex;
     flex-direction: column;
+}
+
+.mis-favoritos-section .fav-gifs-nr {
+    display: none;
+}
+
+.mis-favoritos-section.nr .fav-gifs-nr {
+    display: flex;
+    flex-direction: column;
+}
+
+.mis-favoritos-section.nr .step-button {
+    display: none;
 }
 
 .mis-gifos-section {
