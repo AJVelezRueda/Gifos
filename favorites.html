@@ -6,8 +6,8 @@
     <title>Gifos</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta name="author" content="Ana Julia Velez Rueda">
-    <link rel="stylesheet" type="text/css" href="style/index.css"></link>
-    <link rel="stylesheet" type="text/css" href="style/index_nocturno.css"></link>
+    <link rel="stylesheet" type="text/css" href="style/index.css">
+    <link rel="stylesheet" type="text/css" href="style/index_nocturno.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.12.0/css/all.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;1,100&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
@@ -39,42 +39,40 @@
             </div>
         </nav>
     </header>
-
-    <body>
-        <section id="max-section" class="max-section">
+    <section id="max-section" class="max-section">
+    </section>
+    <main id="main" class="main active">
+        <section class="mis-favoritos-section" id="mis-favoritos-section">
+            <img src="assets/images/icon-favoritos.svg" alt="icon-heart-fav" class="icon-heart-fav">
+            <h2 class="results-title" id="results-title">Favoritos</h2>
+            <div class="search-results" id="search-results">
+            </div>
+            <div class="fav-gifs-nr" id="fav-gifs-nr">
+                <img src="assets/images/icon-fav-sin-contenido.svg" alt="fav-img-nr">
+                <h2>¡Anímate a crear tu primer GIFO!</h2>
+            </div>
+            <button class="step-button ver-mas active" id="ver-mas">VER MAS</button>
         </section>
-        <main id="main" class="main active">
-            <section class="mis-favoritos-section" id="mis-favoritos-section">
-                <img src="assets/images/icon-favoritos.svg" alt="icon-heart-fav" class="icon-heart-fav">
-                <h2 class="results-title" id="results-title">Favoritos</h2>
-                <div class="search-results" id="search-results">
-                </div>
-                <div class="fav-gifs-nr" id="fav-gifs-nr">
-                    <img src="assets/images/icon-fav-sin-contenido.svg" alt="fav-img-nr">
-                    <h2>¡Anímate a crear tu primer GIFO!</h2>
-                </div>
-                <button class="step-button ver-mas active" id="ver-mas">VER MAS</button>
-            </section>
-        </main>
-        <footer class="footer active" id="footer">
-            <section class="footer" id="footer">
-                <div class="socialnets">
-                    <p class="compartir-text" id="compartir-text">Compartir en:</p>
-                    <ul class="contac-icons">
-                        <li class="nav-item">
-                            <a id="nav-link" class="nav-link" href="#"><i class="fab fa-instagram"></i></a>
-                        </li>
-                        <li class="nav-item">
-                            <a id="nav-link" class="nav-link" href="#"><i class="fab fa-twitter"></i></a>
-                        </li>
-                        <li class="nav-item">
-                            <a id="nav-link" class="nav-link" href="#"><i class="fab fa-facebook"></i></a>
-                        </li>
-                    </ul>
-                </div>
-                <p class="footer-text" id="footer-text">© GIFOS 2020 All Rights Reserved</p>
-            </section>
-        </footer>
-    </body>
+    </main>
+    <footer class="footer active" id="footer">
+        <section class="footer">
+            <div class="socialnets">
+                <p class="compartir-text" id="compartir-text">Compartir en:</p>
+                <ul class="contac-icons">
+                    <li class="nav-item">
+                        <a id="nav-link-insta" class="nav-link" href="#"><i class="fab fa-instagram"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="nav-link-twitter" class="nav-link" href="#"><i class="fab fa-twitter"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="nav-link-facebook" class="nav-link" href="#"><i class="fab fa-facebook"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <p class="footer-text" id="footer-text">© GIFOS 2020 All Rights Reserved</p>
+        </section>
+    </footer>
+</body>
 
 </html>
