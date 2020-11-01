@@ -606,7 +606,8 @@ a:hover {
 .mis-gifos-section.nr .mis-gifos-nr {
     display: flex;
     flex-direction: column;
-    margin-top: 2%;
+    margin-top: 6%;
+    margin-bottom: 8%;
 }
 
 .mis-gifos-section .ver-mas {
@@ -692,12 +693,9 @@ a:hover {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        padding: 4% 6%;
-        margin-bottom: 2%;
-        margin-top: 2%;
-    }
-    .crear-footer {
-        margin-top: 10%;
+        padding: 0 6%;
+        margin-bottom: 6%;
+        margin-top: 26%;
     }
     .retroceder,
     .avanzar {
@@ -754,7 +752,7 @@ a:hover {
         text-align: center;
     }
     .camara-viewer img {
-        width: 10%;
+        width: 9%;
     }
     .results {
         background: #F3F5F8;
