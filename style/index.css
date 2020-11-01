@@ -386,10 +386,7 @@ a:hover {
 
 .retroceder,
 .avanzar {
-    background: transparent;
-    z-index: 2;
-    width: 44px;
-    height: 44px;
+    display: none;
 }
 
 .footer {
@@ -680,6 +677,14 @@ a:hover {
     }
     .crear-footer {
         margin-top: 10%;
+    }
+    .retroceder,
+    .avanzar {
+        display: block;
+        background: transparent;
+        z-index: 2;
+        width: 44px;
+        height: 44px;
     }
     .socialnets {
         display: flex;

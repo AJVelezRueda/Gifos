@@ -6,7 +6,10 @@ const searchMore = document.getElementById("ver-mas");
 const searchResultGroup = document.getElementById('search-result-groups');
 const sugestionsList = ['sugerencia1', 'sugerencia2', 'sugerencia3'].map((it) => document.getElementById(it));
 const apiKey = 'Nc8u10QS9qz9vLVNpc7W08yiQVxITRYJ';
-const listaElementosNocturnos = ['body', 'search-input', 'results', 'nav-link', 'center-text', 'compartir-text', 'footer-text']
+const listaElementosNocturnos = ['body', 'search-input', 'results', 'nav-link', 'center-text', 'compartir-text', 'footer-text'];
+const carousel = document.getElementById('carousel');
+let startXPosition;
+let startTime;
 
 
 //---------- Carousel --------------//
@@ -261,6 +264,30 @@ sugestionsList.forEach((it) => {
 });
 
 
+
+function touchStart(event) {
+    startXPosition = event.touches[0].pageX;
+    startTime = new Date();
+}
+
+function touchEnd(event) {
+    let endXPosition = event.changedTouches[0].pageX;
+    let endTime = new Date();
+    let xMovement = endXPosition - startXPosition;
+    let elapsedTime = endTime - startTime;
+    let within_ms = 1000;
+    let min_horizontal_move = 30;
+
+    if (Math.abs(xMovement) > min_horizontal_move && elapsedTime < within_ms) {
+        if (xMovement < 0) {
+            backCarouselImage();
+        } else {
+            nextCarouselImage();
+        }
+    }
+}
+
+
 getTrendingGifos();
 
 document.getElementById('boton-nocturno').addEventListener('click', () => addNocturnoMode(listaElementosNocturnos));
@@ -268,3 +295,6 @@ document.getElementById('mis-gifos-button').addEventListener('click', () => show
 nocturnoModeOn(listaElementosNocturnos);
 locationSensing();
 getTrendingWords();
+
+carousel.addEventListener('touchstart', touchStart);
+carousel.addEventListener('touchend', touchEnd);
