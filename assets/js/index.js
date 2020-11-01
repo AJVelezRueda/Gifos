@@ -276,7 +276,7 @@ function touchEnd(event) {
     let xMovement = endXPosition - startXPosition;
     let elapsedTime = endTime - startTime;
     let within_ms = 1000;
-    let min_horizontal_move = 30;
+    let min_horizontal_move = 40;
 
     if (Math.abs(xMovement) > min_horizontal_move && elapsedTime < within_ms) {
         if (xMovement < 0) {
