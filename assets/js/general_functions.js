@@ -162,7 +162,7 @@ function maximizingDiv(elemento) {
     root.appendChild(figure);
     div.appendChild(figureTitle);
     createFavImage(allFavorites, elemento, div, figure, false);
-    createDownloadImage(div);
+    createDownloadImage(div, elemento);
 
     const favIcon = div.childNodes[1];
     const downloadIcon = div.childNodes[3];
@@ -206,11 +206,11 @@ function createFavImage(allFavorites, elemento, parent, figure, deleteAfterUnfav
 
 }
 
-function createDownloadImage(parent, id) {
+function createDownloadImage(parent, elemento) {
     const downloadImg = creatImgObject("assets/images/icon-download.svg", "download-button overlay-icons", "download-button");
     const downloadImgHover = creatImgObject("assets/images/icon-download-hover.svg", "download-button overlay-icons", "download-button-hover");
 
-    downloadImg.id = id + '-downgload';
+    downloadImg.id = elemento.alt + '-download';
     iconsUndisplay(downloadImgHover);
 
     parent.appendChild(downloadImg);
@@ -223,6 +223,8 @@ function createDownloadImage(parent, id) {
     downloadImgHover.addEventListener('click', () => {
         iconHoverUnhover(downloadImgHover, downloadImg);
     });
+
+    downloadImg.addEventListener('click', () => downloadBlobAsFile(elemento.src));
 }
 
 
@@ -235,7 +237,7 @@ function renderGifos(gifosList, parent, deleteAfterUnfav = false) {
         createFavImage(allFavorites, elemento, overlayDiv, figure, deleteAfterUnfav);
         const maxImg = creatImgObject("assets/images/icon-max-normal.svg", "max-button overlay-icons", "icon-max");
         const maxImgHover = creatImgObject("assets/images/icon-max-hover.svg", "max-button overlay-icons", "icon-max-hover");
-        createDownloadImage(overlayDiv, elemento.alt);
+        createDownloadImage(overlayDiv, elemento);
 
         iconsUndisplay(maxImgHover);
 
@@ -255,8 +257,6 @@ function renderGifos(gifosList, parent, deleteAfterUnfav = false) {
         });
 
         parent.appendChild(figure);
-
-        document.getElementById(elemento.alt + '-downgload').addEventListener('click', () => downloadBlobAsFile(elemento.src));
     })
 }
 
