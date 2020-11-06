@@ -716,6 +716,7 @@ a:hover {
         margin-inline-start: 0;
         flex-direction: row-reverse;
         justify-content: flex-end;
+        color: gray;
     }
     .trending {
         padding: 0 7%;
