@@ -191,7 +191,7 @@ a:hover {
     border: #572EE5 solid 1px;
     border-radius: 15px;
     width: 27em;
-    padding-left: 3%;
+    padding-left: 7%;
     height: 2.3em;
     position: relative;
     z-index: 5;
@@ -221,7 +221,7 @@ a:hover {
 .close-icon {
     z-index: 10;
     position: absolute;
-    margin-left: 9px;
+    margin-left: 13px;
     margin-top: 9px;
     display: none;
 }
