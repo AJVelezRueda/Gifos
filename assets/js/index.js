@@ -69,8 +69,9 @@ function searchSugestionsUrl(query) {
 
 function addLupita(elemento) {
     const imgLupita = document.createElement('img');
-    imgLupita.src = 'assets/images/icon-search-mod-noc.svg';
+    imgLupita.src = 'assets/images/icon-search.svg';
     imgLupita.alt = 'lupita';
+    imgLupita.className = 'lupita';
 
     elemento.appendChild(imgLupita);
 }

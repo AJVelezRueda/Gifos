@@ -231,6 +231,11 @@ a:hover {
     display: inline;
 }
 
+.lupita {
+    width: 16px;
+    margin-left: -18%;
+}
+
 .sugerencias {
     border: #572EE5 solid 1px;
     height: 6.5em;
@@ -271,6 +276,8 @@ a:hover {
 .trending-text {
     margin-bottom: 4%;
     color: #572EE5;
+    display: flex;
+    justify-content: center;
 }
 
 .results {
@@ -704,9 +711,11 @@ a:hover {
     ul li {
         position: relative;
         padding: 0 10px;
-        display: inline-block;
+        display: flex;
         margin-inline-end: 0;
         margin-inline-start: 0;
+        justify-content: space-around;
+        flex-direction: row-reverse;
     }
     .trending {
         padding: 0 7%;
