@@ -217,6 +217,13 @@ a:hover {
     margin-top: 5.5px;
 }
 
+.close-icon {
+    z-index: 10;
+    position: absolute;
+    margin-left: 364px;
+    margin-top: -26px;
+}
+
 .sugerencias {
     border: #572EE5 solid 1px;
     height: 6.5em;
