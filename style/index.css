@@ -215,6 +215,7 @@ a:hover {
     position: absolute;
     margin-left: -33px;
     margin-top: 5.5px;
+    display: none;
 }
 
 .close-icon {
@@ -222,6 +223,12 @@ a:hover {
     position: absolute;
     margin-left: 364px;
     margin-top: -26px;
+    display: none;
+}
+
+.close-icon.active,
+.lupa.active {
+    display: inline;
 }
 
 .sugerencias {
