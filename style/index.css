@@ -233,7 +233,7 @@ a:hover {
 
 .lupita {
     width: 16px;
-    margin-left: -18%;
+    margin-right: 5px;
 }
 
 .sugerencias {
@@ -714,8 +714,8 @@ a:hover {
         display: flex;
         margin-inline-end: 0;
         margin-inline-start: 0;
-        justify-content: space-around;
         flex-direction: row-reverse;
+        justify-content: flex-end;
     }
     .trending {
         padding: 0 7%;

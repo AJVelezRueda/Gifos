@@ -78,8 +78,10 @@ function addLupita(elemento) {
 
 function copySugestionsInSpan(list) {
     sugestionsList.forEach((elemento, indice) => {
-        elemento.innerText = list[indice] || "";
-        addLupita(elemento);
+        if (list[indice]) {
+            elemento.innerText = list[indice] || "";
+            addLupita(elemento);
+        };
     })
 }
 
