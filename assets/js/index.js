@@ -82,11 +82,21 @@ function getSugestions(query) {
 }
 
 function stopSearch() {
+    const lupa = document.getElementById('lupa');
+    const closeIcon = document.getElementById('close-icon');
+
     buscador.classList.remove('searching');
+    lupa.classList.add('active');
+    closeIcon.classList.remove('active');
 }
 
 function startSearch() {
+    const lupa = document.getElementById('lupa');
+    const closeIcon = document.getElementById('close-icon');
+
     buscador.classList.add('searching');
+    lupa.classList.remove('active');
+    closeIcon.classList.add('active');
 }
 
 function trySearch() {
