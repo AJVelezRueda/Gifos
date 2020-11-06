@@ -67,9 +67,18 @@ function searchSugestionsUrl(query) {
     return `https://api.giphy.com/v1/gifs/search/tags?api_key=${apiKey}&q=${query}`;
 }
 
+function addLupita(elemento) {
+    const imgLupita = document.createElement('img');
+    imgLupita.src = 'assets/images/icon-search-mod-noc.svg';
+    imgLupita.alt = 'lupita';
+
+    elemento.appendChild(imgLupita);
+}
+
 function copySugestionsInSpan(list) {
     sugestionsList.forEach((elemento, indice) => {
         elemento.innerText = list[indice] || "";
+        addLupita(elemento);
     })
 }
 
