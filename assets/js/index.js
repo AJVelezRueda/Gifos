@@ -169,12 +169,9 @@ function trendingWords() {
 
 
 function copyTrendingWordToSearcher(id) {
-    const element = document.getElementById(id)
-    const prevResults = document.getElementById('gifos-results')
-
+    const element = document.getElementById(id);
 
     textToFind = element.innerText
-    prevResults.classList.remove('active')
 
     if (textToFind.includes(',')) {
         getingSearchResults(textToFind.replace(',', ''));
