@@ -170,14 +170,12 @@ function trendingWords() {
 
 function copyTrendingWordToSearcher(id) {
     const element = document.getElementById(id);
+    const textToFind = element.innerText.replace(',', '')
 
-    textToFind = element.innerText
+    searchInput.value = textToFind;
+    resetResultsDiv();
+    getingSearchResults(textToFind);
 
-    if (textToFind.includes(',')) {
-        getingSearchResults(textToFind.replace(',', ''));
-    } else {
-        getingSearchResults(textToFind);
-    }
 }
 
 function getTrendingWords() {
