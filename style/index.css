@@ -115,7 +115,10 @@ nav {
 ul li {
     position: relative;
     padding: 0 10px;
-    display: inline-block;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    color: gray;
 }
 
 a {
@@ -191,7 +194,7 @@ a:hover {
     border: #572EE5 solid 1px;
     border-radius: 15px;
     width: 27em;
-    padding-left: 7%;
+    padding-left: 9%;
     height: 2.3em;
     position: relative;
     z-index: 5;
@@ -216,6 +219,15 @@ a:hover {
     margin-left: -33px;
     margin-top: 5.5px;
     display: none;
+}
+
+.lupa-suplementaria {
+    margin-left: 5px;
+    margin-top: 9px;
+}
+
+.searching .lupa-suplementaria {
+    display: block;
 }
 
 .close-icon {
@@ -714,9 +726,6 @@ a:hover {
         display: flex;
         margin-inline-end: 0;
         margin-inline-start: 0;
-        flex-direction: row-reverse;
-        justify-content: flex-end;
-        color: gray;
     }
     .trending {
         padding: 0 7%;
@@ -833,5 +842,18 @@ a:hover {
         padding: 0 7%;
         margin-top: 5%;
         margin-bottom: 1%;
+    }
+}
+
+@media screen and (max-width: 466px) {
+    .search-input {
+        width: 20em;
+    }
+    .buscador-img {
+        width: 64.5vw;
+    }
+    .sugerencias {
+        width: 20em;
+        margin-top: -9.5%;
     }
 }
