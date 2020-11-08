@@ -116,7 +116,7 @@ function recordUpload() {
 
     form.append('file', recorder.getBlob(), 'myGif.gif');
     form.append("tags", "");
-    fetch(`http://upload.giphy.com/v1/gifs?api_key=${apiKey}`, {
+    fetch(`https://upload.giphy.com/v1/gifs?api_key=${apiKey}`, {
             method: 'POST',
             body: form,
         })
