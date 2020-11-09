@@ -96,19 +96,67 @@ function recordingFinished() {
     stopTimer();
 }
 
+function createLinkImg(parent, elemento) {
+    const linkImg = creatImgObject('assets/images/icon-link-normal.svg', "overlay-icons", "link-button");
+    const linkImgHover = creatImgObject("assets/images/icon-link-hover.svg", "overlay-icons", "link-button-hover");
+
+    linkImg.id = elemento.alt + '-link';
+    iconsUndisplay(linkImgHover);
+
+    parent.appendChild(linkImg);
+    parent.appendChild(linkImgHover);
+
+    linkImg.addEventListener('click', () => {
+        iconHoverUnhover(linkImg, linkImgHover);
+    });
+
+    linkImgHover.addEventListener('click', () => {
+        iconHoverUnhover(linkImgHover, linkImg);
+    });
+}
+
+
+function uploadDone(gifo) {
+    const parentDiv = document.getElementById('camera-container');
+    const video = document.getElementById("video");
+    const divIcons = document.createElement('div');
+    const uploadStatusMessage = document.getElementById("upload-status-message");
+    const uploadStatusImg = document.getElementById("upload-status-img");
+
+    divIcons.classList.add('done-div-icons');
+    uploadStatusMessage.innerText = 'GIFO subido con éxito';
+    uploadStatusImg.src = 'assets/images/check.svg';
+
+    createDownloadImage(divIcons, gifo);
+    createLinkImg(divIcons, gifo);
+    parentDiv.insertBefore(divIcons, video);
+
+}
+
 function recordingUpload() {
     const repetir = document.getElementById('repetir-captura');
     const cameraContainer = document.getElementById('camera-container');
-    const video = document.getElementById('video')
+    const video = document.getElementById('video');
+    const divDone = document.createElement('div');
+    const uploadStatusMessage = document.createElement('p');
+    const uploadStatusImg = document.createElement('img');
 
-    subir.addEventListener('click', () => {
-        subir.classList.remove('active');
-        repetir.classList.remove('active');
-        buttonPaso2.classList.remove('active');
-        buttonPaso3.classList.add('active');
-        cameraContainer.classList.add('done');
-        video.classList.add('done');
-    });
+    uploadStatusMessage.innerText = 'subiendo GIFO';
+    uploadStatusMessage.id = "upload-status-message";
+    uploadStatusImg.src = 'assets/images/loader.svg';
+    uploadStatusImg.id = "upload-status-img";
+
+    divDone.appendChild(uploadStatusImg);
+    divDone.appendChild(uploadStatusMessage);
+    cameraContainer.appendChild(divDone);
+    divDone.classList.add('done-div');
+
+    subir.classList.remove('active');
+    repetir.classList.remove('active');
+    buttonPaso2.classList.remove('active');
+    buttonPaso3.classList.add('active');
+    cameraContainer.classList.add('done');
+    video.classList.add('done');
 }
 
 function recordUpload() {
@@ -125,6 +173,7 @@ function recordUpload() {
         .then(gifo => {
             listMisFav.push(gifo);
             localStorage.setItem("mis_gifs", JSON.stringify(listMisFav));
+            uploadDone(gifo);
         });
 }
 
@@ -157,7 +206,7 @@ function startTimer() {
 document.getElementById("comenzar").addEventListener('click', recordInit);
 document.getElementById("grabar").addEventListener('click', recording);
 document.getElementById("finalizar").addEventListener('click', recordingFinished);
-document.getElementById("subir").addEventListener("click", () => {
+subir.addEventListener("click", () => {
     recordUpload();
     recordingUpload();
 });
