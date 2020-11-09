@@ -871,13 +871,13 @@ a:hover {
 
 @media screen and (max-width: 466px) {
     .search-input {
-        width: 20em;
+        width: 19em;
     }
     .buscador-img {
-        width: 64.5vw;
+        width: 56.6vw;
     }
     .sugerencias {
         width: 20em;
-        margin-top: -9.5%;
+        margin-top: -9.6%;
     }
 }
