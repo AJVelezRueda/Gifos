@@ -373,8 +373,8 @@ a:hover {
 }
 
 .overlay {
-    margin-left: 15%;
-    margin-top: -27%;
+    margin-left: 57px;
+    margin-top: -174px;
     position: absolute;
     z-index: 99;
     display: none;
@@ -822,7 +822,7 @@ a:hover {
     }
     .overlay {
         margin-left: 131px;
-        margin-top: -10%;
+        margin-top: -176px;
         position: absolute;
         z-index: 99;
     }
@@ -875,12 +875,22 @@ a:hover {
 @media screen and (max-width: 466px) {
     .search-input {
         width: 19em;
+        padding-left: 10%;
+        padding-top: 1%;
     }
     .buscador-img {
         width: 56.6vw;
     }
     .sugerencias {
-        width: 19.5em;
-        margin-top: -10%;
+        width: 91.5vw;
+        margin-top: -31px;
+    }
+    .overlay {
+        margin-left: 6%;
+        margin-top: -31%;
+    }
+    .overlay-icons {
+        padding: 0 1px;
+        max-width: 26%;
     }
 }
