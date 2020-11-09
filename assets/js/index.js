@@ -220,7 +220,7 @@ function renderMyCreatedGifs() {
     const section = document.getElementById('mis-gifos-section');
     const misGifos = getMisFavorites();
 
-    if (misGifos.lenght) {
+    if (misGifos.length) {
         renderGifos(misGifos, document.getElementById("mis-gifos"), true);
         section.classList.remove('nr');
 
